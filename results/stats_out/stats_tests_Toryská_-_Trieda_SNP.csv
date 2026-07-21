@@ -1,0 +1,131 @@
+intersection,metric,scale,variance,comparison,rl_mean,base_mean,improvement_pct,p_value,sig,n_pairs
+Toryská - Trieda SNP,avg_wait,0.2,0.3,PPO full vs SAC same reward,59.746,312.59700000000004,80.8872126092061,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.3,PPO full vs Reward trip only,59.746,655.147,90.8805199443789,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.3,PPO full vs Reward dwait only,59.746,145.632,58.9746758954076,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.3,PPO full vs Reward dwait w1.0,59.746,112.80799999999999,47.03744415289695,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.3,PPO full vs Reward flow,59.746,75.774,21.152374165280964,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.5,PPO full vs SAC same reward,54.563,286.06399999999996,80.92629621343475,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.5,PPO full vs Reward trip only,54.563,555.689,90.18101851935165,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.5,PPO full vs Reward dwait only,54.563,150.792,63.81571966682582,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.5,PPO full vs Reward dwait w1.0,54.563,98.70000000000002,44.71833839918947,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.5,PPO full vs Reward flow,54.563,77.06300000000002,29.1968908555338,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.8,PPO full vs SAC same reward,54.467999999999996,258.954,78.96614842790612,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.8,PPO full vs Reward trip only,54.467999999999996,483.467,88.73387428717989,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.8,PPO full vs Reward dwait only,54.467999999999996,128.419,57.58571550938725,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.8,PPO full vs Reward dwait w1.0,54.467999999999996,103.904,47.57853403141362,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.2,0.8,PPO full vs Reward flow,54.467999999999996,70.535,22.778762316580423,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.3,PPO full vs SAC same reward,71.629,279.14099999999996,74.33949151145836,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.3,PPO full vs Reward trip only,71.629,608.422,88.22708580557574,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.3,PPO full vs Reward dwait only,71.629,161.869,55.748784510931685,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.3,PPO full vs Reward dwait w1.0,71.629,67.384,-6.299715065891019,0.130859375,ns,10
+Toryská - Trieda SNP,avg_wait,0.6,0.3,PPO full vs Reward flow,71.629,66.26500000000001,-8.094770995246343,0.193359375,ns,10
+Toryská - Trieda SNP,avg_wait,0.6,0.5,PPO full vs SAC same reward,70.673,276.28799999999995,74.42053219828584,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.5,PPO full vs Reward trip only,70.673,528.769,86.63442826640745,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.5,PPO full vs Reward dwait only,70.673,164.875,57.13540561031084,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.5,PPO full vs Reward dwait w1.0,70.673,70.88199999999999,0.2948562399480672,0.921875,ns,10
+Toryská - Trieda SNP,avg_wait,0.6,0.5,PPO full vs Reward flow,70.673,68.71700000000001,-2.846457208550997,0.322265625,ns,10
+Toryská - Trieda SNP,avg_wait,0.6,0.8,PPO full vs SAC same reward,68.91600000000001,269.845,74.46089421705054,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.8,PPO full vs Reward trip only,68.91600000000001,583.581,88.19084240234002,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.8,PPO full vs Reward dwait only,68.91600000000001,168.28799999999998,59.04877353108955,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,0.6,0.8,PPO full vs Reward dwait w1.0,68.91600000000001,66.42600000000002,-3.7485322012464914,0.193359375,ns,10
+Toryská - Trieda SNP,avg_wait,0.6,0.8,PPO full vs Reward flow,68.91600000000001,69.846,1.331500730177809,0.76953125,ns,10
+Toryská - Trieda SNP,avg_wait,1.0,0.3,PPO full vs SAC same reward,88.691,223.41200000000003,60.30159525898341,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.3,PPO full vs Reward trip only,88.691,384.56499999999994,76.93731878876132,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.3,PPO full vs Reward dwait only,88.691,153.08700000000002,42.06496959245397,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.3,PPO full vs Reward dwait w1.0,88.691,75.49800000000002,-17.474635089671224,0.00390625,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.3,PPO full vs Reward flow,88.691,78.53200000000001,-12.936127947842904,0.10546875,ns,10
+Toryská - Trieda SNP,avg_wait,1.0,0.5,PPO full vs SAC same reward,84.02900000000001,223.78500000000003,62.45101324932414,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.5,PPO full vs Reward trip only,84.02900000000001,459.7389999999999,81.7224555671805,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.5,PPO full vs Reward dwait only,84.02900000000001,151.40800000000002,44.501611539680866,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.5,PPO full vs Reward dwait w1.0,84.02900000000001,74.487,-12.810289043725772,0.013671875,*,10
+Toryská - Trieda SNP,avg_wait,1.0,0.5,PPO full vs Reward flow,84.02900000000001,82.19300000000001,-2.233766865791489,0.556640625,ns,10
+Toryská - Trieda SNP,avg_wait,1.0,0.8,PPO full vs SAC same reward,83.45499999999998,223.54700000000003,62.66780587527456,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.8,PPO full vs Reward trip only,83.45499999999998,376.868,77.85564176316376,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.8,PPO full vs Reward dwait only,83.45499999999998,152.46800000000002,45.263924233281756,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.0,0.8,PPO full vs Reward dwait w1.0,83.45499999999998,78.159,-6.77593111477882,0.232421875,ns,10
+Toryská - Trieda SNP,avg_wait,1.0,0.8,PPO full vs Reward flow,83.45499999999998,77.40300000000002,-7.818818392051939,0.275390625,ns,10
+Toryská - Trieda SNP,avg_wait,1.4,0.3,PPO full vs SAC same reward,103.572,221.496,53.23978762596164,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.3,PPO full vs Reward trip only,103.572,353.77799999999996,70.72401336431321,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.3,PPO full vs Reward dwait only,103.572,160.88600000000002,35.6239821985754,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.3,PPO full vs Reward dwait w1.0,103.572,82.34700000000001,-25.77507377317934,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.3,PPO full vs Reward flow,103.572,107.07300000000001,3.269731865176099,0.275390625,ns,10
+Toryská - Trieda SNP,avg_wait,1.4,0.5,PPO full vs SAC same reward,109.928,228.225,51.833497644868,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.5,PPO full vs Reward trip only,109.928,301.10300000000007,63.49156268785101,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.5,PPO full vs Reward dwait only,109.928,151.62,27.49769159741459,0.00390625,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.5,PPO full vs Reward dwait w1.0,109.928,84.208,-30.543416302489074,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.5,PPO full vs Reward flow,109.928,107.80999999999999,-1.9645672943140797,1.0,ns,10
+Toryská - Trieda SNP,avg_wait,1.4,0.8,PPO full vs SAC same reward,104.022,219.033,52.508526112503596,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.8,PPO full vs Reward trip only,104.022,350.599,70.33020630406817,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.8,PPO full vs Reward dwait only,104.022,152.103,31.610816354707005,0.001953125,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.8,PPO full vs Reward dwait w1.0,104.022,85.25800000000001,-22.008491871730502,0.00390625,**,10
+Toryská - Trieda SNP,avg_wait,1.4,0.8,PPO full vs Reward flow,104.022,110.33800000000001,5.724229186680928,0.322265625,ns,10
+Toryská - Trieda SNP,avg_wait,ALL,ALL,PPO full vs SAC same reward,79.47433333333332,251.86558333333332,68.44573510936887,1.9719517121524354e-21,***,120
+Toryská - Trieda SNP,avg_wait,ALL,ALL,PPO full vs Reward trip only,79.47433333333332,470.1439166666667,83.09574355512062,1.9719517121524354e-21,***,120
+Toryská - Trieda SNP,avg_wait,ALL,ALL,PPO full vs Reward dwait only,79.47433333333332,153.4539166666667,48.20964165680578,2.022200629440464e-21,***,120
+Toryská - Trieda SNP,avg_wait,ALL,ALL,PPO full vs Reward dwait w1.0,79.47433333333332,83.33841666666667,4.6366171663528775,0.669469492529191,ns,120
+Toryská - Trieda SNP,avg_wait,ALL,ALL,PPO full vs Reward flow,79.47433333333332,82.62908333333334,3.8179656275181815,0.012707751604907138,*,120
+Toryská - Trieda SNP,total_wait,0.2,0.3,PPO full vs SAC same reward,9678.7,48639.6,80.10119326639197,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.3,PPO full vs Reward trip only,9678.7,83172.6,88.36311477577952,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.3,PPO full vs Reward dwait only,9678.7,23592.4,58.975347993421614,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.3,PPO full vs Reward dwait w1.0,9678.7,18274.5,47.0371282388027,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.3,PPO full vs Reward flow,9678.7,12275.3,21.15304717603642,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.5,PPO full vs SAC same reward,8839.2,45564.0,80.60047405846721,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.5,PPO full vs Reward trip only,8839.2,72392.0,87.78981102884296,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.5,PPO full vs Reward dwait only,8839.2,24428.2,63.81559017856412,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.5,PPO full vs Reward dwait w1.0,8839.2,15989.4,44.718375924049674,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.5,PPO full vs Reward flow,8839.2,12483.9,29.195203422007538,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.8,PPO full vs SAC same reward,8823.7,41159.5,78.56217884085083,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.8,PPO full vs Reward trip only,8823.7,66631.6,86.75748443681377,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.8,PPO full vs Reward dwait only,8823.7,20804.0,57.5865218227264,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.8,PPO full vs Reward dwait w1.0,8823.7,16832.7,47.580007960695546,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.2,0.8,PPO full vs Reward flow,8823.7,11426.9,22.78133176977132,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.3,PPO full vs SAC same reward,35456.3,98168.4,63.882165747837384,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.3,PPO full vs Reward trip only,35456.3,124947.1,71.62295083279243,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.3,PPO full vs Reward dwait only,35456.3,72329.3,50.97934032266315,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.3,PPO full vs Reward dwait w1.0,35456.3,33354.3,-6.302036019343832,0.130859375,ns,10
+Toryská - Trieda SNP,total_wait,0.6,0.3,PPO full vs Reward flow,35456.3,32801.4,-8.093861847360177,0.193359375,ns,10
+Toryská - Trieda SNP,total_wait,0.6,0.5,PPO full vs SAC same reward,34982.8,99649.9,64.8942949265378,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.5,PPO full vs Reward trip only,34982.8,122003.5,71.32639637387452,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.5,PPO full vs Reward dwait only,34982.8,74044.6,52.75442098410957,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.5,PPO full vs Reward dwait w1.0,34982.8,35086.5,0.2955552705456432,0.921875,ns,10
+Toryská - Trieda SNP,total_wait,0.6,0.5,PPO full vs Reward flow,34982.8,34015.6,-2.843401262949954,0.322265625,ns,10
+Toryská - Trieda SNP,total_wait,0.6,0.8,PPO full vs SAC same reward,34114.1,96843.4,64.7739546525628,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.8,PPO full vs Reward trip only,34114.1,124963.9,72.70083600143721,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.8,PPO full vs Reward dwait only,34114.1,74086.2,53.953502811589736,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,0.6,0.8,PPO full vs Reward dwait w1.0,34114.1,32880.9,-3.750505612680909,0.193359375,ns,10
+Toryská - Trieda SNP,total_wait,0.6,0.8,PPO full vs Reward flow,34114.1,34573.1,1.3276217637411745,0.845703125,ns,10
+Toryská - Trieda SNP,total_wait,1.0,0.3,PPO full vs SAC same reward,74112.8,117024.7,36.66909635316304,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.3,PPO full vs Reward trip only,74112.8,131203.9,43.51326446851046,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.3,PPO full vs Reward dwait only,74112.8,99103.8,25.216994706560193,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.3,PPO full vs Reward dwait w1.0,74112.8,62989.9,-17.658227747623034,0.00390625,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.3,PPO full vs Reward flow,74112.8,64115.5,-15.592641404964484,0.037109375,*,10
+Toryská - Trieda SNP,total_wait,1.0,0.5,PPO full vs SAC same reward,70249.3,113459.2,38.084086614395304,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.5,PPO full vs Reward trip only,70249.3,137070.1,48.74936255244579,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.5,PPO full vs Reward dwait only,70249.3,99134.8,29.137598502241392,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.5,PPO full vs Reward dwait w1.0,70249.3,62121.2,-13.084261089611928,0.009765625,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.5,PPO full vs Reward flow,70249.3,65975.8,-6.477375037513755,0.193359375,ns,10
+Toryská - Trieda SNP,total_wait,1.0,0.8,PPO full vs SAC same reward,69725.9,112134.5,37.8194043759949,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.8,PPO full vs Reward trip only,69725.9,130583.0,46.60415214844199,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.8,PPO full vs Reward dwait only,69725.9,97890.2,28.771317251369393,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.0,0.8,PPO full vs Reward dwait w1.0,69725.9,65226.9,-6.897461016850398,0.232421875,ns,10
+Toryská - Trieda SNP,total_wait,1.0,0.8,PPO full vs Reward flow,69725.9,60993.6,-14.316747986674006,0.02734375,*,10
+Toryská - Trieda SNP,total_wait,1.4,0.3,PPO full vs SAC same reward,114510.5,129769.3,11.758405108141911,0.005859375,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.3,PPO full vs Reward trip only,114510.5,139911.3,18.15493101700863,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.3,PPO full vs Reward dwait only,114510.5,122593.5,6.593334883170804,0.01953125,*,10
+Toryská - Trieda SNP,total_wait,1.4,0.3,PPO full vs Reward dwait w1.0,114510.5,91764.9,-24.78681936121546,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.3,PPO full vs Reward flow,114510.5,100773.7,-13.631334366010183,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.5,PPO full vs SAC same reward,115163.2,133778.5,13.91501623953027,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.5,PPO full vs Reward trip only,115163.2,135664.3,15.111639539657812,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.5,PPO full vs Reward dwait only,115163.2,119200.6,3.38706348793547,0.10546875,ns,10
+Toryská - Trieda SNP,total_wait,1.4,0.5,PPO full vs Reward dwait w1.0,115163.2,92577.3,-24.396801375715206,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.5,PPO full vs Reward flow,115163.2,100795.2,-14.254647046684763,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.8,PPO full vs SAC same reward,112502.3,132810.8,15.291301611013552,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.8,PPO full vs Reward trip only,112502.3,140871.1,20.13812627288351,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.8,PPO full vs Reward dwait only,112502.3,118454.2,5.024642435641788,0.005859375,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.8,PPO full vs Reward dwait w1.0,112502.3,94549.5,-18.987726005954556,0.001953125,**,10
+Toryská - Trieda SNP,total_wait,1.4,0.8,PPO full vs Reward flow,112502.3,101566.9,-10.766696630496755,0.009765625,**,10
+Toryská - Trieda SNP,total_wait,ALL,ALL,PPO full vs SAC same reward,57346.566666666666,97416.81666666667,41.13278525319636,2.236179315427349e-21,***,120
+Toryská - Trieda SNP,total_wait,ALL,ALL,PPO full vs Reward trip only,57346.566666666666,117451.2,51.17413303000168,1.9719517121524354e-21,***,120
+Toryská - Trieda SNP,total_wait,ALL,ALL,PPO full vs Reward dwait only,57346.566666666666,78805.15,27.22992511699214,1.1015687010129321e-20,***,120
+Toryská - Trieda SNP,total_wait,ALL,ALL,PPO full vs Reward dwait w1.0,57346.566666666666,51804.0,-10.699109463876662,0.00021520727325155523,***,120
+Toryská - Trieda SNP,total_wait,ALL,ALL,PPO full vs Reward flow,57346.566666666666,52649.74166666667,-8.920888975555272,1.7268525973351066e-05,***,120

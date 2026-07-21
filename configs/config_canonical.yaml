@@ -1,0 +1,592 @@
+# ---------------------------------------------------------------------------
+# Intersection Configuration Template
+# ---------------------------------------------------------------------------
+# Use this template to map a physical SUMO intersection to the 24-slot 
+# Canonical Model used by the Reinforcement Learning agent.
+#
+# The model requires exactly 12 Vehicular slots and 12 Pedestrian slots.
+# Slots that do not physically exist (e.g. a 3-way intersection or missing 
+# right-turn lane) should define empty sumo_tls_indices: [].
+#
+# Naming Convention: {Direction}/{Position}
+# - Direction: North, East, South, West
+# - Position:  Right, Middle, Left
+# ---------------------------------------------------------------------------
+
+intersection:
+  sumocfg_path: "simulation/Canonical.sumocfg"
+  sumo_id: "I-TLS"
+  sumo_signal_count: 32
+  verbose: false
+  verbose_phase_selection: false
+  normalization_bounds:
+    max_vehicles_in_lane: 12
+    max_wait_per_vehicle: 90.0
+    max_light_age: 60.0
+  timing:
+    yellow_steps: 3
+    all_red_steps: 1
+    crosswalk_extra_red_steps: 3
+    red_yellow_steps: 2
+    green_steps: 1
+
+# ---------------------------------------------------------------------------
+# Vehicular Slots Configuration (Indices 0-12)
+# ---------------------------------------------------------------------------
+vehicular_slots:
+  North/Right:
+    sumo_tls_indices: [11]           # e.g., [1, 2] corresponding indexes in the TLS state string. Leave [] if inactive.
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "N1_in"
+        lane_indices: [1]
+      - edge_id: ":N2_in_0"
+        lane_indices: [0]
+      - edge_id: "NW_in"
+        lane_indices: [1]
+  North/Middle:
+    sumo_tls_indices: [8]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "N1_in"
+        lane_indices: [2]
+      - edge_id: ":N2_in_1"
+        lane_indices: [0]
+      - edge_id: "N3_in"
+        lane_indices: [1]
+  North/Left:
+    sumo_tls_indices: [9]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "N1_in"
+        lane_indices: [3]
+      - edge_id: ":N2_in_1"
+        lane_indices: [1]
+      - edge_id: "N3_in"
+        lane_indices: [2]
+
+  East/Right:
+    sumo_tls_indices: [10]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "E1_in"
+        lane_indices: [1]
+      - edge_id: ":E2_in_0"
+        lane_indices: [0]
+      - edge_id: "NE_in"
+        lane_indices: [1]
+  East/Middle:
+    sumo_tls_indices: [1]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "E1_in"
+        lane_indices: [2]
+      - edge_id: ":E2_in_1"
+        lane_indices: [0]
+      - edge_id: "E3_in"
+        lane_indices: [1]
+  East/Left:
+    sumo_tls_indices: [2]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "E1_in"
+        lane_indices: [3]
+      - edge_id: ":E2_in_1"
+        lane_indices: [1]
+      - edge_id: "E3_in"
+        lane_indices: [2]
+
+  South/Right:
+    sumo_tls_indices: [12]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "S1_in"
+        lane_indices: [1]
+      - edge_id: ":S2_in_0"
+        lane_indices: [0]
+      - edge_id: "SE_in"
+        lane_indices: [1]
+  South/Middle:
+    sumo_tls_indices: [3]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "S1_in"
+        lane_indices: [2]
+      - edge_id: ":S2_in_1"
+        lane_indices: [0]
+      - edge_id: "S3_in"
+        lane_indices: [1]
+  South/Left:
+    sumo_tls_indices: [4]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "S1_in"
+        lane_indices: [3]
+      - edge_id: ":S2_in_1"
+        lane_indices: [1]
+      - edge_id: "S3_in"
+        lane_indices: [2]
+
+  West/Right:
+    sumo_tls_indices: [13]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "W1_in"
+        lane_indices: [1]
+      - edge_id: ":W2_in_0"
+        lane_indices: [0]
+      - edge_id: "SW_in"
+        lane_indices: [1]
+  West/Middle:
+    sumo_tls_indices: [6]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "W1_in"
+        lane_indices: [2]
+      - edge_id: ":W2_in_1"
+        lane_indices: [0]
+      - edge_id: "W3_in"
+        lane_indices: [1]
+  West/Left:
+    sumo_tls_indices: [7]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "W1_in"
+        lane_indices: [3]
+      - edge_id: ":W2_in_1"
+        lane_indices: [1]
+      - edge_id: "W3_in"
+        lane_indices: [2]
+
+  # Example of an aggregated canonical slot handling multiple independent physical approaches.
+  # Use 'approaches' instead of 'feed_edges' when you have tracks or lanes arriving from 
+  # opposite ends of the intersection that must decouple their distance-to-stop-line geometries.
+  North-South/Track:
+    sumo_tls_indices: [0, 5]
+    max_capacity: 6
+    approaches:
+      - - edge_id: "NT_in"
+          lane_indices: [0]
+      - - edge_id: "ST_in"
+          lane_indices: [0]
+
+# ---------------------------------------------------------------------------
+# Pedestrian Slots Configuration (Indices 13-26)
+# ---------------------------------------------------------------------------
+# Pedestrian slots map to the physical crossing positions, NOT travel direction.
+pedestrian_slots:
+  North/Right:
+    sumo_tls_indices: [26, 27]
+    approaches:
+      - - edge_id: ":I-NW_w0"
+          lane_indices: [0]
+      - - edge_id: ":I-NW_w1"
+          lane_indices: [0]
+  North/Middle+Left:
+    sumo_tls_indices: [22]
+    feed_edges:
+      - edge_id: ":I_w13"
+        lane_indices: [0]
+  North/Track:
+    sumo_tls_indices: [23]
+    feed_edges:
+      - edge_id: ":I_w8"
+        lane_indices: [0]
+  North/Departing:
+    sumo_tls_indices: [14]
+    feed_edges:
+      - edge_id: ":I_w0"
+        lane_indices: [0]
+
+  East/Right:
+    sumo_tls_indices: [24, 25]
+    approaches:
+      - - edge_id: ":I-NE_w0"
+          lane_indices: [0]
+      - - edge_id: ":I-NE_w1"
+          lane_indices: [0]
+  East/Middle+Left:
+    sumo_tls_indices: [15]
+    feed_edges:
+      - edge_id: ":I_w9"
+        lane_indices: [0]
+  East/Departing:
+    sumo_tls_indices: [16]
+    feed_edges:
+      - edge_id: ":I_w2"
+        lane_indices: [0]
+
+  South/Right:
+    sumo_tls_indices: [28, 29]
+    approaches:
+      - - edge_id: ":I-SE_w0"
+          lane_indices: [0]
+      - - edge_id: ":I-SE_w1"
+          lane_indices: [0]
+  South/Middle+Left:
+    sumo_tls_indices: [17]
+    feed_edges:
+      - edge_id: ":I_w10"
+        lane_indices: [0]
+  South/Track:
+    sumo_tls_indices: [18]
+    feed_edges:
+      - edge_id: ":I_w11"
+        lane_indices: [0]
+  South/Departing:
+    sumo_tls_indices: [19]
+    feed_edges:
+      - edge_id: ":I_w4"
+        lane_indices: [0]
+
+  West/Right:
+    sumo_tls_indices: [30, 31]
+    approaches:
+      - - edge_id: ":I-SW_w2"
+          lane_indices: [0]
+      - - edge_id: ":I-SW_w0"
+          lane_indices: [0]
+  West/Middle+Left:
+    sumo_tls_indices: [20]
+    feed_edges:
+      - edge_id: ":I_w12"
+        lane_indices: [0]
+  West/Departing:
+    sumo_tls_indices: [21]
+    feed_edges:
+      - edge_id: ":I_w6"
+        lane_indices: [0]
+
+valid_phases:
+  # Pedestrian only
+  - label: "Pedestrian only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  1, 1, 1, 1,  1, 1, 1]
+  # Left only
+  - label: "North left only"
+    signals: [0, 0, 1,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  1, 1, 0,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East left only"
+    signals: [0, 0, 0,  0, 0, 1,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "South left only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 1,  0, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  1, 0, 1, 1,  1, 1, 0]
+  - label: "West left only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 1,  0,    1, 1, 1, 0,  1, 1, 1,  1, 1, 1, 1,  1, 0, 1]
+  # Middle only
+  - label: "North middle only"
+    signals: [0, 1, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  1, 1, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East middle only"
+    signals: [0, 0, 0,  0, 1, 0,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  1, 1, 1, 1,  1, 1, 0]
+  - label: "South middle only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  1, 0, 1, 1,  1, 1, 1]
+  - label: "West middle only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 1, 0,  0,    1, 1, 1, 1,  1, 1, 0,  1, 1, 1, 1,  1, 0, 1]
+  # Right only
+  - label: "North right only"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  1, 1, 1,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East right only"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  1, 1, 1, 1,  1, 1, 1]
+  - label: "South right only"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  0, 1, 1, 1,  1, 1, 1]
+  - label: "West right only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  1, 1, 1, 1,  0, 1, 1]
+  # Double left
+  - label: "North-South left"
+    signals: [0, 0, 1,  0, 0, 0,  0, 0, 1,  0, 0, 0,  0,    1, 0, 1, 1,  1, 1, 0,  1, 0, 1, 1,  1, 1, 0]
+  - label: "East-West left"
+    signals: [0, 0, 0,  0, 0, 1,  0, 0, 0,  0, 0, 1,  0,    1, 1, 1, 0,  1, 0, 1,  1, 1, 1, 0,  1, 0, 1]
+  # Left + middle
+  - label: "North left + middle"
+    signals: [0, 1, 1,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  1, 1, 0,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East left + middle"
+    signals: [0, 0, 0,  0, 1, 1,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  1, 1, 1, 0,  1, 1, 0]
+  - label: "South left + middle"
+    signals: [0, 0, 0,  0, 0, 0,  0, 1, 1,  0, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  1, 0, 1, 1,  1, 1, 0]
+  - label: "West left + middle"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 1, 1,  0,    1, 1, 1, 0,  1, 1, 0,  1, 1, 1, 1,  1, 0, 1]
+  # Left + right
+  - label: "North left + north right"
+    signals: [1, 0, 1,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  1, 1, 0,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East left + east right"
+    signals: [0, 0, 0,  1, 0, 1,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "South left + south right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 1,  0, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  0, 0, 1, 1,  1, 1, 0]
+  - label: "West left + west right"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  1, 0, 1,  0,    1, 1, 1, 0,  1, 1, 1,  1, 1, 1, 1,  0, 0, 1]
+  - label: "North left + east right"
+    signals: [0, 0, 1,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  0, 1, 0,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East left + south right"
+    signals: [0, 0, 0,  0, 0, 1,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "South left + west right"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 1,  1, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  1, 0, 1, 1,  0, 1, 0]
+  - label: "West left + north right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 1,  0,    0, 1, 1, 0,  1, 1, 1,  1, 1, 1, 1,  1, 0, 1]
+  - label: "North left + west right"
+    signals: [0, 0, 1,  0, 0, 0,  0, 0, 0,  1, 0, 0,  0,    1, 0, 1, 1,  1, 1, 0,  1, 1, 1, 1,  0, 1, 1]
+  - label: "East left + north right"
+    signals: [1, 0, 0,  0, 0, 1,  0, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  1, 0, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "South left + east right"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 1,  0, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  1, 0, 1, 1,  1, 1, 0]
+  - label: "West left + south right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 0,  0, 0, 1,  0,    1, 1, 1, 0,  1, 1, 1,  0, 1, 1, 1,  1, 0, 1]
+  # Double middle
+  - label: "North-South middle"
+    signals: [0, 1, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  0,    1, 0, 1, 0,  1, 1, 1,  1, 0, 1, 0,  1, 1, 1]
+  - label: "East-West middle"
+    signals: [0, 0, 0,  0, 1, 0,  0, 0, 0,  0, 1, 0,  0,    1, 1, 1, 1,  1, 0, 0,  1, 1, 1, 1,  1, 0, 0]
+  # Middle + right
+  - label: "North middle + north right"
+    signals: [1, 1, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  1, 1, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East middle + east right"
+    signals: [0, 0, 0,  1, 1, 0,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  1, 1, 1, 1,  1, 1, 0]
+  - label: "South middle + south right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  0, 0, 1, 1,  1, 1, 1]
+  - label: "West middle + west right"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  1, 1, 0,  0,    1, 1, 1, 1,  1, 1, 0,  1, 1, 1, 1,  0, 0, 1]
+  - label: "North middle + east right"
+    signals: [0, 1, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  0, 1, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East middle + south right"
+    signals: [0, 0, 0,  0, 1, 0,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  0, 1, 1, 1,  1, 1, 0]
+  - label: "South middle + west right"
+    signals: [0, 0, 0,  0, 0, 0,  0, 1, 0,  1, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  1, 0, 1, 1,  0, 1, 1]
+  - label: "West middle + north right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  0, 1, 0,  0,    0, 1, 1, 1,  1, 1, 0,  1, 1, 1, 1,  1, 0, 1]
+  - label: "North middle + south right"
+    signals: [0, 1, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  1, 1, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "East middle + west right"
+    signals: [0, 0, 0,  0, 1, 0,  0, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  1, 1, 1, 1,  0, 1, 0]
+  - label: "South middle + north right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  0,    0, 1, 1, 0,  1, 1, 1,  1, 0, 1, 1,  1, 1, 1]
+  - label: "West middle + east right"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 0,  0, 1, 0,  0,    1, 1, 1, 1,  0, 1, 0,  1, 1, 1, 1,  1, 0, 1]
+  # Double right
+  - label: "North-East right"
+    signals: [1, 0, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  0, 1, 1,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East-South right"
+    signals: [0, 0, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  0, 1, 1, 1,  1, 1, 1]
+  - label: "South-West right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  0, 1, 1, 1,  0, 1, 1]
+  - label: "West-North right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  1, 0, 0,  0,    0, 1, 1, 1,  1, 1, 1,  1, 1, 1, 1,  0, 1, 1]
+  - label: "North-South right"
+    signals: [1, 0, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  1, 1, 1,  0, 1, 1, 1,  1, 1, 1]
+  - label: "East-West right"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  1, 1, 1, 1,  0, 1, 1]
+  # Left + middle + right
+  - label: "North left + North middle + North right"
+    signals: [1, 1, 1,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  1, 1, 0,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East left + East middle + East right"
+    signals: [0, 0, 0,  1, 1, 1,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  1, 1, 1, 0,  1, 1, 0]
+  - label: "South left + South middle + South right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 1, 1,  0, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  0, 0, 1, 1,  1, 1, 0]
+  - label: "West left + West middle + West right"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  1, 1, 1,  0,    1, 1, 1, 0,  1, 1, 0,  1, 1, 1, 1,  0, 0, 1]
+  - label: "North left + North middle + East right"
+    signals: [0, 1, 1,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  0, 1, 0,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East left + East middle + South right"
+    signals: [0, 0, 0,  0, 1, 1,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  0, 1, 1, 0,  1, 1, 0]
+  - label: "South left + South middle + West right"
+    signals: [0, 0, 0,  0, 0, 0,  0, 1, 1,  1, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  1, 0, 1, 1,  0, 1, 0]
+  - label: "West left + West middle + North right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  0, 1, 1,  0,    0, 1, 1, 0,  1, 1, 0,  1, 1, 1, 1,  1, 0, 1]
+  # Double left + right
+  - label: "North-South left + East right"
+    signals: [0, 0, 1,  1, 0, 0,  0, 0, 1,  0, 0, 0,  0,    1, 0, 1, 1,  0, 1, 0,  1, 0, 1, 1,  1, 1, 0]
+  - label: "East-West left + South right"
+    signals: [0, 0, 0,  0, 0, 1,  1, 0, 0,  0, 0, 1,  0,    1, 1, 1, 0,  1, 0, 1,  0, 1, 1, 0,  1, 0, 1]
+  - label: "South-North left + West right"
+    signals: [0, 0, 1,  0, 0, 0,  0, 0, 1,  1, 0, 0,  0,    1, 0, 1, 1,  1, 1, 0,  1, 0, 1, 1,  0, 1, 0]
+  - label: "West-East left + North right"
+    signals: [1, 0, 0,  0, 0, 1,  0, 0, 0,  0, 0, 1,  0,    0, 1, 1, 0,  1, 0, 1,  1, 1, 1, 0,  1, 0, 1]
+  # Left + double right
+  - label: "North left + North-East right"
+    signals: [1, 0, 1,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  0, 1, 0,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East left + East-South right"
+    signals: [0, 0, 0,  1, 0, 1,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "South left + South-West right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 1,  1, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  0, 0, 1, 1,  0, 1, 0]
+  - label: "West left + West-North right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  1, 0, 1,  0,    0, 1, 1, 0,  1, 1, 1,  1, 1, 1, 1,  0, 0, 1]
+  - label: "North left + East-West right"
+    signals: [0, 0, 1,  1, 0, 0,  0, 0, 0,  1, 0, 0,  0,    1, 0, 1, 1,  0, 1, 0,  1, 1, 1, 1,  0, 1, 1]
+  - label: "East left + South-North right"
+    signals: [1, 0, 0,  0, 0, 1,  1, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  1, 0, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "South left + West-East right"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 1,  1, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  1, 0, 1, 1,  0, 1, 0]
+  - label: "West left + North-South right"
+    signals: [1, 0, 0,  0, 0, 0,  1, 0, 0,  0, 0, 1,  0,    0, 1, 1, 0,  1, 1, 1,  0, 1, 1, 1,  1, 0, 1]
+  - label: "North left + North-West right"
+    signals: [1, 0, 1,  0, 0, 0,  0, 0, 0,  1, 0, 0,  0,    0, 0, 1, 1,  1, 1, 0,  1, 1, 1, 1,  0, 1, 1]
+  - label: "East left + East-North right"
+    signals: [1, 0, 0,  1, 0, 1,  0, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  0, 0, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "South left + South-East right"
+    signals: [0, 0, 0,  1, 0, 0,  1, 0, 1,  0, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  0, 0, 1, 1,  1, 1, 0]
+  - label: "West left + West-South right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 0,  1, 0, 1,  0,    1, 1, 1, 0,  1, 1, 1,  0, 1, 1, 1,  0, 0, 1]
+  # Double middle + right
+  - label: "North-South middle + North right"
+    signals: [1, 1, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  0,    0, 0, 1, 0,  1, 1, 1,  1, 0, 1, 0,  1, 1, 1]
+  - label: "East-West middle + East right"
+    signals: [0, 0, 0,  1, 1, 0,  0, 0, 0,  0, 1, 0,  0,    1, 1, 1, 1,  0, 0, 0,  1, 1, 1, 1,  1, 0, 0]
+  - label: "South-North middle + South right"
+    signals: [0, 1, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  0,    1, 0, 1, 0,  1, 1, 1,  0, 0, 1, 0,  1, 1, 1]
+  - label: "West-East middle + West right"
+    signals: [0, 0, 0,  0, 1, 0,  0, 0, 0,  1, 1, 0,  0,    1, 1, 1, 1,  1, 0, 0,  1, 1, 1, 1,  0, 0, 0]
+  # Middle + double right
+  - label: "North middle + North-South right"
+    signals: [1, 1, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  1, 1, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "East middle + East-West right"
+    signals: [0, 0, 0,  1, 1, 0,  0, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  1, 1, 1, 1,  0, 1, 0]
+  - label: "South middle + South-North right"
+    signals: [1, 0, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  0,    0, 1, 1, 0,  1, 1, 1,  0, 0, 1, 1,  1, 1, 1]
+  - label: "West middle + West-East right"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 0,  1, 1, 0,  0,    1, 1, 1, 1,  0, 1, 0,  1, 1, 1, 1,  0, 0, 1]
+  - label: "North middle + North-East right"
+    signals: [1, 1, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  0, 1, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East middle + East-South right"
+    signals: [0, 0, 0,  1, 1, 0,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  0, 1, 1, 1,  1, 1, 0]
+  - label: "South middle + South-West right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 1, 0,  1, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  0, 0, 1, 1,  0, 1, 1]
+  - label: "West middle + West-North right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  1, 1, 0,  0,    0, 1, 1, 1,  1, 1, 0,  1, 1, 1, 1,  0, 0, 1]
+  - label: "North middle + South-East right"
+    signals: [0, 1, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  0, 1, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "East middle + West-South right"
+    signals: [0, 0, 0,  0, 1, 0,  1, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  0, 1, 1, 1,  0, 1, 0]
+  - label: "South middle + North-West right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 1, 0,  1, 0, 0,  0,    0, 1, 1, 0,  1, 1, 1,  1, 0, 1, 1,  0, 1, 1]
+  - label: "West middle + East-North right"
+    signals: [1, 0, 0,  1, 0, 0,  0, 0, 0,  0, 1, 0,  0,    0, 1, 1, 1,  0, 1, 0,  1, 1, 1, 1,  1, 0, 1]
+  # Triple right
+  - label: "North right + East right + South right"
+    signals: [1, 0, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  0, 1, 1,  0, 1, 1, 1,  1, 1, 1]
+  - label: "East right + South right + West right"
+    signals: [0, 0, 0,  1, 0, 0,  1, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  0, 1, 1, 1,  0, 1, 1]
+  - label: "South right + West right + North right"
+    signals: [1, 0, 0,  0, 0, 0,  1, 0, 0,  1, 0, 0,  0,    0, 1, 1, 1,  1, 1, 1,  0, 1, 1, 1,  0, 1, 1]
+  - label: "West right + North right + East right"
+    signals: [1, 0, 0,  1, 0, 0,  0, 0, 0,  1, 0, 0,  0,    0, 1, 1, 1,  0, 1, 1,  1, 1, 1, 1,  0, 1, 1]
+  # Left + middle + right + right
+  - label: "North left + North middle + North right + East right"
+    signals: [1, 1, 1,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  0, 1, 0,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East left + East middle + East right + South right"
+    signals: [0, 0, 0,  1, 1, 1,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  0, 1, 1, 0,  1, 1, 0]
+  - label: "South left + South middle + South right + West right"
+    signals: [0, 0, 0,  0, 0, 0,  1, 1, 1,  1, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  0, 0, 1, 1,  0, 1, 0]
+  - label: "West left + West middle + West right + North right"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  1, 1, 1,  0,    0, 1, 1, 0,  1, 1, 0,  1, 1, 1, 1,  0, 0, 1]
+  # Double left + double right
+  - label: "North-South left + East-West right"
+    signals: [0, 0, 1,  1, 0, 0,  0, 0, 1,  1, 0, 0,  0,    1, 0, 1, 1,  0, 1, 0,  1, 0, 1, 1,  0, 1, 0]
+  - label: "East-West left + South-North right"
+    signals: [1, 0, 0,  0, 0, 1,  1, 0, 0,  0, 0, 1,  0,    0, 1, 1, 0,  1, 0, 1,  0, 1, 1, 0,  1, 0, 1]
+  # Double middle + double right
+  - label: "North-South middle + North-South right"
+    signals: [1, 1, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  0,    0, 0, 1, 0,  1, 1, 1,  0, 0, 1, 0,  1, 1, 1]
+  - label: "East-West middle + East-West right"
+    signals: [0, 0, 0,  1, 1, 0,  0, 0, 0,  1, 1, 0,  0,    1, 1, 1, 1,  0, 0, 0,  1, 1, 1, 1,  0, 0, 0]
+  # Middle + triple right
+  - label: "North middle + North right + East right + South right"
+    signals: [1, 1, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  0,    0, 0, 1, 1,  0, 1, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "East middle + East right + South right + West right"
+    signals: [0, 0, 0,  1, 1, 0,  1, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  0, 0, 1,  0, 1, 1, 1,  0, 1, 0]
+  - label: "South middle + South right + West right + North right"
+    signals: [1, 0, 0,  0, 0, 0,  1, 1, 0,  1, 0, 0,  0,    0, 1, 1, 0,  1, 1, 1,  0, 0, 1, 1,  0, 1, 1]
+  - label: "West middle + West right + North right + East right"
+    signals: [1, 0, 0,  1, 0, 0,  0, 0, 0,  1, 1, 0,  0,    0, 1, 1, 1,  0, 1, 0,  1, 1, 1, 1,  0, 0, 1]
+  # Left + triple right
+  - label: "North left + North right + East right + West right"
+    signals: [1, 0, 1,  1, 0, 0,  0, 0, 0,  1, 0, 0,  0,    0, 0, 1, 1,  0, 1, 0,  1, 1, 1, 1,  0, 1, 1]
+  - label: "East left + East right + South right + North right"
+    signals: [1, 0, 0,  1, 0, 1,  1, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  0, 0, 1,  0, 1, 1, 0,  1, 1, 1]
+  - label: "South left + South right + West right + East right"
+    signals: [0, 0, 0,  1, 0, 0,  1, 0, 1,  1, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  0, 0, 1, 1,  0, 1, 0]
+  - label: "West left + West right + North right + South right"
+    signals: [1, 0, 0,  0, 0, 0,  1, 0, 0,  1, 0, 1,  0,    0, 1, 1, 0,  1, 1, 1,  0, 1, 1, 1,  0, 0, 1]
+  # Quadruple right
+  - label: "All right"
+    signals: [1, 0, 0,  1, 0, 0,  1, 0, 0,  1, 0, 0,  0,    0, 1, 1, 1,  0, 1, 1,  0, 1, 1, 1,  0, 1, 1]
+  
+  # Double middle + double right + tram
+  - label: "North-South middle + North-South right + Tram"
+    signals: [1, 1, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  1,    0, 0, 0, 0,  1, 1, 1,  0, 0, 0, 0,  1, 1, 1]
+  # Double middle + tram
+  - label: "North-South middle + Tram"
+    signals: [0, 1, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  1,    1, 0, 0, 0,  1, 1, 1,  1, 0, 0, 0,  1, 1, 1]
+  # Middle + right + tram
+  - label: "North middle + North right + Tram"
+    signals: [1, 1, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  1,    0, 0, 0, 1,  1, 1, 1,  1, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + South right + Tram"
+    signals: [0, 0, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  1,    1, 1, 0, 0,  1, 1, 1,  0, 0, 0, 1,  1, 1, 1]
+  - label: "North middle + South right + Tram"
+    signals: [0, 1, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  1,    1, 0, 0, 1,  1, 1, 1,  0, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + North right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  1,    0, 1, 0, 0,  1, 1, 1,  1, 0, 0, 1,  1, 1, 1]
+  - label: "North middle + East right + Tram"
+    signals: [0, 1, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  1,    1, 0, 0, 1,  0, 1, 1,  1, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + West right + Tram"
+    signals: [0, 0, 0,  0, 0, 0,  0, 1, 0,  1, 0, 0,  1,    1, 1, 0, 0,  1, 1, 1,  1, 0, 0, 1,  0, 1, 1]
+  # Double middle + right + tram
+  - label: "North-South middle + North right + Tram"
+    signals: [1, 1, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  1,    0, 0, 0, 0,  1, 1, 1,  1, 0, 0, 0,  1, 1, 1]
+  - label: "North-South middle + South right + Tram"
+    signals: [0, 1, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  1,    1, 0, 0, 0,  1, 1, 1,  0, 0, 0, 0,  1, 1, 1]
+  # Double right + tram
+  - label: "North right + East right + Tram"
+    signals: [1, 0, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  1,    0, 1, 0, 1,  0, 1, 1,  1, 1, 0, 1,  1, 1, 1]
+  - label: "East right + South right + Tram"
+    signals: [0, 0, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  1,    1, 1, 0, 1,  0, 1, 1,  0, 1, 0, 1,  1, 1, 1]
+  - label: "South right + West right + Tram"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 0,  1, 0, 0,  1,    1, 1, 0, 1,  1, 1, 1,  0, 1, 0, 1,  0, 1, 1]
+  - label: "West right + North right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  1, 0, 0,  1,    0, 1, 0, 1,  1, 1, 1,  1, 1, 0, 1,  0, 1, 1]
+  - label: "North right + South right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  1,    0, 1, 0, 1,  1, 1, 1,  0, 1, 0, 1,  1, 1, 1]
+  - label: "East right + West right + Tram"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 0,  1, 0, 0,  1,    1, 1, 0, 1,  0, 1, 1,  1, 1, 0, 1,  0, 1, 1]
+  # Right + tram
+  - label: "North right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  1,    0, 1, 0, 1,  1, 1, 1,  1, 1, 0, 1,  1, 1, 1]
+  - label: "East right + Tram"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  1,    1, 1, 0, 1,  0, 1, 1,  1, 1, 0, 1,  1, 1, 1]
+  - label: "South right + Tram"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  1,    1, 1, 0, 1,  1, 1, 1,  0, 1, 0, 1,  1, 1, 1]
+  - label: "West right + Tram"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  1, 0, 0,  1,    1, 1, 0, 1,  1, 1, 1,  1, 1, 0, 1,  0, 1, 1]
+  # Middle + tram
+  - label: "North middle + Tram"
+    signals: [0, 1, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  1,    1, 0, 0, 1,  1, 1, 1,  1, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + Tram"
+    signals: [0, 0, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  1,    1, 1, 0, 0,  1, 1, 1,  1, 0, 0, 1,  1, 1, 1]
+  # Triple right + tram
+  - label: "North right + East right + South right + Tram"
+    signals: [1, 0, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  1,    0, 1, 0, 1,  0, 1, 1,  0, 1, 0, 1,  1, 1, 1]
+  - label: "East right + South right + West right + Tram"
+    signals: [0, 0, 0,  1, 0, 0,  1, 0, 0,  1, 0, 0,  1,    1, 1, 0, 1,  0, 1, 1,  0, 1, 0, 1,  0, 1, 1]
+  - label: "South right + West right + North right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  1, 0, 0,  1, 0, 0,  1,    0, 1, 0, 1,  1, 1, 1,  0, 1, 0, 1,  0, 1, 1]
+  - label: "West right + North right + East right + Tram"
+    signals: [1, 0, 0,  1, 0, 0,  0, 0, 0,  1, 0, 0,  1,    0, 1, 0, 1,  0, 1, 1,  1, 1, 0, 1,  0, 1, 1]
+  # Quadruple right + tram
+  - label: "All right + Tram"
+    signals: [1, 0, 0,  1, 0, 0,  1, 0, 0,  1, 0, 0,  1,    0, 1, 0, 1,  0, 1, 1,  0, 1, 0, 1,  0, 1, 1]
+  # Middle + double right + tram
+  - label: "North middle + North right + East right + Tram"
+    signals: [1, 1, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  1,    0, 0, 0, 1,  0, 1, 1,  1, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + South right + West right + Tram"
+    signals: [0, 0, 0,  0, 0, 0,  1, 1, 0,  1, 0, 0,  1,    1, 1, 0, 0,  1, 1, 1,  0, 0, 0, 1,  0, 1, 1]
+  - label: "North middle + North right + South right + Tram"
+    signals: [1, 1, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  1,    0, 0, 0, 1,  1, 1, 1,  0, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + South right + North right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  1,    1, 1, 0, 0,  1, 1, 1,  0, 0, 0, 1,  1, 1, 1]
+  - label: "North middle + East right + South right + Tram"
+    signals: [0, 1, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  1,    1, 0, 0, 1,  0, 1, 1,  0, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + West right + North right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  0, 1, 0,  1, 0, 0,  1,    0, 1, 0, 0,  1, 1, 1,  1, 0, 0, 1,  0, 1, 1]
+  # Middle + triple right + tram
+  - label: "North middle + North right + East right + South right + Tram"
+    signals: [1, 1, 0,  1, 0, 0,  1, 0, 0,  0, 0, 0,  1,    0, 0, 0, 1,  0, 1, 1,  0, 1, 0, 0,  1, 1, 1]
+  - label: "South middle + South right + West right + North right + Tram"
+    signals: [1, 0, 0,  0, 0, 0,  1, 1, 0,  1, 0, 0,  1,    0, 1, 0, 0,  1, 1, 1,  0, 0, 0, 1,  0, 1, 1]
+  # Tram only
+  - label: "Tram only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  1,    1, 1, 0, 1,  1, 1, 1,  1, 1, 0, 1,  1, 1, 1]
+

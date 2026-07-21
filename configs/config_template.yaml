@@ -1,0 +1,163 @@
+# ---------------------------------------------------------------------------
+# Intersection Configuration Template
+# ---------------------------------------------------------------------------
+# Use this template to map a physical SUMO intersection to the 24-slot 
+# Canonical Model used by the Reinforcement Learning agent.
+#
+# The model requires exactly 12 Vehicular slots and 12 Pedestrian slots.
+# Slots that do not physically exist (e.g. a 3-way intersection or missing 
+# right-turn lane) should define empty sumo_tls_indices: [].
+#
+# Naming Convention: {Direction}/{Position}
+# - Direction: North, East, South, West
+# - Position:  Right, Middle, Left
+# ---------------------------------------------------------------------------
+
+intersection:
+  sumocfg_path: "path/to/your/sumo_config.sumocfg"  # Path to the SUMO configuration file for this intersection
+  sumo_id: "Your_TLS_ID"       # The traffic light ID used in the SUMO .net.xml file
+  sumo_signal_count: 10        # The total number of signals in the SUMO signal string
+  verbose: true                    # Enable debug printing for phase changes
+  verbose_phase_selection: true    # Enable detailed priority/score logging
+  normalization_bounds:
+    max_vehicles_in_lane: 20       # Normalisation bound for vehicle scaling
+    max_wait_per_vehicle: 90.0     # Normalisation bound for wait time scaling
+    max_light_age: 60.0            # Normalisation bound for time-since-last-change
+  timing:
+    yellow_steps: 3
+    all_red_steps: 1
+    crosswalk_extra_red_steps: 3
+    red_yellow_steps: 2
+    green_steps: 0
+
+# ---------------------------------------------------------------------------
+# Vehicular Slots Configuration (Indices 0-12)
+# ---------------------------------------------------------------------------
+vehicular_slots:
+  North/Right:
+    sumo_tls_indices: []           # e.g., [1, 2] corresponding indexes in the TLS state string. Leave [] if inactive.
+    feed_edges:
+      - edge_id: "Edge1_in"    # SUMO Edge ID that feeds this movement (ordered farthest to nearest)
+        lane_indices: [0, 1]   # The 0-based lane indices on this edge
+  North/Middle:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Left:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  East/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  East/Middle:
+    sumo_tls_indices: []
+    feed_edges: []
+  East/Left:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  South/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  South/Middle:
+    sumo_tls_indices: []
+    feed_edges: []
+  South/Left:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  West/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  West/Middle:
+    sumo_tls_indices: []
+    feed_edges: []
+  West/Left:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  # Example of an aggregated canonical slot handling multiple independent physical approaches.
+  # Use 'approaches' instead of 'feed_edges' when you have tracks or lanes arriving from 
+  # opposite ends of the intersection that must decouple their distance-to-stop-line geometries.
+  North-South/Track:
+    sumo_tls_indices: []
+    approaches:
+      # --- Approach Chain 1: North Track ---
+      - - edge_id: "North_track_far_away_edge"   # <-- Farthest
+          lane_indices: [0]
+        - edge_id: "North_track_stopline_edge"   # <-- Nearest (Stop line)
+          lane_indices: [0]
+          
+      # --- Approach Chain 2: South Track ---
+      - - edge_id: "South_track_only_edge"       # <-- Nearest (Stop line)
+          lane_indices: [0]
+
+# ---------------------------------------------------------------------------
+# Pedestrian Slots Configuration (Indices 13-26)
+# ---------------------------------------------------------------------------
+# Pedestrian slots map to the physical crossing positions, NOT travel direction.
+pedestrian_slots:
+  North/Right:
+    sumo_tls_indices: []
+    feed_edges: []             # For pedestrians, this is usually just the crossing lane, e.g. edge_id: ":J_w0", lane_indices: [0]
+  North/Middle+Left:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Track:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Departing:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  East/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  East/Middle+Left:
+    sumo_tls_indices: []
+    feed_edges: []
+  East/Departing:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  South/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  South/Middle+Left:
+    sumo_tls_indices: []
+    feed_edges: []
+  South/Track:
+    sumo_tls_indices: []
+    feed_edges: []
+  South/Departing:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  West/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  West/Middle+Left:
+    sumo_tls_indices: []
+    feed_edges: []
+  West/Departing:
+    sumo_tls_indices: []
+    feed_edges: []
+
+# ---------------------------------------------------------------------------
+# Valid Phases Definition
+# ---------------------------------------------------------------------------
+# Define all strictly non-colliding (valid) phases. 
+# The agent will only ever pick one of these.
+# 'signals' array must contain exactly 27 integers (1=Green, 0=Red).
+# The order matches the canonical hierarchy:
+# [ N/R, N/M, N/L, E/R, E/M, E/L, S/R, S/M, S/L, W/R, W/M, W/L, N-S/Track
+#   Ped(N...4), Ped(E...3), Ped(S...4), Ped(W...3) ]
+# ---------------------------------------------------------------------------
+valid_phases:
+  - label: "Example Phase NS"
+    signals: [
+      # Vehicular
+      1, 1, 0,  0, 0, 0,  1, 1, 0,  0, 0, 0,  0,
+      # Pedestrian
+      0, 0, 0, 0,  1, 1, 1,  0, 0, 0, 0,  1, 1, 1
+    ]

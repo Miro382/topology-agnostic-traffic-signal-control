@@ -1,0 +1,178 @@
+# ---------------------------------------------------------------------------
+# Example T-Junction Configuration (Missing North Arm & No Tracks)
+# ---------------------------------------------------------------------------
+# This file demonstrates how to define an intersection where specific lanes
+# (or entire arms) do not physically exist. 
+#
+# To make a canonical slot INACTIVE, you simply leave `sumo_tls_indices: []`.
+# The environment will permanently force its state to Red [0] and ignore it
+# during selection. Provide empty `feed_edges: []` as well so no vehicles
+# are mapped from the simulation.
+# ---------------------------------------------------------------------------
+
+intersection:
+  sumocfg_path: "simulation/MissingArm-Example.sumocfg"
+  sumo_id: "Example_TLS_1"
+  sumo_signal_count: 20
+  verbose: false
+  verbose_phase_selection: false
+  normalization_bounds:
+    max_vehicles_in_lane: 20
+    max_wait_per_vehicle: 90.0
+    max_light_age: 60.0
+  timing:
+    yellow_steps: 3
+    all_red_steps: 1
+    crosswalk_extra_red_steps: 0
+    red_yellow_steps: 2
+    green_steps: 0
+
+# ---------------------------------------------------------------------------
+# Vehicular Slots (13 Total)
+# ---------------------------------------------------------------------------
+vehicular_slots:
+  # The entire North arm does not exist in this T-junction
+  North/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Middle:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Left:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  # Normal active arms
+  East/Right:
+    sumo_tls_indices: [0]
+    feed_edges:
+      - edge_id: "E_in"
+        lane_indices: [0]
+  East/Middle:
+    sumo_tls_indices: [1, 2]
+    feed_edges:
+      - edge_id: "E_in"
+        lane_indices: [1]
+  East/Left:
+    sumo_tls_indices: [3]
+    feed_edges:
+      - edge_id: "E_in"
+        lane_indices: [2]
+
+  South/Right:
+    sumo_tls_indices: [4]
+    feed_edges:
+      - edge_id: "S_in"
+        lane_indices: [0]
+  South/Middle:
+    sumo_tls_indices: [5]
+    feed_edges:
+      - edge_id: "S_in"
+        lane_indices: [1]
+  South/Left:
+    sumo_tls_indices: [6]
+    feed_edges:
+      - edge_id: "S_in"
+        lane_indices: [2]
+
+  West/Right:
+    sumo_tls_indices: [7]
+    feed_edges:
+      - edge_id: "W_in"
+        lane_indices: [0]
+  West/Middle:
+    sumo_tls_indices: [8]
+    feed_edges:
+      - edge_id: "W_in"
+        lane_indices: [1]
+  West/Left:
+    sumo_tls_indices: [9]
+    feed_edges:
+      - edge_id: "W_in"
+        lane_indices: [2]
+
+  # NO railway tracks at this intersection
+  North-South/Track:
+    sumo_tls_indices: []
+    feed_edges: []
+
+
+# ---------------------------------------------------------------------------
+# Pedestrian Slots (14 Total)
+# ---------------------------------------------------------------------------
+pedestrian_slots:
+  # North arm ped crossings do not exist
+  North/Right:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Middle+Left:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Track:
+    sumo_tls_indices: []
+    feed_edges: []
+  North/Departing:
+    sumo_tls_indices: []
+    feed_edges: []
+
+  # Active East crosswalks
+  East/Right:
+    sumo_tls_indices: [10]
+    feed_edges: [ {edge_id: ":J_w0", lane_indices: [0]} ]
+  East/Middle+Left:
+    sumo_tls_indices: [11]
+    feed_edges: [ {edge_id: ":J_w1", lane_indices: [0]} ]
+  East/Departing:
+    sumo_tls_indices: [12]
+    feed_edges: [ {edge_id: ":J_w2", lane_indices: [0]} ]
+
+  # Active South crosswalks (No track crosswalk)
+  South/Right:
+    sumo_tls_indices: [13]
+    feed_edges: [ {edge_id: ":J_w3", lane_indices: [0]} ]
+  South/Middle+Left:
+    sumo_tls_indices: [14]
+    feed_edges: [ {edge_id: ":J_w4", lane_indices: [0]} ]
+  South/Track:
+    sumo_tls_indices: []        # <--- Explicitly inactive track crosswalk
+    feed_edges: []
+  South/Departing:
+    sumo_tls_indices: [15]
+    feed_edges: [ {edge_id: ":J_w5", lane_indices: [0]} ]
+
+  # Active West crosswalks
+  West/Right:
+    sumo_tls_indices: [16]
+    feed_edges: [ {edge_id: ":J_w6", lane_indices: [0]} ]
+  West/Middle+Left:
+    sumo_tls_indices: [17]
+    feed_edges: [ {edge_id: ":J_w7", lane_indices: [0]} ]
+  West/Departing:
+    sumo_tls_indices: [18]
+    feed_edges: [ {edge_id: ":J_w8", lane_indices: [0]} ]
+
+
+# ---------------------------------------------------------------------------
+# Valid Phases Definition
+# ---------------------------------------------------------------------------
+# All 27 values are required. For entirely inactive slots, you can write 0,
+# because the controller forces inactive slots to 0 behind the scenes anyway.
+# Order:
+# [ N/R, N/M, N/L, E/R, E/M, E/L, S/R, S/M, S/L, W/R, W/M, W/L, N-S/Track ]
+# [ P_N(R, M+L, Tr, Dep), P_E(R, M+L, Dep), P_S(R, M+L, Tr, Dep), P_W(R, M+L, Dep) ]
+# ---------------------------------------------------------------------------
+valid_phases:
+  - label: "East-West Straight"
+    signals: [
+      # Vehicular
+      0, 0, 0,   0, 1, 0,   0, 0, 0,   0, 1, 0,   0,
+      # Pedestrian (North x4, East x3, South x4, West x3)
+      0, 0, 0, 0,   1, 0, 1,   1, 1, 0, 1,   1, 0, 1
+    ]
+  - label: "South All"
+    signals: [
+      # Vehicular
+      0, 0, 0,   0, 0, 0,   1, 1, 1,   0, 0, 0,   0,
+      # Pedestrian
+      0, 0, 0, 0,   1, 1, 1,   0, 0, 0, 0,   1, 1, 1
+    ]

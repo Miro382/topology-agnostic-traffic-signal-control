@@ -1,0 +1,13 @@
+# Python 3.10 recommended (matches the environment used in the paper).
+# SUMO 1.26.0 must be installed separately and SUMO_HOME set.
+# Exact tested versions are listed under 'Tested environment' in README.md.
+stable-baselines3==2.8.0
+gymnasium
+torch
+numpy
+pandas
+scipy
+pyyaml
+# SUMO Python bindings (traci / libsumo). Either install SUMO system-wide,
+# or use the pip package below (provides sumo, traci and libsumo):
+eclipse-sumo

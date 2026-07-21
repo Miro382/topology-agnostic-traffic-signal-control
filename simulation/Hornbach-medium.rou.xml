@@ -1,0 +1,1226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+
+    <!-- ================================================================
+         Vehicle types — urban intersection (50 km/h zone)
+         ================================================================ -->
+    <vType id="car"
+           vClass="passenger"
+           length="4.5"
+           accel="2.6"
+           decel="4.5"
+           maxSpeed="13.89"
+           minGap="2.5"
+           sigma="0.5"
+           speedFactor="1.0"
+           speedDev="0.1"
+           color="0.2,0.6,1.0"/>
+
+    <vType id="truck"
+           vClass="truck"
+           length="10.0"
+           accel="1.0"
+           decel="3.0"
+           maxSpeed="11.11"
+           minGap="3.5"
+           sigma="0.5"
+           speedFactor="0.9"
+           speedDev="0.05"
+           color="0.8,0.4,0.1"/>
+
+    <!-- Buses -->
+    <vType id="BUS_SOR_NB12" vClass="bus" length="12.18" width="2.55" accel="1.067" decel="3.0" maxSpeed="11.11" minGap="3.0" sigma="0.5" speedFactor="0.95" speedDev="0.05" color="0.9,0.8,0.0"/>
+    <vType id="BUS_SOR_NB18" vClass="bus" length="18.75" width="2.55" accel="1.100" decel="3.0" maxSpeed="11.11" minGap="3.0" sigma="0.5" speedFactor="0.95" speedDev="0.05" color="0.9,0.8,0.0"/>
+    <vType id="BUS_SOR_NB95" vClass="bus" length="9.60" width="2.53" accel="1.067" decel="3.0" maxSpeed="11.11" minGap="3.0" sigma="0.5" speedFactor="0.95" speedDev="0.05" color="0.9,0.8,0.0"/>
+    <vType id="BUS_SOL_U15" vClass="bus" length="14.89" width="2.55" accel="1.067" decel="3.0" maxSpeed="11.11" minGap="3.0" sigma="0.5" speedFactor="0.95" speedDev="0.05" color="0.9,0.8,0.0"/>
+    <vType id="BUS_SOL_U12" vClass="bus" length="12.00" width="2.55" accel="1.067" decel="3.0" maxSpeed="11.11" minGap="3.0" sigma="0.5" speedFactor="0.95" speedDev="0.05" color="0.9,0.8,0.0"/>
+
+    <!-- Trams -->
+    <vType id="TRAM_VARIO" vClass="tram" length="22.60" width="2.48" accel="0.677" decel="2.0" maxSpeed="13.89" minGap="4.0" sigma="0.5" speedFactor="1.0" speedDev="0.0" color="1.0,0.2,0.2"/>
+
+    <!-- Traffic -->
+    <trip id="veh_0" type="car" depart="0.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_1" type="car" depart="0.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_0" depart="0.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_2" type="car" depart="4.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_3" type="car" depart="4.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_4" type="BUS_SOR_NB12" depart="4.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_5" type="car" depart="8.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_6" type="car" depart="8.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_7" type="car" depart="8.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_8" type="car" depart="12.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_9" type="car" depart="12.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_10" type="car" depart="16.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_11" type="car" depart="16.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_12" type="car" depart="16.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_13" type="TRAM_VARIO" depart="20.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_14" type="car" depart="20.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_15" type="BUS_SOR_NB12" depart="20.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_1" depart="20.0">
+        <walk from="NE_in" to="E21"/>
+    </person>
+    <trip id="veh_16" type="car" depart="24.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_17" type="car" depart="24.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_18" type="truck" depart="24.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_19" type="car" depart="28.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_20" type="BUS_SOR_NB12" depart="28.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_21" type="TRAM_VARIO" depart="28.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_22" type="car" depart="32.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_23" type="BUS_SOR_NB18" depart="32.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_24" type="car" depart="32.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_25" type="car" depart="36.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_26" type="car" depart="36.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_27" type="car" depart="40.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_28" type="car" depart="40.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_2" depart="40.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_29" type="car" depart="44.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_30" type="car" depart="44.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_31" type="car" depart="44.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_32" type="car" depart="48.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_33" type="car" depart="48.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_34" type="car" depart="48.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_35" type="truck" depart="52.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_36" type="car" depart="52.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_37" type="car" depart="56.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_38" type="car" depart="56.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_39" type="car" depart="56.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_40" type="BUS_SOR_NB12" depart="60.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_41" type="car" depart="60.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_42" type="car" depart="60.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_3" depart="60.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_43" type="car" depart="64.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_44" type="car" depart="64.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_45" type="TRAM_VARIO" depart="68.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_46" type="car" depart="68.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_47" type="car" depart="68.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_48" type="truck" depart="72.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_49" type="car" depart="72.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_50" type="car" depart="76.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_51" type="TRAM_VARIO" depart="76.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_52" type="car" depart="80.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_53" type="BUS_SOL_U15" depart="80.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_4" depart="80.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_54" type="car" depart="84.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_55" type="car" depart="84.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_56" type="car" depart="88.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_57" type="car" depart="88.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_58" type="car" depart="88.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_59" type="car" depart="92.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_60" type="TRAM_VARIO" depart="92.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_61" type="car" depart="96.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_62" type="BUS_SOL_U15" depart="96.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_63" type="car" depart="96.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_64" type="car" depart="100.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_65" type="BUS_SOR_NB95" depart="100.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_5" depart="100.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_66" type="car" depart="104.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_67" type="BUS_SOR_NB95" depart="104.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_68" type="car" depart="108.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_69" type="car" depart="108.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_70" type="car" depart="112.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_71" type="car" depart="112.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_72" type="car" depart="112.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_73" type="truck" depart="116.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_74" type="car" depart="116.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_75" type="BUS_SOR_NB18" depart="120.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_76" type="car" depart="120.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_6" depart="120.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_77" type="BUS_SOL_U15" depart="124.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_78" type="car" depart="124.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_79" type="car" depart="124.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_80" type="car" depart="128.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_81" type="car" depart="128.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_82" type="car" depart="128.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_83" type="car" depart="132.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_84" type="car" depart="132.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_85" type="car" depart="132.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_86" type="car" depart="136.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_87" type="car" depart="136.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_88" type="TRAM_VARIO" depart="136.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_89" type="car" depart="140.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_90" type="car" depart="140.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_7" depart="140.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_91" type="truck" depart="144.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_92" type="car" depart="144.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_93" type="BUS_SOR_NB18" depart="148.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_94" type="car" depart="148.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_95" type="car" depart="152.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_96" type="TRAM_VARIO" depart="152.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_97" type="car" depart="152.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_98" type="car" depart="156.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_99" type="car" depart="156.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_100" type="car" depart="160.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_101" type="car" depart="160.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_102" type="BUS_SOR_NB12" depart="160.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_8" depart="160.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_103" type="car" depart="164.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_104" type="car" depart="164.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_105" type="car" depart="164.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_106" type="car" depart="168.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_107" type="car" depart="168.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_108" type="car" depart="168.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_109" type="car" depart="172.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_110" type="car" depart="172.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_111" type="car" depart="172.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_112" type="car" depart="176.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_113" type="truck" depart="176.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_114" type="car" depart="176.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_115" type="BUS_SOL_U12" depart="180.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_116" type="car" depart="180.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_9" depart="180.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+    <trip id="veh_117" type="car" depart="184.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_118" type="car" depart="184.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_119" type="car" depart="184.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_120" type="car" depart="188.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_121" type="car" depart="188.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_122" type="car" depart="188.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_123" type="car" depart="192.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_124" type="TRAM_VARIO" depart="192.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_125" type="car" depart="192.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_126" type="car" depart="196.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_127" type="BUS_SOR_NB95" depart="196.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_128" type="car" depart="200.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_129" type="car" depart="200.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_130" type="car" depart="200.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_10" depart="200.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_131" type="car" depart="204.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_132" type="car" depart="204.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_133" type="BUS_SOL_U12" depart="204.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_134" type="car" depart="208.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_135" type="car" depart="208.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_136" type="car" depart="208.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_137" type="car" depart="212.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_138" type="car" depart="212.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_139" type="car" depart="216.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_140" type="car" depart="216.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_141" type="car" depart="216.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_142" type="truck" depart="220.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_143" type="car" depart="220.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_11" depart="220.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_144" type="car" depart="224.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_145" type="car" depart="224.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_146" type="car" depart="224.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_147" type="car" depart="228.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_148" type="car" depart="228.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_149" type="car" depart="228.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_150" type="car" depart="232.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_151" type="car" depart="232.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_152" type="car" depart="236.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_153" type="BUS_SOR_NB18" depart="236.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_154" type="BUS_SOL_U15" depart="236.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_155" type="car" depart="240.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_156" type="car" depart="240.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_12" depart="240.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_157" type="BUS_SOR_NB12" depart="244.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_158" type="car" depart="244.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_159" type="BUS_SOR_NB18" depart="244.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_160" type="car" depart="248.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_161" type="car" depart="248.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_162" type="car" depart="248.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_163" type="car" depart="252.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_164" type="car" depart="252.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_165" type="car" depart="256.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_166" type="car" depart="256.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_167" type="car" depart="256.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_168" type="car" depart="260.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_169" type="car" depart="260.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_170" type="car" depart="260.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_13" depart="260.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_171" type="TRAM_VARIO" depart="264.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_172" type="car" depart="264.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_173" type="car" depart="264.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_174" type="car" depart="268.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_175" type="car" depart="268.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_176" type="car" depart="268.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_177" type="truck" depart="272.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_178" type="car" depart="272.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_179" type="car" depart="272.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_180" type="car" depart="276.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_181" type="truck" depart="276.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_182" type="car" depart="276.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_183" type="car" depart="280.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_184" type="car" depart="280.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_185" type="BUS_SOL_U12" depart="280.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_14" depart="280.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_186" type="car" depart="284.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_187" type="car" depart="284.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_188" type="car" depart="284.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_189" type="car" depart="288.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_190" type="car" depart="288.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_191" type="car" depart="288.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_192" type="car" depart="292.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_193" type="BUS_SOL_U12" depart="292.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_194" type="car" depart="292.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_195" type="BUS_SOR_NB95" depart="296.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_196" type="car" depart="296.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_197" type="TRAM_VARIO" depart="300.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_198" type="car" depart="300.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_199" type="BUS_SOL_U12" depart="300.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_15" depart="300.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_200" type="car" depart="304.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_201" type="car" depart="304.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_202" type="car" depart="304.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_203" type="car" depart="308.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_204" type="car" depart="308.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_205" type="car" depart="312.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_206" type="car" depart="312.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_207" type="car" depart="312.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_208" type="car" depart="316.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_209" type="car" depart="316.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_210" type="truck" depart="320.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_211" type="car" depart="320.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_16" depart="320.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_212" type="car" depart="324.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_213" type="car" depart="324.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_214" type="car" depart="328.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_215" type="car" depart="328.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_216" type="car" depart="328.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_217" type="car" depart="332.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_218" type="car" depart="332.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_219" type="car" depart="336.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_220" type="car" depart="336.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_221" type="car" depart="340.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_222" type="car" depart="340.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_223" type="BUS_SOL_U12" depart="340.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_17" depart="340.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+    <trip id="veh_224" type="car" depart="344.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_225" type="car" depart="344.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_226" type="car" depart="348.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_227" type="car" depart="348.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_228" type="car" depart="348.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_229" type="car" depart="352.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_230" type="car" depart="352.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_231" type="car" depart="352.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_232" type="car" depart="356.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_233" type="BUS_SOR_NB95" depart="356.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_234" type="car" depart="360.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_235" type="car" depart="360.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_236" type="car" depart="360.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_18" depart="360.0">
+        <walk from="NE_in" to="E21"/>
+    </person>
+    <trip id="veh_237" type="car" depart="364.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_238" type="car" depart="364.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_239" type="car" depart="368.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_240" type="car" depart="368.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_241" type="BUS_SOL_U12" depart="372.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_242" type="car" depart="372.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_243" type="car" depart="372.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_244" type="BUS_SOR_NB12" depart="376.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_245" type="car" depart="376.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_246" type="car" depart="380.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_247" type="car" depart="380.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_248" type="car" depart="380.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_19" depart="380.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_249" type="car" depart="384.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_250" type="car" depart="384.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_251" type="car" depart="384.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_252" type="car" depart="388.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_253" type="car" depart="388.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_254" type="car" depart="388.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_255" type="car" depart="392.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_256" type="car" depart="392.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_257" type="car" depart="392.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_258" type="car" depart="396.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_259" type="car" depart="396.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_260" type="BUS_SOL_U15" depart="396.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_261" type="car" depart="400.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_262" type="car" depart="400.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_20" depart="400.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_263" type="truck" depart="404.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_264" type="car" depart="404.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_265" type="car" depart="408.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_266" type="car" depart="408.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_267" type="car" depart="408.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_268" type="car" depart="412.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_269" type="car" depart="412.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_270" type="car" depart="412.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_271" type="car" depart="416.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_272" type="car" depart="416.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_273" type="car" depart="416.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_274" type="car" depart="420.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_275" type="car" depart="420.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_21" depart="420.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_276" type="car" depart="424.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_277" type="car" depart="424.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_278" type="car" depart="424.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_279" type="car" depart="428.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_280" type="car" depart="428.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_281" type="car" depart="428.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_282" type="car" depart="432.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_283" type="car" depart="432.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_284" type="car" depart="432.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_285" type="car" depart="436.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_286" type="car" depart="436.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_287" type="car" depart="436.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_288" type="car" depart="440.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_289" type="car" depart="440.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_22" depart="440.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_290" type="car" depart="444.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_291" type="car" depart="444.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_292" type="car" depart="448.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_293" type="BUS_SOL_U12" depart="448.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_294" type="car" depart="448.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_295" type="truck" depart="452.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_296" type="BUS_SOL_U15" depart="452.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_297" type="BUS_SOR_NB12" depart="452.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_298" type="BUS_SOL_U15" depart="456.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_299" type="car" depart="456.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_300" type="car" depart="460.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_301" type="car" depart="460.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_23" depart="460.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_302" type="car" depart="464.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_303" type="car" depart="464.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_304" type="truck" depart="464.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_305" type="car" depart="468.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_306" type="car" depart="468.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_307" type="car" depart="472.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_308" type="car" depart="472.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_309" type="car" depart="476.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_310" type="car" depart="476.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_311" type="car" depart="480.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_312" type="car" depart="480.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_24" depart="480.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_313" type="car" depart="484.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_314" type="car" depart="484.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_315" type="car" depart="484.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_316" type="car" depart="488.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_317" type="BUS_SOR_NB95" depart="488.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_318" type="truck" depart="488.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_319" type="car" depart="492.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_320" type="car" depart="492.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_321" type="car" depart="496.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_322" type="car" depart="496.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_323" type="car" depart="496.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_324" type="car" depart="500.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_325" type="car" depart="500.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_25" depart="500.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_326" type="TRAM_VARIO" depart="504.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_327" type="car" depart="504.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_328" type="car" depart="504.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_329" type="car" depart="508.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_330" type="car" depart="508.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_331" type="BUS_SOR_NB18" depart="512.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_332" type="car" depart="512.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_333" type="car" depart="512.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_334" type="car" depart="516.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_335" type="BUS_SOR_NB18" depart="516.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_336" type="car" depart="516.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_337" type="car" depart="520.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_338" type="car" depart="520.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_339" type="car" depart="520.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_26" depart="520.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_340" type="car" depart="524.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_341" type="car" depart="524.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_342" type="car" depart="524.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_343" type="car" depart="528.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_344" type="BUS_SOR_NB18" depart="528.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_345" type="car" depart="532.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_346" type="car" depart="532.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_347" type="car" depart="536.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_348" type="BUS_SOR_NB12" depart="536.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_349" type="car" depart="536.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_350" type="BUS_SOL_U12" depart="540.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_351" type="car" depart="540.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_352" type="car" depart="540.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_27" depart="540.0">
+        <walk from="N5_in" to="S3_out"/>
+    </person>
+    <trip id="veh_353" type="car" depart="544.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_354" type="car" depart="544.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_355" type="car" depart="544.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_356" type="car" depart="548.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_357" type="BUS_SOR_NB12" depart="548.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_358" type="car" depart="552.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_359" type="car" depart="552.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_360" type="TRAM_VARIO" depart="552.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_361" type="BUS_SOL_U15" depart="556.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_362" type="car" depart="556.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_363" type="car" depart="556.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_364" type="car" depart="560.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_365" type="car" depart="560.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_366" type="truck" depart="560.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_28" depart="560.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+    <trip id="veh_367" type="car" depart="564.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_368" type="car" depart="564.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_369" type="car" depart="568.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_370" type="car" depart="568.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_371" type="car" depart="568.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_372" type="car" depart="572.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_373" type="car" depart="572.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_374" type="car" depart="576.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_375" type="car" depart="576.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_376" type="car" depart="576.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_377" type="car" depart="580.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_378" type="car" depart="580.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_379" type="car" depart="580.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_29" depart="580.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_380" type="car" depart="584.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_381" type="car" depart="584.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_382" type="car" depart="584.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_383" type="car" depart="588.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_384" type="car" depart="588.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_385" type="car" depart="588.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_386" type="BUS_SOR_NB12" depart="592.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_387" type="car" depart="592.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_388" type="BUS_SOR_NB12" depart="596.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_389" type="TRAM_VARIO" depart="596.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_390" type="car" depart="596.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_391" type="car" depart="600.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_392" type="car" depart="600.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_393" type="car" depart="600.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_30" depart="600.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_394" type="car" depart="604.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_395" type="car" depart="604.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_396" type="car" depart="604.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_397" type="car" depart="608.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_398" type="car" depart="608.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_399" type="car" depart="608.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_400" type="truck" depart="612.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_401" type="car" depart="612.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_402" type="car" depart="612.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_403" type="car" depart="616.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_404" type="car" depart="616.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_405" type="TRAM_VARIO" depart="616.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_406" type="car" depart="620.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_407" type="car" depart="620.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_408" type="car" depart="620.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_31" depart="620.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_409" type="car" depart="624.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_410" type="TRAM_VARIO" depart="624.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_411" type="car" depart="624.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_412" type="car" depart="628.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_413" type="car" depart="628.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_414" type="car" depart="632.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_415" type="car" depart="632.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_416" type="car" depart="636.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_417" type="BUS_SOR_NB18" depart="636.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_418" type="car" depart="640.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_419" type="car" depart="640.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_32" depart="640.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_420" type="car" depart="644.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_421" type="car" depart="644.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_422" type="truck" depart="648.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_423" type="car" depart="648.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_424" type="car" depart="648.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_425" type="car" depart="652.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_426" type="car" depart="652.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_427" type="truck" depart="652.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_428" type="car" depart="656.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_429" type="car" depart="656.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_430" type="car" depart="660.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_431" type="car" depart="660.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_432" type="car" depart="660.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_33" depart="660.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_433" type="car" depart="664.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_434" type="car" depart="664.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_435" type="car" depart="668.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_436" type="car" depart="668.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_437" type="car" depart="672.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_438" type="BUS_SOL_U15" depart="672.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_439" type="car" depart="676.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_440" type="car" depart="676.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_441" type="car" depart="680.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_442" type="car" depart="680.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_443" type="car" depart="680.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_34" depart="680.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_444" type="car" depart="684.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_445" type="car" depart="684.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_446" type="car" depart="684.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_447" type="car" depart="688.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_448" type="car" depart="688.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_449" type="car" depart="688.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_450" type="car" depart="692.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_451" type="car" depart="692.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_452" type="car" depart="692.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_453" type="car" depart="696.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_454" type="BUS_SOR_NB95" depart="696.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_455" type="car" depart="696.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_456" type="car" depart="700.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_457" type="car" depart="700.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_35" depart="700.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_458" type="car" depart="704.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_459" type="BUS_SOR_NB12" depart="704.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_460" type="car" depart="704.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_461" type="car" depart="708.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_462" type="car" depart="708.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_463" type="car" depart="708.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_464" type="car" depart="712.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_465" type="car" depart="712.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_466" type="car" depart="712.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_467" type="car" depart="716.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_468" type="car" depart="716.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_469" type="car" depart="720.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_470" type="car" depart="720.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_471" type="car" depart="720.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_36" depart="720.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_472" type="car" depart="724.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_473" type="car" depart="724.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_474" type="car" depart="728.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_475" type="car" depart="728.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_476" type="car" depart="732.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_477" type="car" depart="732.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_478" type="car" depart="732.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_479" type="car" depart="736.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_480" type="car" depart="736.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_481" type="car" depart="740.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_482" type="car" depart="740.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_483" type="car" depart="740.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_37" depart="740.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_484" type="car" depart="744.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_485" type="car" depart="744.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_486" type="car" depart="748.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_487" type="car" depart="748.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_488" type="car" depart="752.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_489" type="car" depart="752.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_490" type="car" depart="756.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_491" type="car" depart="756.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_492" type="car" depart="760.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_493" type="car" depart="760.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_38" depart="760.0">
+        <walk from="N5_in" to="S3_out"/>
+    </person>
+    <trip id="veh_494" type="car" depart="764.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_495" type="car" depart="764.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_496" type="BUS_SOL_U15" depart="764.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_497" type="car" depart="768.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_498" type="car" depart="768.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_499" type="car" depart="772.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_500" type="truck" depart="772.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_501" type="car" depart="776.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_502" type="BUS_SOR_NB12" depart="776.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_503" type="car" depart="776.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_504" type="car" depart="780.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_505" type="car" depart="780.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_506" type="car" depart="780.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_39" depart="780.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_507" type="car" depart="784.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_508" type="car" depart="784.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_509" type="car" depart="784.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_510" type="truck" depart="788.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_511" type="car" depart="788.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_512" type="car" depart="788.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_513" type="BUS_SOR_NB12" depart="792.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_514" type="BUS_SOL_U15" depart="792.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_515" type="truck" depart="796.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_516" type="car" depart="796.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_517" type="car" depart="796.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_518" type="car" depart="800.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_519" type="car" depart="800.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_40" depart="800.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_520" type="car" depart="804.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_521" type="car" depart="804.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_522" type="car" depart="804.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_523" type="BUS_SOR_NB12" depart="808.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_524" type="car" depart="808.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_525" type="car" depart="808.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_526" type="BUS_SOR_NB18" depart="812.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_527" type="car" depart="812.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_528" type="car" depart="816.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_529" type="car" depart="816.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_530" type="car" depart="820.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_531" type="car" depart="820.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_532" type="car" depart="820.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_41" depart="820.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_533" type="car" depart="824.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_534" type="truck" depart="824.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_535" type="car" depart="828.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_536" type="car" depart="828.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_537" type="car" depart="832.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_538" type="car" depart="832.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_539" type="car" depart="836.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_540" type="car" depart="836.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_541" type="car" depart="840.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_542" type="car" depart="840.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_543" type="car" depart="840.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_42" depart="840.0">
+        <walk from="N5_in" to="S3_out"/>
+    </person>
+    <trip id="veh_544" type="car" depart="844.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_545" type="BUS_SOR_NB12" depart="844.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_546" type="car" depart="848.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_547" type="BUS_SOR_NB95" depart="848.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_548" type="car" depart="852.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_549" type="car" depart="852.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_550" type="car" depart="852.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_551" type="car" depart="856.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_552" type="car" depart="856.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_553" type="car" depart="860.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_554" type="car" depart="860.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_43" depart="860.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_555" type="car" depart="864.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_556" type="BUS_SOL_U15" depart="864.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_557" type="car" depart="864.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_558" type="car" depart="868.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_559" type="car" depart="868.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_560" type="car" depart="868.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_561" type="car" depart="872.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_562" type="car" depart="872.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_563" type="car" depart="876.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_564" type="car" depart="876.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_565" type="car" depart="880.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_566" type="car" depart="880.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_44" depart="880.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_567" type="car" depart="884.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_568" type="car" depart="884.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_569" type="BUS_SOR_NB12" depart="888.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_570" type="car" depart="888.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_571" type="car" depart="888.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_572" type="car" depart="892.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_573" type="BUS_SOL_U12" depart="892.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_574" type="car" depart="896.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_575" type="truck" depart="896.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_576" type="car" depart="896.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_577" type="car" depart="900.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_578" type="BUS_SOL_U12" depart="900.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_45" depart="900.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_579" type="car" depart="904.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_580" type="car" depart="904.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_581" type="BUS_SOR_NB12" depart="908.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_582" type="car" depart="908.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_583" type="car" depart="912.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_584" type="car" depart="912.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_585" type="truck" depart="916.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_586" type="car" depart="916.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_587" type="car" depart="916.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_588" type="truck" depart="920.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_589" type="car" depart="920.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_46" depart="920.0">
+        <walk from="SW_in" to="-E23"/>
+    </person>
+    <trip id="veh_590" type="car" depart="924.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_591" type="BUS_SOR_NB95" depart="924.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_592" type="car" depart="928.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_593" type="car" depart="928.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_594" type="car" depart="932.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_595" type="car" depart="932.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_596" type="car" depart="932.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_597" type="car" depart="936.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_598" type="car" depart="936.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_599" type="car" depart="940.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_600" type="car" depart="940.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_47" depart="940.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_601" type="car" depart="944.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_602" type="car" depart="944.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_603" type="car" depart="944.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_604" type="car" depart="948.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_605" type="car" depart="948.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_606" type="car" depart="952.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_607" type="car" depart="952.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_608" type="car" depart="956.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_609" type="car" depart="956.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_610" type="car" depart="960.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_611" type="BUS_SOL_U12" depart="960.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_612" type="car" depart="960.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_48" depart="960.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_613" type="car" depart="964.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_614" type="car" depart="964.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_615" type="car" depart="964.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_616" type="car" depart="968.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_617" type="car" depart="968.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_618" type="car" depart="972.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_619" type="car" depart="972.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_620" type="car" depart="972.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_621" type="car" depart="976.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_622" type="car" depart="976.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_623" type="TRAM_VARIO" depart="980.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_624" type="car" depart="980.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_625" type="car" depart="980.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_49" depart="980.0">
+        <walk from="N5_in" to="S3_out"/>
+    </person>
+    <trip id="veh_626" type="car" depart="984.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_627" type="car" depart="984.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_628" type="car" depart="984.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_629" type="car" depart="988.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_630" type="car" depart="988.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_631" type="BUS_SOL_U15" depart="992.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_632" type="BUS_SOL_U12" depart="992.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_633" type="car" depart="996.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_634" type="car" depart="996.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_635" type="car" depart="996.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_636" type="car" depart="1000.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_637" type="car" depart="1000.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_50" depart="1000.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+    <trip id="veh_638" type="car" depart="1004.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_639" type="car" depart="1004.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_640" type="car" depart="1008.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_641" type="car" depart="1008.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_642" type="TRAM_VARIO" depart="1008.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_643" type="TRAM_VARIO" depart="1012.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_644" type="car" depart="1012.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_645" type="BUS_SOR_NB12" depart="1012.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_646" type="car" depart="1016.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_647" type="BUS_SOR_NB12" depart="1016.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_648" type="car" depart="1020.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_649" type="BUS_SOR_NB18" depart="1020.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_51" depart="1020.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_650" type="TRAM_VARIO" depart="1024.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_651" type="car" depart="1024.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_652" type="car" depart="1028.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_653" type="truck" depart="1028.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_654" type="car" depart="1032.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_655" type="car" depart="1032.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_656" type="car" depart="1032.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_657" type="car" depart="1036.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_658" type="car" depart="1036.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_659" type="car" depart="1040.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_660" type="car" depart="1040.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_52" depart="1040.0">
+        <walk from="NE_in" to="E21"/>
+    </person>
+    <trip id="veh_661" type="car" depart="1044.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_662" type="car" depart="1044.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_663" type="car" depart="1044.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_664" type="car" depart="1048.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_665" type="car" depart="1048.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_666" type="BUS_SOL_U15" depart="1048.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_667" type="car" depart="1052.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_668" type="car" depart="1052.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_669" type="car" depart="1052.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_670" type="car" depart="1056.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_671" type="car" depart="1056.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_672" type="car" depart="1056.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_673" type="car" depart="1060.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_674" type="car" depart="1060.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_675" type="car" depart="1060.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_53" depart="1060.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+    <trip id="veh_676" type="car" depart="1064.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_677" type="car" depart="1064.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_678" type="car" depart="1068.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_679" type="car" depart="1068.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_680" type="car" depart="1072.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_681" type="car" depart="1072.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_682" type="car" depart="1072.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_683" type="car" depart="1076.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_684" type="car" depart="1076.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_685" type="car" depart="1076.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_686" type="car" depart="1080.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_687" type="car" depart="1080.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_688" type="BUS_SOR_NB12" depart="1080.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_54" depart="1080.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_689" type="car" depart="1084.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_690" type="car" depart="1084.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_691" type="car" depart="1084.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_692" type="car" depart="1088.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_693" type="car" depart="1088.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_694" type="BUS_SOL_U12" depart="1092.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_695" type="car" depart="1092.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_696" type="car" depart="1096.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_697" type="car" depart="1096.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_698" type="car" depart="1096.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_699" type="car" depart="1100.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_700" type="car" depart="1100.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_55" depart="1100.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_701" type="car" depart="1104.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_702" type="car" depart="1104.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_703" type="car" depart="1104.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_704" type="car" depart="1108.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_705" type="car" depart="1108.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_706" type="car" depart="1108.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_707" type="car" depart="1112.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_708" type="TRAM_VARIO" depart="1112.0" from="ST_in" to="NT_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_709" type="car" depart="1112.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_710" type="car" depart="1116.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_711" type="car" depart="1116.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_712" type="car" depart="1120.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_713" type="car" depart="1120.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_56" depart="1120.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_714" type="car" depart="1124.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_715" type="car" depart="1124.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_716" type="car" depart="1124.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_717" type="car" depart="1128.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_718" type="car" depart="1128.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_719" type="BUS_SOR_NB95" depart="1128.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_720" type="car" depart="1132.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_721" type="car" depart="1132.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_722" type="car" depart="1132.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_723" type="car" depart="1136.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_724" type="car" depart="1136.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_725" type="BUS_SOL_U12" depart="1140.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_726" type="car" depart="1140.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_57" depart="1140.0">
+        <walk from="N5_in" to="S3_out"/>
+    </person>
+    <trip id="veh_727" type="car" depart="1144.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_728" type="car" depart="1144.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_729" type="truck" depart="1144.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_730" type="car" depart="1148.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_731" type="car" depart="1148.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_732" type="car" depart="1152.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_733" type="car" depart="1152.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_734" type="car" depart="1156.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_735" type="car" depart="1156.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_736" type="car" depart="1156.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_737" type="car" depart="1160.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_738" type="car" depart="1160.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_739" type="car" depart="1160.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_58" depart="1160.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_740" type="car" depart="1164.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_741" type="car" depart="1164.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_742" type="car" depart="1164.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_743" type="car" depart="1168.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_744" type="car" depart="1168.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_745" type="car" depart="1172.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_746" type="car" depart="1172.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_747" type="car" depart="1176.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_748" type="car" depart="1176.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_749" type="car" depart="1176.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_750" type="car" depart="1180.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_751" type="car" depart="1180.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_59" depart="1180.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_752" type="car" depart="1184.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_753" type="car" depart="1184.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_754" type="car" depart="1188.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_755" type="car" depart="1188.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_756" type="car" depart="1188.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_757" type="car" depart="1192.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_758" type="car" depart="1192.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_759" type="car" depart="1196.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_760" type="car" depart="1196.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_761" type="BUS_SOR_NB12" depart="1196.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_762" type="car" depart="1200.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_763" type="car" depart="1200.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_764" type="car" depart="1200.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_60" depart="1200.0">
+        <walk from="SE_in" to="E22"/>
+    </person>
+    <trip id="veh_765" type="BUS_SOR_NB12" depart="1204.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_766" type="car" depart="1204.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_767" type="car" depart="1208.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_768" type="car" depart="1208.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_769" type="car" depart="1208.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_770" type="car" depart="1212.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_771" type="car" depart="1212.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_772" type="car" depart="1212.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_773" type="car" depart="1216.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_774" type="BUS_SOR_NB18" depart="1216.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_775" type="car" depart="1216.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_776" type="car" depart="1220.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_777" type="car" depart="1220.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_61" depart="1220.0">
+        <walk from="NE_in" to="E21"/>
+    </person>
+    <trip id="veh_778" type="car" depart="1224.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_779" type="truck" depart="1224.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_780" type="car" depart="1228.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_781" type="car" depart="1228.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_782" type="car" depart="1232.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_783" type="car" depart="1232.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_784" type="car" depart="1232.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_785" type="car" depart="1236.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_786" type="car" depart="1236.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_787" type="car" depart="1236.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_788" type="car" depart="1240.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_789" type="car" depart="1240.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_790" type="car" depart="1240.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_62" depart="1240.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_791" type="car" depart="1244.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_792" type="car" depart="1244.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_793" type="car" depart="1244.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_794" type="car" depart="1248.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_795" type="truck" depart="1248.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_796" type="car" depart="1248.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_797" type="car" depart="1252.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_798" type="car" depart="1252.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_799" type="car" depart="1252.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_800" type="car" depart="1256.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_801" type="car" depart="1256.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_802" type="car" depart="1260.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_803" type="car" depart="1260.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_804" type="car" depart="1260.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_63" depart="1260.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+    <trip id="veh_805" type="BUS_SOL_U12" depart="1264.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_806" type="car" depart="1264.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_807" type="car" depart="1268.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_808" type="truck" depart="1268.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_809" type="car" depart="1272.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_810" type="car" depart="1272.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_811" type="car" depart="1272.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_812" type="car" depart="1276.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_813" type="car" depart="1276.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_814" type="car" depart="1280.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_815" type="car" depart="1280.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_816" type="car" depart="1280.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_64" depart="1280.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_817" type="car" depart="1284.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_818" type="BUS_SOL_U12" depart="1284.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_819" type="car" depart="1288.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_820" type="car" depart="1288.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_821" type="car" depart="1288.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_822" type="car" depart="1292.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_823" type="car" depart="1292.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_824" type="car" depart="1292.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_825" type="car" depart="1296.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_826" type="car" depart="1296.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_827" type="car" depart="1296.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_828" type="BUS_SOR_NB12" depart="1300.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_829" type="BUS_SOR_NB12" depart="1300.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_65" depart="1300.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_830" type="car" depart="1304.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_831" type="car" depart="1304.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_832" type="car" depart="1304.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_833" type="car" depart="1308.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_834" type="car" depart="1308.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_835" type="car" depart="1308.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_836" type="car" depart="1312.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_837" type="car" depart="1312.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_838" type="car" depart="1312.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_839" type="car" depart="1316.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_840" type="BUS_SOR_NB95" depart="1316.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_841" type="car" depart="1316.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_842" type="car" depart="1320.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_843" type="car" depart="1320.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_844" type="car" depart="1320.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_66" depart="1320.0">
+        <walk from="NE_in" to="E21"/>
+    </person>
+    <trip id="veh_845" type="car" depart="1324.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_846" type="car" depart="1324.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_847" type="car" depart="1328.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_848" type="BUS_SOR_NB18" depart="1328.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_849" type="truck" depart="1328.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_850" type="car" depart="1332.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_851" type="car" depart="1332.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_852" type="car" depart="1332.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_853" type="car" depart="1336.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_854" type="truck" depart="1336.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_855" type="car" depart="1340.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_856" type="car" depart="1340.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_67" depart="1340.0">
+        <walk from="S3_in" to="N3_out"/>
+    </person>
+    <trip id="veh_857" type="car" depart="1344.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_858" type="car" depart="1344.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_859" type="car" depart="1348.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_860" type="car" depart="1348.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_861" type="car" depart="1348.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_862" type="car" depart="1352.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_863" type="BUS_SOL_U12" depart="1352.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_864" type="car" depart="1356.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_865" type="car" depart="1356.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_866" type="car" depart="1360.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_867" type="car" depart="1360.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_68" depart="1360.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_868" type="car" depart="1364.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_869" type="truck" depart="1364.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_870" type="car" depart="1364.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_871" type="car" depart="1368.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_872" type="car" depart="1368.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_873" type="BUS_SOR_NB95" depart="1372.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_874" type="car" depart="1372.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_875" type="car" depart="1376.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_876" type="car" depart="1376.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_877" type="car" depart="1380.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_878" type="car" depart="1380.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_879" type="car" depart="1380.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_69" depart="1380.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_880" type="truck" depart="1384.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_881" type="car" depart="1384.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_882" type="car" depart="1388.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_883" type="car" depart="1388.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_884" type="car" depart="1392.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_885" type="car" depart="1392.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_886" type="car" depart="1396.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_887" type="car" depart="1396.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_888" type="car" depart="1400.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_889" type="car" depart="1400.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_890" type="car" depart="1400.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_70" depart="1400.0">
+        <walk from="E3_in" to="W3_out"/>
+    </person>
+    <trip id="veh_891" type="car" depart="1404.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_892" type="car" depart="1404.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_893" type="BUS_SOR_NB12" depart="1404.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_894" type="car" depart="1408.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_895" type="car" depart="1408.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_896" type="car" depart="1408.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_897" type="truck" depart="1412.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_898" type="car" depart="1412.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_899" type="truck" depart="1416.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_900" type="TRAM_VARIO" depart="1416.0" from="NT_in" to="ST_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_901" type="car" depart="1416.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_902" type="car" depart="1420.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_903" type="truck" depart="1420.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_904" type="car" depart="1420.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_71" depart="1420.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_905" type="car" depart="1424.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_906" type="car" depart="1424.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_907" type="car" depart="1428.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_908" type="car" depart="1428.0" from="S1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_909" type="car" depart="1432.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_910" type="car" depart="1432.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_911" type="car" depart="1436.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_912" type="car" depart="1436.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_913" type="car" depart="1440.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_914" type="car" depart="1440.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_915" type="car" depart="1440.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_72" depart="1440.0">
+        <walk from="N5_in" to="S3_out"/>
+    </person>
+    <trip id="veh_916" type="car" depart="1444.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_917" type="car" depart="1444.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_918" type="car" depart="1444.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_919" type="BUS_SOR_NB95" depart="1448.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_920" type="car" depart="1448.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_921" type="car" depart="1452.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_922" type="car" depart="1452.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_923" type="car" depart="1452.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_924" type="car" depart="1456.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_925" type="BUS_SOL_U15" depart="1456.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_926" type="car" depart="1460.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_927" type="car" depart="1460.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_928" type="car" depart="1460.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_73" depart="1460.0">
+        <walk from="W3_in" to="E3_out"/>
+    </person>
+    <trip id="veh_929" type="car" depart="1464.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_930" type="car" depart="1464.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_931" type="car" depart="1468.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_932" type="car" depart="1468.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_933" type="car" depart="1468.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_934" type="car" depart="1472.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_935" type="car" depart="1472.0" from="S1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_936" type="car" depart="1472.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_937" type="truck" depart="1476.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_938" type="car" depart="1476.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_939" type="car" depart="1476.0" from="E1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_940" type="car" depart="1480.0" from="S1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_941" type="car" depart="1480.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_942" type="BUS_SOL_U12" depart="1480.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_74" depart="1480.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+    <trip id="veh_943" type="car" depart="1484.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_944" type="BUS_SOR_NB18" depart="1484.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_945" type="car" depart="1488.0" from="W1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_946" type="car" depart="1488.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_947" type="BUS_SOR_NB95" depart="1488.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_948" type="car" depart="1492.0" from="N1_in" to="E1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_949" type="car" depart="1492.0" from="E1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_950" type="car" depart="1496.0" from="W1_in" to="N1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_951" type="BUS_SOR_NB95" depart="1496.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_952" type="car" depart="1496.0" from="E1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_953" type="car" depart="1500.0" from="N1_in" to="W1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_954" type="car" depart="1500.0" from="N1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <trip id="veh_955" type="car" depart="1500.0" from="W1_in" to="S1_out" departLane="best" departSpeed="max"/>
+    <person id="ped_75" depart="1500.0">
+        <walk from="NW_in" to="-E24"/>
+    </person>
+</routes>

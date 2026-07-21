@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-04-06T13:32:25.112333+01:00 by Eclipse SUMO netedit 1.26.0
+<neteditConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/neteditConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/tashmaf/PycharmProjects/TrafficLightControlReinforcementLearning/simulation/Hornbach.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/tashmaf/PycharmProjects/TrafficLightControlReinforcementLearning/simulation/Hornbach.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.avoid-overlap value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="0"/>
+    </processing>
+
+    <junctions>
+        <no-internal-links value="false"/>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="5"/>
+        <junctions.limit-turn-speed value="5.50"/>
+        <rectangular-lane-cut value="0"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="1"/>
+    </pedestrian>
+
+</neteditConfiguration>
+-->
+
+<net version="1.20" junctionCornerDetail="5" walkingareas="true" limitTurnSpeed="5.50" avoidOverlap="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="-107.34,-107.47,107.00,107.66" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id=":E2_in_0" function="internal">
+        <lane id=":E2_in_0_0" index="0" disallow="pedestrian" speed="13.89" length="9.00" shape="55.64,27.18 52.99,26.98 51.16,27.08 49.33,27.29 46.66,27.39"/>
+    </edge>
+    <edge id=":E2_in_1" function="internal">
+        <lane id=":E2_in_1_0" index="0" disallow="pedestrian" speed="13.89" length="9.62" shape="56.05,24.01 46.66,23.50"/>
+        <lane id=":E2_in_1_1" index="1" disallow="pedestrian" speed="13.89" length="9.62" shape="56.46,20.84 46.66,20.24"/>
+    </edge>
+    <edge id=":E2_in_w0" function="walkingarea">
+        <lane id=":E2_in_w0_0" index="0" allow="pedestrian" speed="2.78" length="8.64" width="2.00" shape="46.67,28.99 46.65,30.99 55.17,30.75 55.43,28.77 53.57,28.59 52.19,28.58 51.05,28.68 49.91,28.82 48.52,28.95"/>
+    </edge>
+    <edge id=":E2_out_0" function="internal">
+        <lane id=":E2_out_0_0" index="0" disallow="pedestrian" speed="13.89" length="30.32" shape="26.55,-9.68 31.68,-4.79 37.02,-0.78 43.74,1.90 53.03,2.77"/>
+    </edge>
+    <edge id=":E2_out_1" function="internal">
+        <lane id=":E2_out_1_0" index="0" disallow="pedestrian" speed="13.89" length="29.12" shape="24.64,-1.88 33.12,-1.01 38.83,0.63 44.55,2.18 53.03,2.77"/>
+        <lane id=":E2_out_1_1" index="1" disallow="pedestrian" speed="13.89" length="29.12" shape="24.23,1.31 32.85,2.19 38.65,3.83 44.46,5.38 53.08,5.97"/>
+    </edge>
+    <edge id=":E2_out_w0" function="walkingarea">
+        <lane id=":E2_out_w0_0" index="0" allow="pedestrian" speed="2.78" length="28.04" width="2.00" shape="53.00,1.17 52.97,-0.83 28.46,-12.83 27.08,-11.38 32.08,-6.57 35.62,-3.37 38.88,-1.12 42.45,0.31 46.96,1.03"/>
+    </edge>
+    <edge id=":I_0" function="internal">
+        <lane id=":I_0_0" index="0" disallow="pedestrian" speed="13.89" length="49.14" shape="24.81,20.10 -24.04,14.84"/>
+    </edge>
+    <edge id=":I_1" function="internal">
+        <lane id=":I_1_0" index="0" disallow="pedestrian" speed="13.89" length="48.96" shape="24.87,16.90 10.68,13.95 0.62,6.85 -5.31,-4.40 -6.41,-13.77"/>
+    </edge>
+    <edge id=":I_12" function="internal">
+        <lane id=":I_12_0" index="0" disallow="pedestrian" speed="13.89" length="6.05" shape="-6.41,-13.77 -7.11,-19.78"/>
+    </edge>
+    <edge id=":I_2" function="internal">
+        <lane id=":I_2_0" index="0" disallow="pedestrian" speed="13.89" length="49.42" shape="14.89,-19.39 13.52,29.99"/>
+        <lane id=":I_2_1" index="1" disallow="pedestrian" speed="13.89" length="49.42" shape="11.69,-19.46 10.32,29.96"/>
+    </edge>
+    <edge id=":I_4" function="internal">
+        <lane id=":I_4_0" index="0" disallow="pedestrian" speed="13.89" length="45.07" shape="8.49,-19.54 6.18,-5.88 -0.02,3.87 -10.09,9.71 -18.03,10.81"/>
+    </edge>
+    <edge id=":I_13" function="internal">
+        <lane id=":I_13_0" index="0" disallow="pedestrian" speed="13.89" length="6.06" shape="-18.03,10.81 -24.03,11.64"/>
+    </edge>
+    <edge id=":I_5" function="internal">
+        <lane id=":I_5_0" index="0" allow="tram rail_urban rail rail_electric rail_fast" speed="13.89" length="49.94" shape="2.46,-19.64 0.70,30.27"/>
+    </edge>
+    <edge id=":I_6" function="internal">
+        <lane id=":I_6_0" index="0" disallow="pedestrian" speed="13.89" length="48.69" shape="-24.00,-6.52 -12.21,-5.87 0.22,-4.34 12.65,-2.74 24.44,-1.88"/>
+    </edge>
+    <edge id=":I_7" function="internal">
+        <lane id=":I_7_0" index="0" disallow="pedestrian" speed="13.89" length="41.62" shape="-24.01,-3.32 -15.38,0.60 -5.07,9.95 3.55,20.97 5.12,24.90"/>
+    </edge>
+    <edge id=":I_14" function="internal">
+        <lane id=":I_14_0" index="0" disallow="pedestrian" speed="13.89" length="5.41" shape="5.12,24.90 7.12,29.92"/>
+    </edge>
+    <edge id=":I_8" function="internal">
+        <lane id=":I_8_0" index="0" disallow="pedestrian" speed="13.89" length="48.59" shape="-13.76,28.62 -10.31,-19.83"/>
+        <lane id=":I_8_1" index="1" disallow="pedestrian" speed="13.89" length="48.59" shape="-10.56,28.70 -7.11,-19.78"/>
+    </edge>
+    <edge id=":I_10" function="internal">
+        <lane id=":I_10_0" index="0" disallow="pedestrian" speed="13.89" length="42.38" shape="-7.36,28.77 -5.04,16.55 0.97,7.90 10.66,2.82 19.07,1.87"/>
+    </edge>
+    <edge id=":I_15" function="internal">
+        <lane id=":I_15_0" index="0" disallow="pedestrian" speed="13.89" length="4.99" shape="19.07,1.87 24.03,1.31"/>
+    </edge>
+    <edge id=":I_11" function="internal">
+        <lane id=":I_11_0" index="0" allow="tram rail_urban rail rail_electric rail_fast" speed="13.89" length="49.95" shape="-2.50,30.23 -0.88,-19.69"/>
+    </edge>
+    <edge id=":I_c0" function="crossing" crossingEdges="E3_in">
+        <lane id=":I_c0_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="6.00" shape="21.96,15.14 21.73,21.54" outlineShape="24.96,15.25 24.73,21.64 23.10,21.79 21.55,22.20 20.26,22.87 19.43,23.75 19.28,24.55 18.73,21.43 18.97,15.03 24.46,15.17 19.47,15.05 19.35,12.02"/>
+    </edge>
+    <edge id=":I_c1" function="crossing" crossingEdges="E3_out">
+        <lane id=":I_c1_0" index="0" allow="pedestrian" speed="2.78" length="6.41" width="5.00" shape="21.97,-3.53 21.50,2.86" outlineShape="24.46,-3.35 23.99,3.05 19.01,2.68 23.99,3.05 19.01,2.68 19.70,-6.75 19.94,-6.05 21.06,-4.77 22.61,-3.85"/>
+    </edge>
+    <edge id=":I_c2" function="crossing" crossingEdges="S3_in">
+        <lane id=":I_c2_0" index="0" allow="pedestrian" speed="2.78" length="9.60" width="6.00" shape="6.82,-16.58 16.42,-16.35" outlineShape="6.89,-19.58 16.49,-19.35 16.48,-16.75 16.65,-14.14 16.80,-13.34 6.75,-13.58 6.79,-19.58 6.75,-13.58"/>
+    </edge>
+    <edge id=":I_c3" function="crossing" crossingEdges="ST_out ST_in">
+        <lane id=":I_c3_0" index="0" allow="pedestrian" speed="2.78" length="6.55" width="6.00" shape="-2.54,-16.72 4.00,-16.61" outlineShape="-2.49,-19.72 4.05,-19.61 6.89,-19.58 6.75,-13.58 3.95,-13.61 -2.59,-13.72 -2.59,-19.72 -2.59,-13.72"/>
+    </edge>
+    <edge id=":I_c4" function="crossing" crossingEdges="S3_out">
+        <lane id=":I_c4_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="6.00" shape="-11.95,-16.86 -5.56,-16.76" outlineShape="-11.91,-19.86 -5.51,-19.76 -5.60,-13.76 -5.51,-19.76 -5.60,-13.76 -12.00,-13.86 -13.50,-13.88 -12.86,-15.07 -12.18,-17.40"/>
+    </edge>
+    <edge id=":I_c5" function="crossing" crossingEdges="W3_in">
+        <lane id=":I_c5_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="6.00" shape="-21.00,-1.74 -21.01,-8.14" outlineShape="-24.00,-1.73 -24.01,-8.13 -23.99,-8.23 -23.99,-8.12 -22.18,-8.29 -20.41,-8.75 -18.92,-9.45 -18.02,-10.30 -18.01,-8.14 -18.00,-1.74 -24.00,-1.73 -18.00,-1.74 -18.01,1.26"/>
+    </edge>
+    <edge id=":I_c6" function="crossing" crossingEdges="W3_out">
+        <lane id=":I_c6_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="6.00" shape="-21.04,16.45 -21.03,10.05" outlineShape="-24.04,16.44 -24.03,10.04 -24.00,-1.73 -18.00,-1.74 -18.03,10.05 -18.04,16.45 -18.50,19.69 -19.02,18.71 -20.34,17.54 -22.07,16.74"/>
+    </edge>
+    <edge id=":I_c7" function="crossing" crossingEdges="N5_in">
+        <lane id=":I_c7_0" index="0" allow="pedestrian" speed="2.78" length="9.60" width="5.00" shape="-5.68,26.33 -15.27,26.07" outlineShape="-5.74,28.83 -15.44,28.57 -15.43,26.82 -15.76,25.11 -16.33,23.65 -16.43,23.54 -5.61,23.83 -5.74,28.83 -5.61,23.83"/>
+    </edge>
+    <edge id=":I_c8" function="crossing" crossingEdges="NT_out NT_in">
+        <lane id=":I_c8_0" index="0" allow="pedestrian" speed="2.78" length="6.40" width="5.00" shape="2.34,27.80 -4.06,27.70" outlineShape="2.30,30.30 -4.09,30.20 -4.02,25.20 -4.09,30.20 -5.65,25.18 2.38,25.30 2.30,30.30 2.38,25.30"/>
+    </edge>
+    <edge id=":I_c9" function="crossing" crossingEdges="N3_out">
+        <lane id=":I_c9_0" index="0" allow="pedestrian" speed="2.78" length="9.60" width="5.00" shape="15.15,27.51 5.55,27.41" outlineShape="15.12,30.01 5.52,29.91 2.30,30.30 2.38,25.30 3.12,25.21 5.58,24.91 15.18,25.01 17.69,25.28 16.70,25.94 15.89,27.06 15.34,28.46"/>
+    </edge>
+    <edge id=":I_w0" function="walkingarea">
+        <lane id=":I_w0_0" index="0" allow="pedestrian" speed="2.78" length="3.78" width="5.00" shape="15.12,30.01 17.12,30.03 18.42,27.31 19.87,25.93 18.77,25.22 17.69,25.28 16.70,25.94 15.89,27.06 15.34,28.46"/>
+    </edge>
+    <edge id=":I_w1" function="walkingarea">
+        <lane id=":I_w1_0" index="0" allow="pedestrian" speed="2.78" length="4.00" width="6.00" shape="19.87,25.93 21.32,24.55 24.71,23.70 24.82,21.70 24.73,21.64 23.10,21.79 21.55,22.20 20.26,22.87 19.43,23.75 19.23,24.79"/>
+    </edge>
+    <edge id=":I_w2" function="walkingarea">
+        <lane id=":I_w2_0" index="0" allow="pedestrian" speed="2.78" length="5.07" width="5.00" shape="24.46,-3.35 24.75,-3.48 24.79,-5.48 21.92,-8.78 20.70,-10.37 19.62,-9.03 19.42,-7.53 19.94,-6.05 21.06,-4.77 22.61,-3.85"/>
+    </edge>
+    <edge id=":I_w3" function="walkingarea">
+        <lane id=":I_w3_0" index="0" allow="pedestrian" speed="2.78" length="6.03" width="6.00" shape="20.70,-10.37 19.48,-11.95 18.49,-19.30 16.49,-19.35 16.48,-16.75 16.65,-14.14 17.07,-11.86 17.83,-10.25 19.01,-9.64"/>
+    </edge>
+    <edge id=":I_w4" function="walkingarea">
+        <lane id=":I_w4_0" index="0" allow="pedestrian" speed="2.78" length="6.02" width="6.00" shape="-11.91,-19.86 -13.91,-19.89 -17.07,-14.08 -18.45,-12.63 -16.75,-11.66 -15.21,-11.92 -13.89,-13.15 -12.86,-15.07 -12.18,-17.40"/>
+    </edge>
+    <edge id=":I_w5" function="walkingarea">
+        <lane id=":I_w5_0" index="0" allow="pedestrian" speed="2.78" length="4.32" width="6.00" shape="-18.45,-12.63 -19.84,-11.19 -24.00,-10.12 -23.99,-8.12 -22.18,-8.29 -20.41,-8.75 -18.92,-9.45 -17.95,-10.37 -17.72,-11.44"/>
+    </edge>
+    <edge id=":I_w6" function="walkingarea">
+        <lane id=":I_w6_0" index="0" allow="pedestrian" speed="2.78" length="5.13" width="6.00" shape="-24.04,16.44 -24.04,18.44 -20.63,21.52 -19.29,23.01 -18.32,21.58 -18.29,20.10 -19.02,18.71 -20.34,17.54 -22.07,16.74"/>
+    </edge>
+    <edge id=":I_w7" function="walkingarea">
+        <lane id=":I_w7_0" index="0" allow="pedestrian" speed="2.78" length="4.04" width="5.00" shape="-19.29,23.01 -17.95,24.49 -17.36,28.53 -15.36,28.60 -15.43,26.82 -15.76,25.11 -16.33,23.65 -17.12,22.68 -18.12,22.39"/>
+    </edge>
+    <edge id=":I_w8" function="walkingarea">
+        <lane id=":I_w8_0" index="0" allow="pedestrian" speed="2.78" length="12.28" width="5.00" shape="19.01,2.68 23.99,3.05 24.46,15.23 19.47,15.05"/>
+    </edge>
+    <edge id=":I_w9" function="walkingarea">
+        <lane id=":I_w9_0" index="0" allow="pedestrian" speed="2.78" length="2.82" width="6.00" shape="3.95,-13.61 4.05,-19.61 6.89,-19.58 6.75,-13.58"/>
+    </edge>
+    <edge id=":I_w10" function="walkingarea">
+        <lane id=":I_w10_0" index="0" allow="pedestrian" speed="2.78" length="3.01" width="6.00" shape="-5.60,-13.76 -5.51,-19.76 -2.49,-19.72 -2.59,-13.72"/>
+    </edge>
+    <edge id=":I_w11" function="walkingarea">
+        <lane id=":I_w11_0" index="0" allow="pedestrian" speed="2.78" length="11.78" width="6.00" shape="-18.03,10.05 -24.03,10.04 -24.00,-1.73 -18.00,-1.74"/>
+    </edge>
+    <edge id=":I_w12" function="walkingarea">
+        <lane id=":I_w12_0" index="0" allow="pedestrian" speed="2.78" length="2.12" width="5.00" shape="-4.02,25.20 -4.09,30.20 -5.74,28.83 -5.61,23.83"/>
+    </edge>
+    <edge id=":I_w13" function="walkingarea">
+        <lane id=":I_w13_0" index="0" allow="pedestrian" speed="2.78" length="3.23" width="5.00" shape="5.58,24.91 5.52,29.91 2.30,30.30 2.38,25.30"/>
+    </edge>
+    <edge id=":I-NE_0" function="internal">
+        <lane id=":I-NE_0_0" index="0" disallow="pedestrian" speed="13.89" length="6.43" shape="25.13,27.41 23.37,28.12 22.20,28.73 21.17,29.54 19.81,30.87"/>
+    </edge>
+    <edge id=":I-NE_c0" function="crossing" crossingEdges="NE_in">
+        <lane id=":I-NE_c0_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="22.68,26.65 23.86,29.63" outlineShape="24.51,25.83 25.72,28.90 24.58,29.35 23.75,29.71 23.09,30.08 22.48,30.53 22.17,30.81 20.47,26.48 20.85,26.80 21.50,27.03 22.14,26.97 22.83,26.71 23.61,26.33"/>
+    </edge>
+    <edge id=":I-NE_c1" function="crossing" crossingEdges="NE_out">
+        <lane id=":I-NE_c1_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="22.35,30.58 20.08,28.32" outlineShape="20.94,32.00 18.67,29.74 20.14,26.21 18.70,27.59 18.67,29.74 21.49,26.91 23.76,29.16 24.14,29.54 23.75,29.71 23.09,30.08 22.48,30.53 21.81,31.14"/>
+    </edge>
+    <edge id=":I-NE_w0" function="walkingarea">
+        <lane id=":I-NE_w0_0" index="0" allow="pedestrian" speed="2.78" length="3.19" width="4.00" shape="20.94,32.00 22.36,33.41 26.45,30.76 25.72,28.90 24.58,29.35 23.75,29.71 23.09,30.08 22.48,30.53 21.81,31.14"/>
+    </edge>
+    <edge id=":I-NE_w1" function="walkingarea">
+        <lane id=":I-NE_w1_0" index="0" allow="pedestrian" speed="2.78" length="2.14" width="4.00" shape="24.54,25.92 21.59,24.83 20.14,26.21 20.85,26.80 21.50,27.03 22.14,26.97 22.83,26.71 23.61,26.33"/>
+    </edge>
+    <edge id=":I-NE_w2" function="walkingarea">
+        <lane id=":I-NE_w2_0" index="0" allow="pedestrian" speed="2.78" length="1.57" width="4.00" shape="20.14,26.21 18.70,27.59 18.67,29.74 19.34,29.11 19.95,28.53 20.41,27.99 20.65,27.44 20.59,26.86"/>
+    </edge>
+    <edge id=":I-NW_0" function="internal">
+        <lane id=":I-NW_0_0" index="0" disallow="pedestrian" speed="11.27" length="6.17" shape="-19.75,27.42 -20.55,25.79 -21.26,24.73 -22.19,23.88 -23.68,22.83"/>
+    </edge>
+    <edge id=":I-NW_c0" function="crossing" crossingEdges="NW_in">
+        <lane id=":I-NW_c0_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="-19.15,24.93 -22.05,26.29" outlineShape="-18.30,26.74 -21.19,28.10 -21.68,27.10 -22.08,26.36 -22.49,25.79 -22.98,25.30 -23.61,24.82 -22.90,24.48 -20.01,23.12 -19.32,23.28 -19.44,23.14 -19.90,23.73 -19.95,24.26 -19.70,24.77 -19.26,25.33 -18.76,25.97"/>
+    </edge>
+    <edge id=":I-NW_c1" function="crossing" crossingEdges="NW_out">
+        <lane id=":I-NW_c1_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="-22.91,25.28 -21.13,22.62" outlineShape="-24.57,24.16 -22.79,21.50 -19.44,23.14 -20.78,21.66 -22.74,21.51 -19.47,23.73 -21.25,26.39 -21.70,27.06 -22.08,26.36 -22.49,25.79 -22.98,25.30 -23.65,24.79"/>
+    </edge>
+    <edge id=":I-NW_w0" function="walkingarea">
+        <lane id=":I-NW_w0_0" index="0" allow="pedestrian" speed="2.78" length="2.86" width="4.00" shape="-24.57,24.16 -25.69,25.82 -23.00,28.95 -21.19,28.10 -21.68,27.10 -22.08,26.36 -22.49,25.79 -22.98,25.30 -23.65,24.79"/>
+    </edge>
+    <edge id=":I-NW_w1" function="walkingarea">
+        <lane id=":I-NW_w1_0" index="0" allow="pedestrian" speed="2.78" length="1.11" width="4.00" shape="-18.30,26.74 -18.10,24.62 -19.44,23.14 -19.90,23.73 -19.95,24.26 -19.70,24.77 -19.26,25.33 -18.76,25.97"/>
+    </edge>
+    <edge id=":I-NW_w2" function="walkingarea">
+        <lane id=":I-NW_w2_0" index="0" allow="pedestrian" speed="2.78" length="1.04" width="4.00" shape="-19.44,23.14 -20.78,21.66 -22.79,21.50 -22.10,22.07 -21.54,22.67 -21.05,23.18 -20.58,23.50 -20.06,23.52"/>
+    </edge>
+    <edge id=":I-SE_0" function="internal">
+        <lane id=":I-SE_0_0" index="0" disallow="pedestrian" speed="12.89" length="6.28" shape="22.58,-15.49 23.21,-13.75 23.78,-12.60 24.58,-11.59 25.91,-10.29"/>
+    </edge>
+    <edge id=":I-SE_c0" function="crossing" crossingEdges="SE_out">
+        <lane id=":I-SE_c0_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="25.56,-12.83 23.35,-10.51" outlineShape="27.01,-11.45 24.80,-9.13 21.31,-10.84 22.53,-9.25 24.74,-9.13 21.91,-11.89 24.11,-14.21 24.57,-14.69 24.80,-14.11 25.15,-13.47 25.58,-12.89 26.17,-12.26"/>
+    </edge>
+    <edge id=":I-SE_c1" function="crossing" crossingEdges="SE_in">
+        <lane id=":I-SE_c1_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="21.72,-13.08 24.74,-14.13" outlineShape="20.97,-14.93 24.18,-16.05 24.48,-14.92 24.80,-14.11 25.15,-13.47 25.58,-12.89 26.00,-12.45 25.40,-12.24 22.38,-11.19 21.15,-11.04 21.31,-10.84 21.91,-11.44 22.13,-12.03 22.06,-12.64 21.79,-13.31 21.43,-14.07"/>
+    </edge>
+    <edge id=":I-SE_w0" function="walkingarea">
+        <lane id=":I-SE_w0_0" index="0" allow="pedestrian" speed="2.78" length="3.01" width="4.00" shape="27.01,-11.45 28.39,-12.90 25.98,-16.68 24.09,-16.02 24.48,-14.92 24.80,-14.11 25.15,-13.47 25.58,-12.89 26.17,-12.26"/>
+    </edge>
+    <edge id=":I-SE_w1" function="walkingarea">
+        <lane id=":I-SE_w1_0" index="0" allow="pedestrian" speed="2.78" length="1.78" width="4.00" shape="21.07,-14.97 20.09,-12.42 21.31,-10.84 21.91,-11.44 22.13,-12.03 22.06,-12.64 21.79,-13.31 21.43,-14.07"/>
+    </edge>
+    <edge id=":I-SE_w2" function="walkingarea">
+        <lane id=":I-SE_w2_0" index="0" allow="pedestrian" speed="2.78" length="1.51" width="4.00" shape="21.31,-10.84 22.53,-9.25 24.80,-9.13 24.16,-9.80 23.61,-10.43 23.10,-10.93 22.59,-11.22 22.00,-11.21"/>
+    </edge>
+    <edge id=":I-SW_0" function="internal">
+        <lane id=":I-SW_0_0" index="0" disallow="pedestrian" speed="13.89" length="6.42" shape="-27.13,-16.67 -25.55,-17.72 -24.53,-18.55 -23.67,-19.53 -22.56,-21.07"/>
+    </edge>
+    <edge id=":I-SW_c0" function="crossing" crossingEdges="E17">
+        <lane id=":I-SW_c0_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="-25.02,-20.36 -22.40,-18.51" outlineShape="-23.86,-21.99 -21.25,-20.15 -22.42,-16.44 -21.03,-17.88 -21.24,-20.08 -23.55,-16.88 -26.17,-18.72 -26.55,-18.99 -26.23,-19.22 -25.65,-19.71 -25.14,-20.27 -24.58,-20.99"/>
+    </edge>
+    <edge id=":I-SW_c1" function="crossing" crossingEdges="SW_in">
+        <lane id=":I-SW_c1_0" index="0" allow="pedestrian" speed="2.78" length="3.20" width="4.00" shape="-24.58,-16.42 -26.33,-19.10" outlineShape="-26.26,-15.33 -28.00,-18.01 -26.98,-18.69 -26.23,-19.22 -25.65,-19.71 -25.14,-20.27 -24.90,-20.57 -24.65,-20.19 -22.91,-17.51 -22.43,-16.43 -23.09,-16.92 -23.68,-17.01 -24.25,-16.81 -24.84,-16.41 -25.49,-15.89"/>
+    </edge>
+    <edge id=":I-SW_w0" function="walkingarea">
+        <lane id=":I-SW_w0_0" index="0" allow="pedestrian" speed="2.78" length="1.63" width="4.00" shape="-26.26,-15.33 -23.80,-15.00 -22.42,-16.44 -23.09,-16.92 -23.68,-17.01 -24.25,-16.81 -24.84,-16.41 -25.49,-15.89"/>
+    </edge>
+    <edge id=":I-SW_w1" function="walkingarea">
+        <lane id=":I-SW_w1_0" index="0" allow="pedestrian" speed="2.78" length="1.51" width="4.00" shape="-22.42,-16.44 -21.03,-17.88 -21.25,-20.15 -21.82,-19.42 -22.36,-18.78 -22.78,-18.20 -22.99,-17.65 -22.90,-17.07"/>
+    </edge>
+    <edge id=":I-SW_w2" function="walkingarea">
+        <lane id=":I-SW_w2_0" index="0" allow="pedestrian" speed="2.78" length="3.22" width="4.00" shape="-23.86,-21.99 -25.50,-23.15 -29.10,-19.68 -28.00,-18.01 -26.98,-18.69 -26.23,-19.22 -25.65,-19.71 -25.14,-20.27 -24.58,-20.99"/>
+    </edge>
+    <edge id=":N2_in_0" function="internal">
+        <lane id=":N2_in_0_0" index="0" disallow="pedestrian" speed="13.89" length="9.72" shape="-15.17,90.40 -15.66,87.46 -16.78,85.57 -17.88,83.68 -18.32,80.75"/>
+        <lane id=":N2_in_0_1" index="1" disallow="pedestrian" speed="13.89" length="9.72" shape="-15.17,90.40 -15.13,80.83"/>
+        <lane id=":N2_in_0_2" index="2" disallow="pedestrian" speed="13.89" length="9.72" shape="-11.97,90.42 -11.93,80.91"/>
+        <lane id=":N2_in_0_3" index="3" disallow="pedestrian" speed="13.89" length="9.72" shape="-8.77,90.45 -8.73,80.98"/>
+    </edge>
+    <edge id=":N2_in_w0" function="walkingarea">
+        <lane id=":N2_in_w0_0" index="0" allow="pedestrian" speed="2.78" length="10.19" width="2.00" shape="-19.92,80.71 -21.92,80.66 -21.73,82.80 -21.15,84.31 -20.38,85.52 -19.60,86.72 -19.00,88.23 -18.77,90.37 -16.77,90.39 -17.00,88.26 -17.60,86.75 -18.38,85.55 -19.15,84.35 -19.73,82.84"/>
+    </edge>
+    <edge id=":N2_out_0" function="internal">
+        <lane id=":N2_out_0_0" index="0" disallow="pedestrian" speed="8.61" length="6.42" shape="19.30,31.38 17.98,32.74 17.19,33.83 16.79,35.08 16.67,36.94"/>
+    </edge>
+    <edge id=":N2_out_1" function="internal">
+        <lane id=":N2_out_1_0" index="0" disallow="pedestrian" speed="13.89" length="6.69" shape="13.52,30.19 13.47,36.90"/>
+        <lane id=":N2_out_1_1" index="1" disallow="pedestrian" speed="13.89" length="6.69" shape="10.32,30.16 10.27,36.85"/>
+        <lane id=":N2_out_1_2" index="2" disallow="pedestrian" speed="13.89" length="6.69" shape="7.12,30.12 7.07,36.81"/>
+    </edge>
+    <edge id=":N2_out_w0" function="walkingarea">
+        <lane id=":N2_out_w0_0" index="0" allow="pedestrian" speed="2.78" length="4.21" width="2.00" shape="18.27,36.97 20.27,36.99 21.86,33.92 20.44,32.51 19.67,33.28 19.11,33.90 18.71,34.47 18.46,35.10 18.32,35.90"/>
+    </edge>
+    <edge id=":N4_in_0" function="internal">
+        <lane id=":N4_in_0_0" index="0" disallow="pedestrian" speed="13.89" length="11.51" shape="-17.31,39.16 -17.25,35.75 -17.42,33.40 -18.08,31.14 -19.45,28.04"/>
+    </edge>
+    <edge id=":N4_in_1" function="internal">
+        <lane id=":N4_in_1_0" index="0" disallow="pedestrian" speed="13.89" length="10.42" shape="-14.11,39.23 -13.77,28.82"/>
+        <lane id=":N4_in_1_1" index="1" disallow="pedestrian" speed="13.89" length="10.42" shape="-10.91,39.31 -10.57,28.90"/>
+        <lane id=":N4_in_1_2" index="2" disallow="pedestrian" speed="13.89" length="10.42" shape="-7.71,39.39 -7.37,28.97"/>
+    </edge>
+    <edge id=":N4_in_w1" function="walkingarea">
+        <lane id=":N4_in_w1_0" index="0" allow="pedestrian" speed="2.78" length="10.12" width="2.00" shape="-20.90,28.72 -22.71,29.58 -20.91,39.07 -18.91,39.12 -18.85,36.84 -18.87,35.13 -19.01,33.73 -19.35,32.37 -19.96,30.79"/>
+    </edge>
+    <edge id=":S2_in_0" function="internal">
+        <lane id=":S2_in_0_0" index="0" disallow="pedestrian" speed="13.89" length="10.13" shape="18.51,-37.83 18.59,-34.84 18.94,-32.82 19.42,-30.80 19.88,-27.82"/>
+    </edge>
+    <edge id=":S2_in_1" function="internal">
+        <lane id=":S2_in_1_0" index="0" disallow="pedestrian" speed="13.89" length="11.06" shape="15.31,-37.92 15.08,-27.30"/>
+        <lane id=":S2_in_1_1" index="1" disallow="pedestrian" speed="13.89" length="11.06" shape="12.11,-38.01 11.87,-26.95"/>
+        <lane id=":S2_in_1_2" index="2" disallow="pedestrian" speed="13.89" length="11.06" shape="8.91,-38.09 8.66,-26.60"/>
+    </edge>
+    <edge id=":S2_in_w0" function="walkingarea">
+        <lane id=":S2_in_w0_0" index="0" allow="pedestrian" speed="2.78" length="9.75" width="2.00" shape="21.47,-28.00 23.46,-28.21 22.11,-37.74 20.11,-37.79 20.12,-35.69 20.28,-34.15 20.54,-32.88 20.85,-31.62 21.17,-30.09"/>
+    </edge>
+    <edge id=":S2_out_0" function="internal">
+        <lane id=":S2_out_0_0" index="0" disallow="pedestrian" speed="12.20" length="7.49" shape="-15.96,-30.85 -14.73,-32.70 -13.94,-34.05 -13.50,-35.50 -13.33,-37.68"/>
+    </edge>
+    <edge id=":S2_out_1" function="internal">
+        <lane id=":S2_out_1_0" index="0" disallow="pedestrian" speed="13.89" length="7.79" shape="-10.16,-29.80 -10.13,-37.61"/>
+        <lane id=":S2_out_1_1" index="1" disallow="pedestrian" speed="13.89" length="7.79" shape="-6.96,-29.76 -6.93,-37.53"/>
+    </edge>
+    <edge id=":S2_out_w0" function="walkingarea">
+        <lane id=":S2_out_w0_0" index="0" allow="pedestrian" speed="2.78" length="6.13" width="2.00" shape="-14.93,-37.72 -16.93,-37.77 -19.11,-32.62 -17.43,-31.54 -16.53,-32.88 -15.93,-33.76 -15.49,-34.53 -15.19,-35.33 -15.01,-36.34"/>
+    </edge>
+    <edge id=":W2_in_0" function="internal">
+        <lane id=":W2_in_0_0" index="0" disallow="pedestrian" speed="12.01" length="7.53" shape="-40.99,-9.53 -38.81,-9.67 -37.36,-10.14 -36.01,-10.96 -34.14,-12.20"/>
+    </edge>
+    <edge id=":W2_in_1" function="internal">
+        <lane id=":W2_in_1_0" index="0" disallow="pedestrian" speed="13.89" length="7.97" shape="-41.00,-6.33 -33.05,-6.46"/>
+        <lane id=":W2_in_1_1" index="1" disallow="pedestrian" speed="13.89" length="7.97" shape="-41.01,-3.13 -33.03,-3.26"/>
+    </edge>
+    <edge id=":W2_in_w1" function="walkingarea">
+        <lane id=":W2_in_w1_0" index="0" allow="pedestrian" speed="2.78" length="5.93" width="2.00" shape="-34.98,-13.56 -36.03,-15.26 -40.97,-13.13 -40.98,-11.13 -39.60,-11.19 -38.60,-11.38 -37.80,-11.70 -37.04,-12.17 -36.15,-12.79"/>
+    </edge>
+    <edge id=":W2_out_0" function="internal">
+        <lane id=":W2_out_0_0" index="0" disallow="pedestrian" speed="13.89" length="23.08" shape="-27.01,20.60 -32.33,17.34 -36.79,15.62 -41.81,14.95 -48.80,14.85"/>
+    </edge>
+    <edge id=":W2_out_1" function="internal">
+        <lane id=":W2_out_1_0" index="0" disallow="pedestrian" speed="13.89" length="23.06" shape="-25.85,14.84 -48.80,14.85"/>
+        <lane id=":W2_out_1_1" index="1" disallow="pedestrian" speed="13.89" length="23.06" shape="-25.85,11.64 -48.81,11.65"/>
+        <lane id=":W2_out_1_2" index="2" disallow="pedestrian" speed="13.89" length="23.06" shape="-25.85,11.64 -32.70,11.12 -37.34,10.02 -41.97,8.93 -48.82,8.45"/>
+    </edge>
+    <edge id=":W2_out_w0" function="walkingarea">
+        <lane id=":W2_out_w0_0" index="0" allow="pedestrian" speed="2.78" length="21.02" width="2.00" shape="-48.80,16.45 -48.79,18.45 -29.01,23.59 -27.90,21.93 -31.81,19.43 -34.90,17.82 -37.66,16.92 -40.57,16.52 -44.12,16.42"/>
+    </edge>
+
+    <edge id="-E21" from="I" to="I-NE" priority="-1">
+        <lane id="-E21_0" index="0" allow="pedestrian" speed="13.89" length="0.40" width="2.00" shape="20.59,25.24 20.87,25.52"/>
+    </edge>
+    <edge id="-E22" from="I" to="I-SE" priority="-1">
+        <lane id="-E22_0" index="0" allow="pedestrian" speed="13.89" length="0.77" width="2.00" shape="20.09,-11.16 20.70,-11.63"/>
+    </edge>
+    <edge id="-E23" from="I-SW" to="I" priority="-1">
+        <lane id="-E23_0" index="0" allow="pedestrian" speed="13.89" length="5.50" width="2.00" shape="-21.73,-17.16 -17.76,-13.35"/>
+    </edge>
+    <edge id="-E24" from="I-NW" to="I" priority="-1">
+        <lane id="-E24_0" index="0" allow="pedestrian" speed="13.89" length="0.20" width="2.00" shape="-20.11,22.40 -19.96,22.26"/>
+    </edge>
+    <edge id="E17" from="I-SW" to="S2_out" priority="-1" shape="-23.28,-17.27 -17.75,-25.11 -13.42,-31.85 -5.09,-47.52">
+        <lane id="E17_0" index="0" allow="pedestrian" speed="13.89" length="11.63" width="2.00" shape="-24.68,-22.57 -21.23,-27.46 -18.27,-32.08"/>
+        <lane id="E17_1" index="1" disallow="pedestrian" speed="13.89" length="11.63" shape="-22.56,-21.07 -19.08,-26.00 -15.96,-30.85"/>
+    </edge>
+    <edge id="E1_in" from="E_in" to="E2_in" priority="-1" shape="107.00,0.73 91.75,11.54 78.45,16.98 64.43,20.26 56.67,19.25">
+        <lane id="E1_in_0" index="0" allow="pedestrian" speed="13.89" length="59.98" width="2.00" shape="113.13,9.38 96.89,20.89 81.68,27.11 64.97,31.02 55.30,29.76"/>
+        <lane id="E1_in_1" index="1" disallow="pedestrian" speed="13.89" length="59.98" shape="111.63,7.26 95.63,18.60 80.89,24.62 64.84,28.38 55.64,27.18"/>
+        <lane id="E1_in_2" index="2" disallow="pedestrian" speed="13.89" length="59.98" shape="109.78,4.65 94.08,15.77 79.91,21.57 64.67,25.13 56.05,24.01"/>
+        <lane id="E1_in_3" index="3" disallow="pedestrian" speed="13.89" length="59.98" shape="107.93,2.04 92.53,12.95 78.94,18.51 64.51,21.88 56.46,20.84"/>
+    </edge>
+    <edge id="E1_out" from="E2_out" to="E_out" priority="-1" shape="52.00,7.59 56.39,7.52 74.74,6.21 90.10,-1.51 105.07,-12.61">
+        <lane id="E1_out_0" index="0" allow="pedestrian" speed="13.89" length="54.62" width="2.00" shape="52.98,0.17 56.07,0.12 72.74,-1.07 86.21,-7.83 100.66,-18.55"/>
+        <lane id="E1_out_1" index="1" disallow="pedestrian" speed="13.89" length="54.62" shape="53.03,2.77 56.18,2.72 73.44,1.49 87.57,-5.61 102.21,-16.47"/>
+        <lane id="E1_out_2" index="2" disallow="pedestrian" speed="13.89" length="54.62" shape="53.08,5.97 56.32,5.92 74.31,4.64 89.26,-2.88 104.12,-13.90"/>
+    </edge>
+    <edge id="E21" from="I-NE" to="I" priority="-1">
+        <lane id="E21_0" index="0" allow="pedestrian" speed="13.89" length="0.40" width="2.00" shape="19.42,26.90 19.14,26.62"/>
+    </edge>
+    <edge id="E22" from="I-SE" to="I" priority="-1">
+        <lane id="E22_0" index="0" allow="pedestrian" speed="13.89" length="0.77" width="2.00" shape="21.92,-10.04 21.31,-9.57"/>
+    </edge>
+    <edge id="E23" from="I" to="I-SW" priority="-1">
+        <lane id="E23_0" index="0" allow="pedestrian" speed="13.89" length="5.50" width="2.00" shape="-19.15,-11.91 -23.11,-15.72"/>
+    </edge>
+    <edge id="E24" from="I" to="I-NW" priority="-1">
+        <lane id="E24_0" index="0" allow="pedestrian" speed="13.89" length="0.20" width="2.00" shape="-18.62,23.75 -18.77,23.88"/>
+    </edge>
+    <edge id="E3_in" from="E2_in" to="I" priority="-1" shape="50.47,19.37 32.13,15.69 26.41,15.38">
+        <lane id="E3_in_0" index="0" allow="pedestrian" speed="13.89" length="22.15" width="2.00" shape="46.66,26.15 31.20,23.05 24.77,22.70"/>
+        <lane id="E3_in_1" index="1" disallow="pedestrian" speed="13.89" length="22.15" shape="46.66,23.50 31.52,20.46 24.81,20.10"/>
+        <lane id="E3_in_2" index="2" disallow="pedestrian" speed="13.89" length="22.15" shape="46.66,20.24 31.93,17.28 24.87,16.90"/>
+    </edge>
+    <edge id="E3_out" from="I" to="E2_out" priority="-1" shape="25.13,2.93 32.76,3.07 38.16,4.25 52.00,7.59">
+        <lane id="E3_out_0" index="0" allow="pedestrian" speed="13.89" length="0.20" width="2.00" shape="24.77,-4.48 24.97,-4.47"/>
+        <lane id="E3_out_1" index="1" disallow="pedestrian" speed="13.89" length="0.20" shape="24.44,-1.88 24.64,-1.88"/>
+        <lane id="E3_out_2" index="2" disallow="pedestrian" speed="13.89" length="0.20" shape="24.03,1.31 24.23,1.31"/>
+    </edge>
+    <edge id="N1_in" from="N_in" to="N2_in" priority="-1" shape="-7.30,107.12 -7.17,90.46">
+        <lane id="N1_in_0" index="0" allow="pedestrian" speed="13.89" length="16.66" width="2.00" shape="-17.90,107.04 -17.77,90.38"/>
+        <lane id="N1_in_1" index="1" disallow="pedestrian" speed="13.89" length="16.66" shape="-15.30,107.06 -15.17,90.40"/>
+        <lane id="N1_in_2" index="2" disallow="pedestrian" speed="13.89" length="16.66" shape="-12.10,107.08 -11.97,90.42"/>
+        <lane id="N1_in_3" index="3" disallow="pedestrian" speed="13.89" length="16.66" shape="-8.90,107.11 -8.77,90.45"/>
+    </edge>
+    <edge id="N1_out" from="N2_out" to="N_out" priority="-1">
+        <lane id="N1_out_0" index="0" allow="pedestrian" speed="13.89" length="70.53" width="2.00" shape="19.27,36.98 18.26,107.50"/>
+        <lane id="N1_out_1" index="1" disallow="pedestrian" speed="13.89" length="70.53" shape="16.67,36.94 15.66,107.46"/>
+        <lane id="N1_out_2" index="2" disallow="pedestrian" speed="13.89" length="70.53" shape="13.47,36.90 12.46,107.41"/>
+        <lane id="N1_out_3" index="3" disallow="pedestrian" speed="13.89" length="70.53" shape="10.27,36.85 9.26,107.37"/>
+        <lane id="N1_out_4" index="4" disallow="pedestrian" speed="13.89" length="70.53" shape="7.07,36.81 6.06,107.32"/>
+    </edge>
+    <edge id="N3_in" from="N2_in" to="N4_in" priority="-1">
+        <lane id="N3_in_0" index="0" allow="pedestrian" speed="13.89" length="41.61" width="2.00" shape="-20.92,80.69 -19.91,39.09"/>
+        <lane id="N3_in_1" index="1" disallow="pedestrian" speed="13.89" length="41.61" shape="-18.32,80.75 -17.31,39.16"/>
+        <lane id="N3_in_2" index="2" disallow="pedestrian" speed="13.89" length="41.61" shape="-15.13,80.83 -14.11,39.23"/>
+        <lane id="N3_in_3" index="3" disallow="pedestrian" speed="13.89" length="41.61" shape="-11.93,80.91 -10.91,39.31"/>
+        <lane id="N3_in_4" index="4" disallow="pedestrian" speed="13.89" length="41.61" shape="-8.73,80.98 -7.71,39.39"/>
+    </edge>
+    <edge id="N3_out" from="I" to="N2_out" priority="-1" shape="5.52,30.32 5.38,43.13">
+        <lane id="N3_out_0" index="0" allow="pedestrian" speed="13.89" length="0.20" width="2.00" shape="16.12,30.02 16.12,30.22"/>
+        <lane id="N3_out_1" index="1" disallow="pedestrian" speed="13.89" length="0.20" shape="13.52,29.99 13.52,30.19"/>
+        <lane id="N3_out_2" index="2" disallow="pedestrian" speed="13.89" length="0.20" shape="10.32,29.96 10.32,30.16"/>
+        <lane id="N3_out_3" index="3" disallow="pedestrian" speed="13.89" length="0.20" shape="7.12,29.92 7.12,30.12"/>
+    </edge>
+    <edge id="N5_in" from="N4_in" to="I" priority="-1" shape="-6.16,40.37 -5.88,32.25">
+        <lane id="N5_in_0" index="0" allow="pedestrian" speed="13.89" length="0.20" width="2.00" shape="-16.37,28.77 -16.36,28.57"/>
+        <lane id="N5_in_1" index="1" disallow="pedestrian" speed="13.89" length="0.20" shape="-13.77,28.82 -13.76,28.62"/>
+        <lane id="N5_in_2" index="2" disallow="pedestrian" speed="13.89" length="0.20" shape="-10.57,28.90 -10.56,28.70"/>
+        <lane id="N5_in_3" index="3" disallow="pedestrian" speed="13.89" length="0.20" shape="-7.37,28.97 -7.36,28.77"/>
+    </edge>
+    <edge id="NE_in" from="E2_in" to="I-NE" priority="-1" shape="40.66,25.74 35.87,25.70 31.42,25.13 26.72,25.06 21.14,27.26">
+        <lane id="NE_in_0" index="0" allow="pedestrian" speed="13.89" length="21.21" width="2.00" shape="46.66,29.99 35.58,29.90 31.12,29.33 27.49,29.27 26.08,29.83"/>
+        <lane id="NE_in_1" index="1" disallow="pedestrian" speed="13.89" length="21.21" shape="46.66,27.39 35.76,27.30 31.31,26.73 27.01,26.66 25.13,27.41"/>
+    </edge>
+    <edge id="NE_out" from="I-NE" to="N2_out" priority="-1">
+        <lane id="NE_out_0" index="0" allow="pedestrian" speed="13.89" length="0.72" width="2.00" shape="21.65,32.70 21.15,33.21"/>
+        <lane id="NE_out_1" index="1" disallow="pedestrian" speed="13.89" length="0.72" shape="19.81,30.87 19.30,31.38"/>
+    </edge>
+    <edge id="NT_in" from="NT" to="I" priority="-1" shape="-2.31,107.66 -0.90,30.02">
+        <lane id="NT_in_0" index="0" allow="tram rail_urban rail rail_electric rail_fast" speed="13.89" length="77.41" shape="-3.91,107.63 -2.50,30.23"/>
+    </edge>
+    <edge id="NT_out" from="I" to="NT" priority="-1" shape="-0.90,30.02 -2.31,107.66">
+        <lane id="NT_out_0" index="0" allow="tram rail_urban rail rail_electric rail_fast" speed="13.89" length="77.43" shape="0.70,30.27 -0.71,107.69"/>
+    </edge>
+    <edge id="NW_in" from="N4_in" to="I-NW" priority="-1" shape="-16.66,30.21 -19.83,23.49">
+        <lane id="NW_in_0" index="0" allow="pedestrian" speed="13.89" length="0.69" width="2.00" shape="-21.80,29.15 -22.10,28.53"/>
+        <lane id="NW_in_1" index="1" disallow="pedestrian" speed="13.89" length="0.69" shape="-19.45,28.04 -19.75,27.42"/>
+    </edge>
+    <edge id="NW_out" from="I-NW" to="W2_out" priority="-1" shape="-19.83,23.49 -35.38,13.05">
+        <lane id="NW_out_0" index="0" allow="pedestrian" speed="13.89" length="4.01" width="2.00" shape="-25.13,24.99 -28.46,22.76"/>
+        <lane id="NW_out_1" index="1" disallow="pedestrian" speed="13.89" length="4.01" shape="-23.68,22.83 -27.01,20.60"/>
+    </edge>
+    <edge id="S1_in" from="S_in" to="S2_in" priority="-1">
+        <lane id="S1_in_0" index="0" allow="pedestrian" speed="13.89" length="69.36" width="2.00" shape="22.98,-107.10 21.11,-37.76"/>
+        <lane id="S1_in_1" index="1" disallow="pedestrian" speed="13.89" length="69.36" shape="20.39,-107.17 18.51,-37.83"/>
+        <lane id="S1_in_2" index="2" disallow="pedestrian" speed="13.89" length="69.36" shape="17.19,-107.25 15.31,-37.92"/>
+        <lane id="S1_in_3" index="3" disallow="pedestrian" speed="13.89" length="69.36" shape="13.99,-107.34 12.11,-38.01"/>
+        <lane id="S1_in_4" index="4" disallow="pedestrian" speed="13.89" length="69.36" shape="10.79,-107.43 8.91,-38.09"/>
+    </edge>
+    <edge id="S1_out" from="S2_out" to="S_out" priority="-1">
+        <lane id="S1_out_0" index="0" allow="pedestrian" speed="13.89" length="69.80" width="2.00" shape="-15.93,-37.74 -14.27,-107.52"/>
+        <lane id="S1_out_1" index="1" disallow="pedestrian" speed="13.89" length="69.80" shape="-13.33,-37.68 -11.67,-107.46"/>
+        <lane id="S1_out_2" index="2" disallow="pedestrian" speed="13.89" length="69.80" shape="-10.13,-37.61 -8.47,-107.38"/>
+        <lane id="S1_out_3" index="3" disallow="pedestrian" speed="13.89" length="69.80" shape="-6.93,-37.53 -5.27,-107.31"/>
+    </edge>
+    <edge id="S3_in" from="S2_in" to="I" priority="-1" shape="7.53,-46.19 6.89,-19.58">
+        <lane id="S3_in_0" index="0" allow="pedestrian" speed="13.89" length="7.68" width="2.00" shape="17.69,-27.58 17.49,-19.33"/>
+        <lane id="S3_in_1" index="1" disallow="pedestrian" speed="13.89" length="7.68" shape="15.08,-27.30 14.89,-19.39"/>
+        <lane id="S3_in_2" index="2" disallow="pedestrian" speed="13.89" length="7.68" shape="11.87,-26.95 11.69,-19.46"/>
+        <lane id="S3_in_3" index="3" disallow="pedestrian" speed="13.89" length="7.68" shape="8.66,-26.60 8.49,-19.54"/>
+    </edge>
+    <edge id="S3_out" from="I" to="S2_out" priority="-1" shape="-5.51,-19.76 -5.09,-47.52">
+        <lane id="S3_out_0" index="0" allow="pedestrian" speed="13.89" length="9.97" width="2.00" shape="-12.91,-19.87 -12.76,-29.84"/>
+        <lane id="S3_out_1" index="1" disallow="pedestrian" speed="13.89" length="9.97" shape="-10.31,-19.83 -10.16,-29.80"/>
+        <lane id="S3_out_2" index="2" disallow="pedestrian" speed="13.89" length="9.97" shape="-7.11,-19.78 -6.96,-29.76"/>
+    </edge>
+    <edge id="SE_in" from="S2_in" to="I-SE" priority="-1" shape="18.29,-27.65 18.74,-23.52 18.95,-21.05 22.25,-11.56">
+        <lane id="SE_in_0" index="0" allow="pedestrian" speed="13.89" length="12.41" width="2.00" shape="22.47,-28.10 22.92,-23.94 23.09,-21.93 25.03,-16.35"/>
+        <lane id="SE_in_1" index="1" disallow="pedestrian" speed="13.89" length="12.41" shape="19.88,-27.82 20.33,-23.68 20.53,-21.39 22.58,-15.49"/>
+    </edge>
+    <edge id="SE_out" from="I-SE" to="E2_out" priority="-1" shape="22.25,-11.56 30.38,-3.82 49.07,5.04">
+        <lane id="SE_out_0" index="0" allow="pedestrian" speed="13.89" length="0.49" width="2.00" shape="27.70,-12.17 27.77,-12.10"/>
+        <lane id="SE_out_1" index="1" disallow="pedestrian" speed="13.89" length="0.49" shape="25.91,-10.29 26.55,-9.68"/>
+    </edge>
+    <edge id="ST_in" from="ST_out" to="I" priority="-1" shape="2.48,-107.38 0.86,-19.75">
+        <lane id="ST_in_0" index="0" allow="tram rail_urban rail rail_electric rail_fast" speed="13.89" length="87.73" shape="4.08,-107.35 2.46,-19.64"/>
+    </edge>
+    <edge id="ST_out" from="I" to="ST_out" priority="-1" shape="0.72,-19.82 2.48,-107.38">
+        <lane id="ST_out_0" index="0" allow="tram rail_urban rail rail_electric rail_fast" speed="13.89" length="87.74" shape="-0.88,-19.69 0.88,-107.41"/>
+    </edge>
+    <edge id="SW_in" from="W2_in" to="I-SW" priority="-1" shape="-48.28,-1.56 -30.24,-12.73 -23.28,-17.27">
+        <lane id="SW_in_0" index="0" allow="pedestrian" speed="13.89" length="8.28" width="2.00" shape="-35.51,-14.41 -32.49,-16.27 -28.55,-18.85"/>
+        <lane id="SW_in_1" index="1" disallow="pedestrian" speed="13.89" length="8.28" shape="-34.14,-12.20 -31.10,-14.08 -27.13,-16.67"/>
+    </edge>
+    <edge id="W1_in" from="W_in" to="W2_in" priority="-1">
+        <lane id="W1_in_0" index="0" allow="pedestrian" speed="13.89" length="66.33" width="2.00" shape="-107.30,-12.37 -40.98,-12.13"/>
+        <lane id="W1_in_1" index="1" disallow="pedestrian" speed="13.89" length="66.33" shape="-107.31,-9.77 -40.99,-9.53"/>
+        <lane id="W1_in_2" index="2" disallow="pedestrian" speed="13.89" length="66.33" shape="-107.32,-6.57 -41.00,-6.33"/>
+        <lane id="W1_in_3" index="3" disallow="pedestrian" speed="13.89" length="66.33" shape="-107.33,-3.37 -41.01,-3.13"/>
+    </edge>
+    <edge id="W1_out" from="W2_out" to="W_out" priority="-1" shape="-48.83,6.85 -107.21,7.05">
+        <lane id="W1_out_0" index="0" allow="pedestrian" speed="13.89" length="58.38" width="2.00" shape="-48.79,17.45 -107.17,17.65"/>
+        <lane id="W1_out_1" index="1" disallow="pedestrian" speed="13.89" length="58.38" shape="-48.80,14.85 -107.18,15.05"/>
+        <lane id="W1_out_2" index="2" disallow="pedestrian" speed="13.89" length="58.38" shape="-48.81,11.65 -107.19,11.85"/>
+        <lane id="W1_out_3" index="3" disallow="pedestrian" speed="13.89" length="58.38" shape="-48.82,8.45 -107.20,8.65"/>
+    </edge>
+    <edge id="W3_in" from="W2_in" to="I" priority="-1" shape="-48.28,-1.56 -25.18,-1.71">
+        <lane id="W3_in_0" index="0" allow="pedestrian" speed="13.89" length="9.04" width="2.00" shape="-33.06,-9.06 -24.00,-9.12"/>
+        <lane id="W3_in_1" index="1" disallow="pedestrian" speed="13.89" length="9.04" shape="-33.05,-6.46 -24.00,-6.52"/>
+        <lane id="W3_in_2" index="2" disallow="pedestrian" speed="13.89" length="9.04" shape="-33.03,-3.26 -24.01,-3.32"/>
+    </edge>
+    <edge id="W3_out" from="I" to="W2_out" priority="-1" shape="-24.03,10.04 -41.31,10.01">
+        <lane id="W3_out_0" index="0" allow="pedestrian" speed="13.89" length="1.82" width="2.00" shape="-24.04,17.44 -25.86,17.44"/>
+        <lane id="W3_out_1" index="1" disallow="pedestrian" speed="13.89" length="1.82" shape="-24.04,14.84 -25.85,14.84"/>
+        <lane id="W3_out_2" index="2" disallow="pedestrian" speed="13.89" length="1.82" shape="-24.03,11.64 -25.85,11.64"/>
+    </edge>
+
+    <tlLogic id="I-TLS" type="static" programID="0" offset="0">
+        <phase duration="3"  state="rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"/>
+    </tlLogic>
+
+    <junction id="E2_in" type="priority" x="50.47" y="19.37" incLanes="E1_in_0 E1_in_1 E1_in_2 E1_in_3" intLanes=":E2_in_0_0 :E2_in_1_0 :E2_in_1_1" shape="55.17,30.75 56.67,19.25 46.66,18.60 46.66,30.99 49.82,30.82 50.93,30.68 52.04,30.58 53.37,30.58">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="E2_out" type="priority" x="52.00" y="7.59" incLanes="SE_out_0 SE_out_1 E3_out_0 E3_out_1 E3_out_2" intLanes=":E2_out_0_0 :E2_out_1_0 :E2_out_1_1" shape="53.10,7.57 52.97,-0.83 47.03,-1.00 42.63,-1.79 39.15,-3.30 36.00,-5.62 32.55,-8.85 28.19,-13.08 25.82,-8.16 24.72,-5.48 22.72,2.89">
+        <request index="0" response="110" foes="110" cont="0"/>
+        <request index="1" response="000" foes="001" cont="0"/>
+        <request index="2" response="000" foes="001" cont="0"/>
+    </junction>
+    <junction id="E_in" type="dead_end" x="107.00" y="0.73" incLanes="" intLanes="" shape="107.00,0.73 113.71,10.19"/>
+    <junction id="E_out" type="dead_end" x="105.07" y="-12.61" incLanes="E1_out_0 E1_out_1 E1_out_2" intLanes="" shape="100.07,-19.36 105.07,-12.61"/>
+    <junction id="I" type="traffic_light" x="0.26" y="5.35" incLanes="E21_0 E3_in_0 E3_in_1 E3_in_2 E22_0 S3_in_0 S3_in_1 S3_in_2 S3_in_3 ST_in_0 -E23_0 W3_in_0 W3_in_1 W3_in_2 -E24_0 N5_in_0 N5_in_1 N5_in_2 N5_in_3 NT_in_0 :I_w8_0 :I_w2_0 :I_w9_0 :I_w10_0 :I_w4_0 :I_w11_0 :I_w6_0 :I_w12_0 :I_w13_0 :I_w0_0" intLanes=":I_0_0 :I_12_0 :I_2_0 :I_2_1 :I_13_0 :I_5_0 :I_6_0 :I_14_0 :I_8_0 :I_8_1 :I_15_0 :I_11_0 :I_c0_0 :I_c1_0 :I_c2_0 :I_c3_0 :I_c4_0 :I_c5_0 :I_c6_0 :I_c7_0 :I_c8_0 :I_c9_0" shape="18.42,27.31 21.32,24.55 21.24,23.97 21.66,23.79 22.38,23.69 23.41,23.66 24.75,23.70 25.28,-5.47 23.11,-5.60 21.58,-5.90 20.69,-6.37 20.46,-7.00 20.86,-7.81 21.92,-8.78 19.48,-11.95 18.84,-12.37 18.64,-13.35 18.51,-14.85 18.46,-16.87 18.49,-19.40 -13.91,-19.89 -14.03,-17.30 -14.32,-15.37 -14.76,-14.07 -15.37,-13.43 -16.14,-13.43 -17.07,-14.08 -19.84,-11.19 -19.82,-10.61 -20.34,-10.40 -21.21,-10.25 -22.43,-10.16 -24.00,-10.12 -24.04,18.44 -20.68,18.82 -19.88,19.30 -19.66,19.96 -20.03,20.81 -20.99,21.84 -18.31,24.81 -17.71,24.95 -17.53,25.62 -17.42,26.70 -17.38,28.18 -17.41,30.07 17.12,30.45 17.29,28.12 17.47,27.43 17.72,27.07 18.04,27.03">
+        <request index="0"  response="0001000001111110001100" foes="0001000001111110101100" cont="0"/>
+        <request index="1"  response="0000010001111101111100" foes="0000010001111101111100" cont="1"/>
+        <request index="2"  response="1000000100010000000010" foes="1000000100010001000011" cont="0"/>
+        <request index="3"  response="1000000100010000000010" foes="1000000100010001000011" cont="0"/>
+        <request index="4"  response="0001000100001110000010" foes="0001000100101111100010" cont="1"/>
+        <request index="5"  response="0100001000010010010011" foes="0100001000010011010011" cont="0"/>
+        <request index="6"  response="0000100010001100111110" foes="0000100010101100111110" cont="0"/>
+        <request index="7"  response="1000100000111100110001" foes="1000100000111100110001" cont="1"/>
+        <request index="8"  response="0010010000000010010000" foes="0010010000000011010011" cont="0"/>
+        <request index="9"  response="0010010000000010010010" foes="0010010000000011010011" cont="0"/>
+        <request index="10" response="0010000010000010001110" foes="0010000010100010101111" cont="1"/>
+        <request index="11" response="0100001000010011010010" foes="0100001000010011010011" cont="0"/>
+        <request index="12" response="0000000000000000000000" foes="0000000000000000000011" cont="0"/>
+        <request index="13" response="0000000000000000000000" foes="0000000000010001000000" cont="0"/>
+        <request index="14" response="0000000000000000000000" foes="0000000000000000011100" cont="0"/>
+        <request index="15" response="0000000000000000000000" foes="0000000000100000100000" cont="0"/>
+        <request index="16" response="0000000000000000000000" foes="0000000000001100000010" cont="0"/>
+        <request index="17" response="0000000000000000000000" foes="0000000000000011000000" cont="0"/>
+        <request index="18" response="0000000000000000000000" foes="0000000000000000010001" cont="0"/>
+        <request index="19" response="0000000000000000000000" foes="0000000000011100000000" cont="0"/>
+        <request index="20" response="0000000000000000000000" foes="0000000000100000100000" cont="0"/>
+        <request index="21" response="0000000000000000000000" foes="0000000000000010001100" cont="0"/>
+    </junction>
+    <junction id="I-NE" type="traffic_light" x="21.14" y="27.26" incLanes="NE_in_0 NE_in_1 -E21_0 :I-NE_w1_0 :I-NE_w0_0" intLanes=":I-NE_0_0 :I-NE_c0_0 :I-NE_c1_0" shape="26.45,30.76 24.54,25.92 23.60,26.04 23.11,25.92 22.61,25.68 22.11,25.32 21.59,24.83 18.70,27.59 19.15,28.32 19.21,28.67 19.15,29.03 18.97,29.39 18.67,29.74 22.36,33.41 23.68,32.15 24.20,31.77 24.77,31.46 25.48,31.14">
+        <request index="0" response="110" foes="110" cont="0"/>
+        <request index="1" response="000" foes="001" cont="0"/>
+        <request index="2" response="000" foes="001" cont="0"/>
+    </junction>
+    <junction id="I-NW" type="traffic_light" x="-19.83" y="23.49" incLanes="NW_in_0 NW_in_1 E24_0 :I-NW_w1_0 :I-NW_w0_0" intLanes=":I-NW_0_0 :I-NW_c0_0 :I-NW_c1_0" shape="-23.00,28.95 -18.30,26.74 -18.52,25.86 -18.48,25.45 -18.34,25.05 -18.09,24.67 -17.75,24.30 -20.43,21.34 -21.19,21.80 -21.57,21.88 -21.97,21.86 -22.38,21.73 -22.79,21.50 -25.69,25.82 -24.42,26.73 -24.03,27.12 -23.71,27.57 -23.39,28.15">
+        <request index="0" response="110" foes="110" cont="0"/>
+        <request index="1" response="000" foes="001" cont="0"/>
+        <request index="2" response="000" foes="001" cont="0"/>
+    </junction>
+    <junction id="I-SE" type="traffic_light" x="22.25" y="-11.56" incLanes="SE_in_0 SE_in_1 -E22_0 :I-SE_w0_0 :I-SE_w1_0" intLanes=":I-SE_0_0 :I-SE_c0_0 :I-SE_c1_0" shape="24.80,-9.13 28.39,-12.90 27.20,-14.09 26.85,-14.57 26.57,-15.10 26.30,-15.77 25.98,-16.68 21.07,-14.97 21.18,-14.05 21.07,-13.62 20.85,-13.21 20.52,-12.81 20.09,-12.42 22.53,-9.25 23.31,-9.64 23.69,-9.68 24.07,-9.60 24.44,-9.42">
+        <request index="0" response="110" foes="110" cont="0"/>
+        <request index="1" response="000" foes="001" cont="0"/>
+        <request index="2" response="000" foes="001" cont="0"/>
+    </junction>
+    <junction id="I-SW" type="traffic_light" x="-23.28" y="-17.27" incLanes="E23_0 SW_in_0 SW_in_1 :I-SW_w2_0 :I-SW_w0_0" intLanes=":I-SW_0_0 :I-SW_c0_0 :I-SW_c1_0" shape="-23.80,-15.00 -21.03,-17.88 -21.54,-18.60 -21.63,-18.97 -21.61,-19.35 -21.48,-19.75 -21.25,-20.15 -25.50,-23.15 -26.61,-21.65 -27.05,-21.16 -27.55,-20.73 -28.20,-20.27 -29.10,-19.68 -26.26,-15.33 -25.42,-15.66 -25.01,-15.66 -24.61,-15.55 -24.20,-15.33">
+        <request index="0" response="110" foes="110" cont="0"/>
+        <request index="1" response="000" foes="001" cont="0"/>
+        <request index="2" response="000" foes="001" cont="0"/>
+    </junction>
+    <junction id="N2_in" type="priority" x="-7.09" y="79.48" incLanes="N1_in_0 N1_in_1 N1_in_2 N1_in_3" intLanes=":N2_in_0_0 :N2_in_0_1 :N2_in_0_2 :N2_in_0_3" shape="-7.13,81.02 -21.92,80.66 -21.73,82.80 -21.15,84.31 -20.38,85.52 -19.60,86.72 -19.00,88.23 -18.77,90.37 -7.17,90.46">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="N2_out" type="priority" x="5.38" y="43.13" incLanes="NE_out_0 NE_out_1 N3_out_0 N3_out_1 N3_out_2 N3_out_3" intLanes=":N2_out_0_0 :N2_out_1_0 :N2_out_1_1 :N2_out_1_2" shape="21.86,33.92 18.17,30.25 17.13,29.82 5.53,29.69 5.47,36.78 20.27,36.99 20.42,35.70 20.61,35.27 20.91,34.88 21.32,34.45">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="N4_in" type="priority" x="-6.41" y="51.62" incLanes="N3_in_0 N3_in_1 N3_in_2 N3_in_3 N3_in_4" intLanes=":N4_in_0_0 :N4_in_1_0 :N4_in_1_1 :N4_in_1_2" shape="-5.72,27.62 -17.31,27.22 -18.00,27.36 -22.71,29.58 -21.85,31.46 -21.30,32.91 -20.99,34.15 -20.86,35.43 -20.86,36.99 -20.91,39.07 -6.11,39.43">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="NT" type="dead_end" x="-2.31" y="107.66" incLanes="NT_out_0" intLanes="" shape="-2.31,107.66 0.89,107.72 -2.31,107.66"/>
+    <junction id="N_in" type="dead_end" x="-7.30" y="107.12" incLanes="" intLanes="" shape="-7.30,107.12 -18.90,107.03"/>
+    <junction id="N_out" type="dead_end" x="4.46" y="107.30" incLanes="N1_out_0 N1_out_1 N1_out_2 N1_out_3 N1_out_4" intLanes="" shape="19.26,107.51 4.46,107.30"/>
+    <junction id="S2_in" type="priority" x="7.53" y="-46.19" incLanes="S1_in_0 S1_in_1 S1_in_2 S1_in_3 S1_in_4" intLanes=":S2_in_0_0 :S2_in_1_0 :S2_in_1_1 :S2_in_1_2" shape="7.05,-26.43 23.46,-28.21 23.17,-30.24 22.85,-31.74 22.54,-32.96 22.28,-34.19 22.13,-35.69 22.11,-37.74 7.31,-38.14">
+        <request index="0" response="0000" foes="0000" cont="0"/>
+        <request index="1" response="0000" foes="0000" cont="0"/>
+        <request index="2" response="0000" foes="0000" cont="0"/>
+        <request index="3" response="0000" foes="0000" cont="0"/>
+    </junction>
+    <junction id="S2_out" type="priority" x="-5.09" y="-47.52" incLanes="E17_0 E17_1 S3_out_0 S3_out_1 S3_out_2" intLanes=":S2_out_0_0 :S2_out_1_0 :S2_out_1_1" shape="-5.33,-37.49 -16.93,-37.77 -17.19,-35.68 -17.49,-34.99 -17.91,-34.33 -18.46,-33.57 -19.15,-32.55 -14.55,-30.10 -13.76,-29.86 -5.36,-29.73">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="ST_out" type="dead_end" x="2.48" y="-107.38" incLanes="ST_out_0" intLanes="" shape="2.48,-107.38 5.68,-107.32 -0.72,-107.44"/>
+    <junction id="S_in" type="dead_end" x="9.19" y="-107.47" incLanes="" intLanes="" shape="9.19,-107.47 23.98,-107.07"/>
+    <junction id="S_out" type="dead_end" x="-3.67" y="-107.27" incLanes="S1_out_0 S1_out_1 S1_out_2 S1_out_3" intLanes="" shape="-15.27,-107.55 -3.67,-107.27"/>
+    <junction id="W2_in" type="priority" x="-48.28" y="-1.56" incLanes="W1_in_0 W1_in_1 W1_in_2 W1_in_3" intLanes=":W2_in_0_0 :W2_in_1_0 :W2_in_1_1" shape="-33.02,-1.66 -33.07,-10.06 -33.29,-10.84 -36.03,-15.26 -37.73,-14.08 -38.35,-13.66 -39.01,-13.37 -39.83,-13.19 -40.97,-13.13 -41.01,-1.53">
+        <request index="0" response="000" foes="000" cont="0"/>
+        <request index="1" response="000" foes="000" cont="0"/>
+        <request index="2" response="000" foes="000" cont="0"/>
+    </junction>
+    <junction id="W2_out" type="priority" x="-41.31" y="10.01" incLanes="NW_out_0 NW_out_1 W3_out_0 W3_out_1 W3_out_2" intLanes=":W2_out_0_0 :W2_out_1_0 :W2_out_1_1 :W2_out_1_2" shape="-29.01,23.59 -26.12,19.27 -26.64,18.81 -26.67,18.64 -26.56,18.53 -26.28,18.46 -25.86,18.44 -25.85,10.04 -30.77,9.79 -34.38,9.19 -37.34,8.42 -40.29,7.65 -43.90,7.07 -48.83,6.85 -48.79,18.45 -44.37,18.42 -41.01,18.50 -38.25,18.87 -35.64,19.72 -32.71,21.23">
+        <request index="0" response="1110" foes="1110" cont="0"/>
+        <request index="1" response="0000" foes="0001" cont="0"/>
+        <request index="2" response="0000" foes="0001" cont="0"/>
+        <request index="3" response="0000" foes="0001" cont="0"/>
+    </junction>
+    <junction id="W_in" type="dead_end" x="-107.34" y="-1.77" incLanes="" intLanes="" shape="-107.34,-1.77 -107.30,-13.37"/>
+    <junction id="W_out" type="dead_end" x="-107.21" y="7.05" incLanes="W1_out_0 W1_out_1 W1_out_2 W1_out_3" intLanes="" shape="-107.17,18.65 -107.21,7.05"/>
+
+    <junction id=":I_12_0" type="internal" x="-6.41" y="-13.77" incLanes=":I_1_0" intLanes=":I_2_0 :I_2_1 :I_4_0 :I_5_0 :I_6_0 :I_8_0 :I_8_1 :I_10_0 :I_11_0 :I_c0_0 :I_c4_0"/>
+    <junction id=":I_13_0" type="internal" x="-18.03" y="10.81" incLanes=":I_4_0" intLanes=":I_1_0 :I_5_0 :I_6_0 :I_7_0 :I_8_0 :I_8_1 :I_11_0 :I_c2_0 :I_c6_0"/>
+    <junction id=":I_14_0" type="internal" x="5.12" y="24.90" incLanes=":I_7_0" intLanes=":I_0_0 :I_4_0 :I_5_0 :I_8_0 :I_8_1 :I_10_0 :I_11_0 :I_c5_0 :I_c9_0"/>
+    <junction id=":I_15_0" type="internal" x="19.07" y="1.87" incLanes=":I_10_0" intLanes=":I_0_0 :I_1_0 :I_2_0 :I_2_1 :I_5_0 :I_7_0 :I_11_0 :I_c1_0 :I_c7_0"/>
+
+    <connection from="E17" to="S1_out" fromLane="1" toLane="1" via=":S2_out_0_0" dir="s" state="M"/>
+    <connection from="E1_in" to="NE_in" fromLane="1" toLane="1" via=":E2_in_0_0" dir="R" state="M"/>
+    <connection from="E1_in" to="E3_in" fromLane="2" toLane="1" via=":E2_in_1_0" dir="s" state="M"/>
+    <connection from="E1_in" to="E3_in" fromLane="3" toLane="2" via=":E2_in_1_1" dir="s" state="M"/>
+    <connection from="E3_in" to="W3_out" fromLane="1" toLane="1" via=":I_0_0" tl="I-TLS" linkIndex="0" dir="s" state="o"/>
+    <connection from="E3_in" to="S3_out" fromLane="2" toLane="2" via=":I_1_0" tl="I-TLS" linkIndex="1" dir="L" state="o"/>
+    <connection from="E3_out" to="E1_out" fromLane="1" toLane="1" via=":E2_out_1_0" dir="s" state="M"/>
+    <connection from="E3_out" to="E1_out" fromLane="2" toLane="2" via=":E2_out_1_1" dir="s" state="M"/>
+    <connection from="N1_in" to="N3_in" fromLane="1" toLane="1" via=":N2_in_0_0" dir="s" state="M"/>
+    <connection from="N1_in" to="N3_in" fromLane="1" toLane="2" via=":N2_in_0_1" dir="s" state="M"/>
+    <connection from="N1_in" to="N3_in" fromLane="2" toLane="3" via=":N2_in_0_2" dir="s" state="M"/>
+    <connection from="N1_in" to="N3_in" fromLane="3" toLane="4" via=":N2_in_0_3" dir="s" state="M"/>
+    <connection from="N3_in" to="NW_in" fromLane="1" toLane="1" via=":N4_in_0_0" dir="R" state="M"/>
+    <connection from="N3_in" to="N5_in" fromLane="2" toLane="1" via=":N4_in_1_0" dir="s" state="M"/>
+    <connection from="N3_in" to="N5_in" fromLane="3" toLane="2" via=":N4_in_1_1" dir="s" state="M"/>
+    <connection from="N3_in" to="N5_in" fromLane="4" toLane="3" via=":N4_in_1_2" dir="s" state="M"/>
+    <connection from="N3_out" to="N1_out" fromLane="1" toLane="2" via=":N2_out_1_0" dir="s" state="M"/>
+    <connection from="N3_out" to="N1_out" fromLane="2" toLane="3" via=":N2_out_1_1" dir="s" state="M"/>
+    <connection from="N3_out" to="N1_out" fromLane="3" toLane="4" via=":N2_out_1_2" dir="s" state="M"/>
+    <connection from="N5_in" to="S3_out" fromLane="1" toLane="1" via=":I_8_0" tl="I-TLS" linkIndex="8" dir="s" state="o"/>
+    <connection from="N5_in" to="S3_out" fromLane="2" toLane="2" via=":I_8_1" tl="I-TLS" linkIndex="9" dir="s" state="o"/>
+    <connection from="N5_in" to="E3_out" fromLane="3" toLane="2" via=":I_10_0" tl="I-TLS" linkIndex="10" dir="l" state="o"/>
+    <connection from="NE_in" to="NE_out" fromLane="1" toLane="1" via=":I-NE_0_0" tl="I-TLS" linkIndex="12" dir="s" state="o"/>
+    <connection from="NE_out" to="N1_out" fromLane="1" toLane="1" via=":N2_out_0_0" dir="s" state="M"/>
+    <connection from="NT_in" to="ST_out" fromLane="0" toLane="0" via=":I_11_0" tl="I-TLS" linkIndex="11" dir="s" state="o"/>
+    <connection from="NW_in" to="NW_out" fromLane="1" toLane="1" via=":I-NW_0_0" tl="I-TLS" linkIndex="13" dir="s" state="o"/>
+    <connection from="NW_out" to="W1_out" fromLane="1" toLane="1" via=":W2_out_0_0" dir="s" state="m"/>
+    <connection from="S1_in" to="SE_in" fromLane="1" toLane="1" via=":S2_in_0_0" dir="R" state="M"/>
+    <connection from="S1_in" to="S3_in" fromLane="2" toLane="1" via=":S2_in_1_0" dir="s" state="M"/>
+    <connection from="S1_in" to="S3_in" fromLane="3" toLane="2" via=":S2_in_1_1" dir="s" state="M"/>
+    <connection from="S1_in" to="S3_in" fromLane="4" toLane="3" via=":S2_in_1_2" dir="s" state="M"/>
+    <connection from="S3_in" to="N3_out" fromLane="1" toLane="1" via=":I_2_0" tl="I-TLS" linkIndex="2" dir="s" state="o"/>
+    <connection from="S3_in" to="N3_out" fromLane="2" toLane="2" via=":I_2_1" tl="I-TLS" linkIndex="3" dir="s" state="o"/>
+    <connection from="S3_in" to="W3_out" fromLane="3" toLane="2" via=":I_4_0" tl="I-TLS" linkIndex="4" dir="l" state="o"/>
+    <connection from="S3_out" to="S1_out" fromLane="1" toLane="2" via=":S2_out_1_0" dir="s" state="M"/>
+    <connection from="S3_out" to="S1_out" fromLane="2" toLane="3" via=":S2_out_1_1" dir="s" state="M"/>
+    <connection from="SE_in" to="SE_out" fromLane="1" toLane="1" via=":I-SE_0_0" tl="I-TLS" linkIndex="14" dir="s" state="o"/>
+    <connection from="SE_out" to="E1_out" fromLane="1" toLane="1" via=":E2_out_0_0" dir="s" state="m"/>
+    <connection from="ST_in" to="NT_out" fromLane="0" toLane="0" via=":I_5_0" tl="I-TLS" linkIndex="5" dir="s" state="o"/>
+    <connection from="SW_in" to="E17" fromLane="1" toLane="1" via=":I-SW_0_0" tl="I-TLS" linkIndex="15" dir="s" state="o"/>
+    <connection from="W1_in" to="SW_in" fromLane="1" toLane="1" via=":W2_in_0_0" dir="R" state="M"/>
+    <connection from="W1_in" to="W3_in" fromLane="2" toLane="1" via=":W2_in_1_0" dir="s" state="M"/>
+    <connection from="W1_in" to="W3_in" fromLane="3" toLane="2" via=":W2_in_1_1" dir="s" state="M"/>
+    <connection from="W3_in" to="E3_out" fromLane="1" toLane="1" via=":I_6_0" tl="I-TLS" linkIndex="6" dir="s" state="o"/>
+    <connection from="W3_in" to="N3_out" fromLane="2" toLane="3" via=":I_7_0" tl="I-TLS" linkIndex="7" dir="l" state="o"/>
+    <connection from="W3_out" to="W1_out" fromLane="1" toLane="1" via=":W2_out_1_0" dir="s" state="M"/>
+    <connection from="W3_out" to="W1_out" fromLane="2" toLane="2" via=":W2_out_1_1" dir="s" state="M"/>
+    <connection from="W3_out" to="W1_out" fromLane="2" toLane="3" via=":W2_out_1_2" dir="s" state="M"/>
+
+    <connection from=":E2_in_0" to="NE_in" fromLane="0" toLane="1" dir="R" state="M"/>
+    <connection from=":E2_in_1" to="E3_in" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":E2_in_1" to="E3_in" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":E2_out_0" to="E1_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":E2_out_1" to="E1_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":E2_out_1" to="E1_out" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":I_0" to="W3_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":I_1" to="S3_out" fromLane="0" toLane="2" via=":I_12_0" dir="L" state="m"/>
+    <connection from=":I_12" to="S3_out" fromLane="0" toLane="2" dir="L" state="m"/>
+    <connection from=":I_2" to="N3_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":I_2" to="N3_out" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":I_4" to="W3_out" fromLane="0" toLane="2" via=":I_13_0" dir="l" state="m"/>
+    <connection from=":I_13" to="W3_out" fromLane="0" toLane="2" dir="l" state="m"/>
+    <connection from=":I_5" to="NT_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_6" to="E3_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":I_7" to="N3_out" fromLane="0" toLane="3" via=":I_14_0" dir="l" state="m"/>
+    <connection from=":I_14" to="N3_out" fromLane="0" toLane="3" dir="l" state="m"/>
+    <connection from=":I_8" to="S3_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":I_8" to="S3_out" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":I_10" to="E3_out" fromLane="0" toLane="2" via=":I_15_0" dir="l" state="m"/>
+    <connection from=":I_15" to="E3_out" fromLane="0" toLane="2" dir="l" state="m"/>
+    <connection from=":I_11" to="ST_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NE_0" to="NE_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":I-NW_0" to="NW_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":I-SE_0" to="SE_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":I-SW_0" to="E17" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":N2_in_0" to="N3_in" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":N2_in_0" to="N3_in" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":N2_in_0" to="N3_in" fromLane="2" toLane="3" dir="s" state="M"/>
+    <connection from=":N2_in_0" to="N3_in" fromLane="3" toLane="4" dir="s" state="M"/>
+    <connection from=":N2_out_0" to="N1_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":N2_out_1" to="N1_out" fromLane="0" toLane="2" dir="s" state="M"/>
+    <connection from=":N2_out_1" to="N1_out" fromLane="1" toLane="3" dir="s" state="M"/>
+    <connection from=":N2_out_1" to="N1_out" fromLane="2" toLane="4" dir="s" state="M"/>
+    <connection from=":N4_in_0" to="NW_in" fromLane="0" toLane="1" dir="R" state="M"/>
+    <connection from=":N4_in_1" to="N5_in" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":N4_in_1" to="N5_in" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":N4_in_1" to="N5_in" fromLane="2" toLane="3" dir="s" state="M"/>
+    <connection from=":S2_in_0" to="SE_in" fromLane="0" toLane="1" dir="R" state="M"/>
+    <connection from=":S2_in_1" to="S3_in" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":S2_in_1" to="S3_in" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":S2_in_1" to="S3_in" fromLane="2" toLane="3" dir="s" state="M"/>
+    <connection from=":S2_out_0" to="S1_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":S2_out_1" to="S1_out" fromLane="0" toLane="2" dir="s" state="M"/>
+    <connection from=":S2_out_1" to="S1_out" fromLane="1" toLane="3" dir="s" state="M"/>
+    <connection from=":W2_in_0" to="SW_in" fromLane="0" toLane="1" dir="R" state="M"/>
+    <connection from=":W2_in_1" to="W3_in" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":W2_in_1" to="W3_in" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":W2_out_0" to="W1_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":W2_out_1" to="W1_out" fromLane="0" toLane="1" dir="s" state="M"/>
+    <connection from=":W2_out_1" to="W1_out" fromLane="1" toLane="2" dir="s" state="M"/>
+    <connection from=":W2_out_1" to="W1_out" fromLane="2" toLane="3" dir="s" state="M"/>
+
+    <connection from=":E2_in_w0" to="NE_in" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="E1_in" to=":E2_in_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":E2_out_w0" to="E1_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="SE_out" to=":E2_out_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c0" to=":I_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c1" to=":I_w8" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c2" to=":I_w3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c3" to=":I_w9" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c4" to=":I_w10" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c5" to=":I_w5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c6" to=":I_w11" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c7" to=":I_w7" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c8" to=":I_w12" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_c9" to=":I_w13" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w0" to=":I_c9" fromLane="0" toLane="0" tl="I-TLS" linkIndex="25" dir="s" state="M"/>
+    <connection from=":I_w0" to="N3_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="E21" to=":I_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w1" to="-E21" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="E3_in" to=":I_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w2" to=":I_c1" fromLane="0" toLane="0" tl="I-TLS" linkIndex="17" dir="s" state="M"/>
+    <connection from=":I_w2" to="E3_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="E22" to=":I_w2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w3" to="-E22" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="S3_in" to=":I_w3" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w4" to=":I_c4" fromLane="0" toLane="0" tl="I-TLS" linkIndex="20" dir="s" state="M"/>
+    <connection from=":I_w4" to="S3_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="-E23" to=":I_w4" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w5" to="E23" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="W3_in" to=":I_w5" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w6" to=":I_c6" fromLane="0" toLane="0" tl="I-TLS" linkIndex="22" dir="s" state="M"/>
+    <connection from=":I_w6" to="W3_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="-E24" to=":I_w6" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w7" to="E24" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="N5_in" to=":I_w7" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I_w8" to=":I_c0" fromLane="0" toLane="0" tl="I-TLS" linkIndex="16" dir="s" state="M"/>
+    <connection from=":I_w9" to=":I_c2" fromLane="0" toLane="0" tl="I-TLS" linkIndex="18" dir="s" state="M"/>
+    <connection from=":I_w10" to=":I_c3" fromLane="0" toLane="0" tl="I-TLS" linkIndex="19" dir="s" state="M"/>
+    <connection from=":I_w11" to=":I_c5" fromLane="0" toLane="0" tl="I-TLS" linkIndex="21" dir="s" state="M"/>
+    <connection from=":I_w12" to=":I_c7" fromLane="0" toLane="0" tl="I-TLS" linkIndex="23" dir="s" state="M"/>
+    <connection from=":I_w13" to=":I_c8" fromLane="0" toLane="0" tl="I-TLS" linkIndex="24" dir="s" state="M"/>
+    <connection from=":I-NE_c0" to=":I-NE_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NE_c1" to=":I-NE_w2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NE_w0" to=":I-NE_c1" fromLane="0" toLane="0" tl="I-TLS" linkIndex="27" dir="s" state="M"/>
+    <connection from=":I-NE_w0" to="NE_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="NE_in" to=":I-NE_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NE_w1" to=":I-NE_c0" fromLane="0" toLane="0" tl="I-TLS" linkIndex="26" dir="s" state="M"/>
+    <connection from="-E21" to=":I-NE_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NE_w2" to="E21" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NW_c0" to=":I-NW_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NW_c1" to=":I-NW_w2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NW_w0" to=":I-NW_c1" fromLane="0" toLane="0" tl="I-TLS" linkIndex="29" dir="s" state="M"/>
+    <connection from=":I-NW_w0" to="NW_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="NW_in" to=":I-NW_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NW_w1" to=":I-NW_c0" fromLane="0" toLane="0" tl="I-TLS" linkIndex="28" dir="s" state="M"/>
+    <connection from="E24" to=":I-NW_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-NW_w2" to="-E24" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SE_c0" to=":I-SE_w2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SE_c1" to=":I-SE_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SE_w0" to=":I-SE_c0" fromLane="0" toLane="0" tl="I-TLS" linkIndex="30" dir="s" state="M"/>
+    <connection from=":I-SE_w0" to="SE_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="SE_in" to=":I-SE_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SE_w1" to=":I-SE_c1" fromLane="0" toLane="0" tl="I-TLS" linkIndex="31" dir="s" state="M"/>
+    <connection from="-E22" to=":I-SE_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SE_w2" to="E22" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SW_c0" to=":I-SW_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SW_c1" to=":I-SW_w2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SW_w0" to=":I-SW_c1" fromLane="0" toLane="0" tl="I-TLS" linkIndex="33" dir="s" state="M"/>
+    <connection from="E23" to=":I-SW_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SW_w1" to="-E23" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":I-SW_w2" to=":I-SW_c0" fromLane="0" toLane="0" tl="I-TLS" linkIndex="32" dir="s" state="M"/>
+    <connection from=":I-SW_w2" to="E17" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="SW_in" to=":I-SW_w2" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":N2_in_w0" to="N3_in" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="N1_in" to=":N2_in_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":N2_out_w0" to="N1_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="NE_out" to=":N2_out_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":N4_in_w1" to="NW_in" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="N3_in" to=":N4_in_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":S2_in_w0" to="SE_in" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="S1_in" to=":S2_in_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":S2_out_w0" to="S1_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="E17" to=":S2_out_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":W2_in_w1" to="SW_in" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="W1_in" to=":W2_in_w1" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from=":W2_out_w0" to="W1_out" fromLane="0" toLane="0" dir="s" state="M"/>
+    <connection from="NW_out" to=":W2_out_w0" fromLane="0" toLane="0" dir="s" state="M"/>
+</net>

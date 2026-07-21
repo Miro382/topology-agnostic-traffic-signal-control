@@ -1,0 +1,136 @@
+
+
+# ---------------------------------------------------------------------------
+
+# LuST (Luxembourg) junction -3976 - held-out cross-city validation
+# Vehicular Slots Configuration (Indices 0-12)
+intersection:
+  sumocfg_path: "simulation/LuST.sumocfg"  # Path to the SUMO configuration file for this intersection
+  sumo_id: "-3976"             # The traffic light ID used in the SUMO .net.xml file
+  sumo_signal_count: 13        # The total number of signals in the SUMO signal string
+  verbose: false                    # Enable debug printing for phase changes
+  verbose_phase_selection: false    # Enable detailed priority/score logging
+  normalization_bounds:
+    max_vehicles_in_lane: 11       # Normalisation bound for vehicle scaling
+    max_wait_per_vehicle: 90.0     # Normalisation bound for wait time scaling
+    max_light_age: 60.0            # Normalisation bound for time-since-last-change
+  timing:
+    yellow_steps: 3
+    all_red_steps: 1
+    crosswalk_extra_red_steps: 0
+    red_yellow_steps: 2
+    green_steps: 1
+
+vehicular_slots:
+  North/Right:
+    sumo_tls_indices: []
+    max_capacity: 10
+    feed_edges: []
+  North/Middle:                # --32410#1 through (links 0,1,2)
+    sumo_tls_indices: [0, 1, 2]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "--32410#1"
+        lane_indices: [0, 1, 2]
+  North/Left:                  # --32410#1 left (link 3, lane 2)
+    sumo_tls_indices: [3]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "--32410#1"
+        lane_indices: [2]
+
+  East/Right:                  # --31890 right (link 4, lane 0)
+    sumo_tls_indices: [4]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "--31890"
+        lane_indices: [0]
+  East/Middle:
+    sumo_tls_indices: []
+    max_capacity: 10
+    feed_edges: []
+  East/Left:                   # --31890 left (link 5, lane 1)
+    sumo_tls_indices: [5]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "--31890"
+        lane_indices: [1]
+
+  South/Right:                 # -32410#0 right (link 6, lane 0)
+    sumo_tls_indices: [6]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "-32410#0"
+        lane_indices: [0]
+  South/Middle:                # -32410#0 through (links 7,8,9)
+    sumo_tls_indices: [7, 8, 9]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "-32410#0"
+        lane_indices: [0, 1, 2]
+  South/Left:
+    sumo_tls_indices: []
+    max_capacity: 10
+    feed_edges: []
+
+  West/Right:                  # -32850 right (link 10, lane 0)
+    sumo_tls_indices: [10]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "-32850"
+        lane_indices: [0]
+  West/Middle:                 # -32850 through (link 11, lane 1)
+    sumo_tls_indices: [11]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "-32850"
+        lane_indices: [1]
+  West/Left:                   # -32850 left (link 12, lane 1)
+    sumo_tls_indices: [12]
+    max_capacity: 10
+    feed_edges:
+      - edge_id: "-32850"
+        lane_indices: [1]
+
+# No signalised pedestrian crossings at this junction. All ped slots empty.
+pedestrian_slots:
+  North/Right: {sumo_tls_indices: [], feed_edges: []}
+  North/Middle+Left: {sumo_tls_indices: [], feed_edges: []}
+  North/Track: {sumo_tls_indices: [], feed_edges: []}
+  North/Departing: {sumo_tls_indices: [], feed_edges: []}
+  East/Right: {sumo_tls_indices: [], feed_edges: []}
+  East/Middle+Left: {sumo_tls_indices: [], feed_edges: []}
+  East/Departing: {sumo_tls_indices: [], feed_edges: []}
+  South/Right: {sumo_tls_indices: [], feed_edges: []}
+  South/Middle+Left: {sumo_tls_indices: [], feed_edges: []}
+  South/Track: {sumo_tls_indices: [], feed_edges: []}
+  South/Departing: {sumo_tls_indices: [], feed_edges: []}
+  West/Right: {sumo_tls_indices: [], feed_edges: []}
+  West/Middle+Left: {sumo_tls_indices: [], feed_edges: []}
+  West/Departing: {sumo_tls_indices: [], feed_edges: []}
+
+# [ N/R,N/M,N/L, E/R,E/M,E/L, S/R,S/M,S/L, W/R,W/M,W/L, rail,  14x ped ]
+# Exact translation of LuST green phases ph0/2/4/6 (collision-free by construction).
+valid_phases:
+  - label: "North through+left and South right+through"   # LuST ph0
+    signals: [0,1,1, 0,0,0, 1,1,0, 0,0,0, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  - label: "North protected left"                          # LuST ph2
+    signals: [0,0,1, 0,0,0, 0,0,0, 0,0,0, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  - label: "East and West (side street)"                   # LuST ph4
+    signals: [0,0,0, 1,0,1, 0,0,0, 1,1,1, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  - label: "East+West protected left"                      # LuST ph6
+    signals: [0,0,0, 0,0,1, 0,0,0, 0,0,1, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+standard_cycle:
+  - label: "North through+left and South right+through"
+    duration: 30
+    signals: [0,1,1, 0,0,0, 1,1,0, 0,0,0, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  - label: "North protected left"
+    duration: 10
+    signals: [0,0,1, 0,0,0, 0,0,0, 0,0,0, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  - label: "East and West (side street)"
+    duration: 30
+    signals: [0,0,0, 1,0,1, 0,0,0, 1,1,1, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  - label: "East+West protected left"
+    duration: 10
+    signals: [0,0,0, 0,0,1, 0,0,0, 0,0,1, 0,  0,0,0,0,0,0,0,0,0,0,0,0,0,0]

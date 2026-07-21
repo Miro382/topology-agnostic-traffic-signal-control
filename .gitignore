@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Training / run artifacts (regenerated)
+train_logs/
+logs/
+logs_seed*/
+tensorboard/
+*_sumo_tensorboard/
+*.log
+simulation/TrafficDensity/*-density-scaled*.rou.xml
+simulation/TrafficDensity/*-varied-*.csv
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

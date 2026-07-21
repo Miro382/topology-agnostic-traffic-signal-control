@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- LuST held-out junction -3976 (Luxembourg). Real demand cut from LuST DUARoutes.
+     Route file, begin and scale are supplied on the command line by the evaluator. -->
+<configuration>
+    <input>
+        <net-file value="LuST.net.xml"/>
+        <additional-files value="vtypes_lust.add.xml"/>
+    </input>
+</configuration>

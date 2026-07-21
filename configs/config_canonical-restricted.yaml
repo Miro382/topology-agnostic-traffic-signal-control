@@ -1,0 +1,308 @@
+
+
+# ---------------------------------------------------------------------------
+
+# Vehicular Slots Configuration (Indices 0-12)
+intersection:
+  sumocfg_path: "simulation/Hornbach-Tutorial.sumocfg"  # Path to the SUMO configuration file for this intersection
+  sumo_id: "I-TLS"       # The traffic light ID used in the SUMO .net.xml file
+  sumo_signal_count: 34        # The total number of signals in the SUMO signal string
+  verbose: false                    # Enable debug printing for phase changes
+  verbose_phase_selection: false    # Enable detailed priority/score logging
+  normalization_bounds:
+    max_vehicles_in_lane: 11       # Normalisation bound for vehicle scaling
+    max_wait_per_vehicle: 90.0     # Normalisation bound for wait time scaling
+    max_light_age: 60.0            # Normalisation bound for time-since-last-change
+  timing:
+    yellow_steps: 3
+    all_red_steps: 1
+    crosswalk_extra_red_steps: 3
+    red_yellow_steps: 2
+    green_steps: 1
+
+
+# ---------------------------------------------------------------------------
+vehicular_slots:
+  North/Right:
+    sumo_tls_indices: [13]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "N1_in"
+        lane_indices: [1]
+      - edge_id: ":N2_in_0"
+        lane_indices: [0]
+      - edge_id: "N3_in"
+        lane_indices: [1]
+      - edge_id: ":N4_in_0"
+        lane_indices: [0]
+      - edge_id: "NW_in"
+        lane_indices: [1]
+  North/Middle:
+    sumo_tls_indices: [8, 9]
+    max_capacity: 22
+    feed_edges:
+      - edge_id: "N1_in"
+        lane_indices: [1, 2]
+      - edge_id: ":N2_in_0"
+        lane_indices: [1, 2]
+      - edge_id: "N3_in"
+        lane_indices: [2, 3]
+      - edge_id: ":N4_in_1"
+        lane_indices: [0, 1]
+      - edge_id: "N5_in"
+        lane_indices: [1, 2]
+  North/Left:
+    sumo_tls_indices: [10]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "N1_in"
+        lane_indices: [3]
+      - edge_id: ":N2_in_0"
+        lane_indices: [3]
+      - edge_id: "N3_in"
+        lane_indices: [4]
+      - edge_id: ":N4_in_1"
+        lane_indices: [2]
+      - edge_id: "N5_in"
+        lane_indices: [3]
+
+  East/Right:
+    sumo_tls_indices: [12]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "E1_in"
+        lane_indices: [1]
+      - edge_id: ":E2_in_0"
+        lane_indices: [0]
+      - edge_id: "NE_in"
+        lane_indices: [1]
+  East/Middle:
+    sumo_tls_indices: [0]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "E1_in"
+        lane_indices: [2]
+      - edge_id: ":E2_in_1"
+        lane_indices: [0]
+      - edge_id: "E3_in"
+        lane_indices: [1]
+  East/Left:
+    sumo_tls_indices: [1]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "E1_in"
+        lane_indices: [3]
+      - edge_id: ":E2_in_1"
+        lane_indices: [1]
+      - edge_id: "E3_in"
+        lane_indices: [2]
+
+  South/Right:
+    sumo_tls_indices: [14]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "S1_in"
+        lane_indices: [1]
+      - edge_id: ":S2_in_0"
+        lane_indices: [0]
+      - edge_id: "SE_in"
+        lane_indices: [1]
+  South/Middle:
+    sumo_tls_indices: [2, 3]
+    max_capacity: 22
+    feed_edges:
+      - edge_id: "S1_in"
+        lane_indices: [2, 3]
+      - edge_id: ":S2_in_1"
+        lane_indices: [0, 1]
+      - edge_id: "S3_in"
+        lane_indices: [1, 2]
+  South/Left:
+    sumo_tls_indices: [4]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "S1_in"
+        lane_indices: [4]
+      - edge_id: ":S2_in_1"
+        lane_indices: [2]
+      - edge_id: "S3_in"
+        lane_indices: [3]
+
+  West/Right:
+    sumo_tls_indices: [15]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "W1_in"
+        lane_indices: [1]
+      - edge_id: ":W2_in_0"
+        lane_indices: [0]
+      - edge_id: "SW_in"
+        lane_indices: [1]
+  West/Middle:
+    sumo_tls_indices: [6]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "W1_in"
+        lane_indices: [2]
+      - edge_id: ":W2_in_1"
+        lane_indices: [0]
+      - edge_id: "W3_in"
+        lane_indices: [1]
+  West/Left:
+    sumo_tls_indices: [7]
+    max_capacity: 12
+    feed_edges:
+      - edge_id: "W1_in"
+        lane_indices: [3]
+      - edge_id: ":W2_in_1"
+        lane_indices: [1]
+      - edge_id: "W3_in"
+        lane_indices: [2]
+
+  # Example of an aggregated canonical slot handling multiple independent physical approaches.
+  # Use 'approaches' instead of 'feed_edges' when you have tracks or lanes arriving from
+  # opposite ends of the intersection that must decouple their distance-to-stop-line geometries.
+  North-South/Track:
+    sumo_tls_indices: [5, 11]
+    max_capacity: 8
+    approaches:
+      # --- Approach Chain 1: North Track ---
+      - - edge_id: "NT_in"
+          lane_indices: [0]
+          
+      # --- Approach Chain 2: South Track ---
+      - - edge_id: "ST_in"
+          lane_indices: [0]
+
+# ---------------------------------------------------------------------------
+# Pedestrian Slots Configuration (Indices 13-26)
+# ---------------------------------------------------------------------------
+# Pedestrian slots map to the physical crossing positions, NOT travel direction.
+pedestrian_slots:
+  North/Right:
+    sumo_tls_indices: [28, 29]
+    approaches:
+      - - edge_id: ":I-NW_w0"
+          lane_indices: [0]
+      - - edge_id: ":I-NW_w1"
+          lane_indices: [0]
+  North/Middle+Left:
+    sumo_tls_indices: [23]
+    feed_edges:
+      - edge_id: ":I_w12"
+        lane_indices: [0]
+  North/Track:
+    sumo_tls_indices: [24]
+    feed_edges:
+      - edge_id: ":I_w13"
+        lane_indices: [0]
+  North/Departing:
+    sumo_tls_indices: [25]
+    feed_edges:
+      - edge_id: ":I_w0"
+        lane_indices: [0]
+
+  East/Right:
+    sumo_tls_indices: [26, 27]
+    approaches:
+      - - edge_id: ":I-NE_w0"
+          lane_indices: [0]
+      - - edge_id: ":I-NE_w1"
+          lane_indices: [0]
+  East/Middle+Left:
+    sumo_tls_indices: [16]
+    feed_edges:
+      - edge_id: ":I_w8"
+        lane_indices: [0]
+  East/Departing:
+    sumo_tls_indices: [17]
+    feed_edges:
+      - edge_id: ":I_w2"
+        lane_indices: [0]
+
+  South/Right:
+    sumo_tls_indices: [30, 31]
+    approaches:
+      - - edge_id: ":I-SE_w0"
+          lane_indices: [0]
+      - - edge_id: ":I-SE_w1"
+          lane_indices: [0]
+  South/Middle+Left:
+    sumo_tls_indices: [18]
+    feed_edges:
+      - edge_id: ":I_w9"
+        lane_indices: [0]
+  South/Track:
+    sumo_tls_indices: [19]
+    feed_edges:
+      - edge_id: ":I_w10"
+        lane_indices: [0]
+  South/Departing:
+    sumo_tls_indices: [20]
+    feed_edges:
+      - edge_id: ":I_w4"
+        lane_indices: [0]
+
+  West/Right:
+    sumo_tls_indices: [32, 33]
+    approaches:
+      - - edge_id: ":I-SW_w2"
+          lane_indices: [0]
+      - - edge_id: ":I-SW_w0"
+          lane_indices: [0]
+  West/Middle+Left:
+    sumo_tls_indices: [21]
+    feed_edges:
+      - edge_id: ":I_w11"
+        lane_indices: [0]
+  West/Departing:
+    sumo_tls_indices: [22]
+    feed_edges:
+      - edge_id: ":I_w6"
+        lane_indices: [0]
+
+# ---------------------------------------------------------------------------
+# Valid Phases Definition
+# ---------------------------------------------------------------------------
+# Define all strictly non-colliding (valid) phases. 
+# The agent will only ever pick one of these.
+# 'signals' array must contain exactly 27 integers (1=Green, 0=Red).
+# The order matches the canonical hierarchy:
+# [ N/R, N/M, N/L, E/R, E/M, E/L, S/R, S/M, S/L, W/R, W/M, W/L, N-S/Track
+#   Ped(N...4), Ped(E...3), Ped(S...4), Ped(W...3) ]
+# ---------------------------------------------------------------------------
+valid_phases:
+  # Pedestrian only
+  - label: "Pedestrian only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  1, 1, 1, 1,  1, 1, 1]
+  # Left only
+  - label: "North left only"
+    signals: [0, 0, 1,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  1, 1, 0,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East left only"
+    signals: [0, 0, 0,  0, 0, 1,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "South left only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 1,  0, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  1, 0, 1, 1,  1, 1, 0]
+  - label: "West left only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 1,  0,    1, 1, 1, 0,  1, 1, 1,  1, 1, 1, 1,  1, 0, 1]
+  # Middle only
+  - label: "North middle only"
+    signals: [0, 1, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 0, 1, 1,  1, 1, 1,  1, 1, 1, 0,  1, 1, 1]
+  - label: "East middle only"
+    signals: [0, 0, 0,  0, 1, 0,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 0, 1,  1, 1, 1, 1,  1, 1, 0]
+  - label: "South middle only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 1, 0,  0, 0, 0,  0,    1, 1, 1, 0,  1, 1, 1,  1, 0, 1, 1,  1, 1, 1]
+  - label: "West middle only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 1, 0,  0,    1, 1, 1, 1,  1, 1, 0,  1, 1, 1, 1,  1, 0, 1]
+  # Right only
+  - label: "North right only"
+    signals: [1, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  0,    0, 1, 1, 1,  1, 1, 1,  1, 1, 1, 1,  1, 1, 1]
+  - label: "East right only"
+    signals: [0, 0, 0,  1, 0, 0,  0, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  0, 1, 1,  1, 1, 1, 1,  1, 1, 1]
+  - label: "South right only"
+    signals: [0, 0, 0,  0, 0, 0,  1, 0, 0,  0, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  0, 1, 1, 1,  1, 1, 1]
+  - label: "West right only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  1, 0, 0,  0,    1, 1, 1, 1,  1, 1, 1,  1, 1, 1, 1,  0, 1, 1]
+  # Tram only
+  - label: "Tram only"
+    signals: [0, 0, 0,  0, 0, 0,  0, 0, 0,  0, 0, 0,  1,    1, 1, 0, 1,  1, 1, 1,  1, 1, 0, 1,  1, 1, 1]
+
